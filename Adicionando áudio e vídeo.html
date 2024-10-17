@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Adicionando áudio e vídeo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        code {color: rgb(219, 179, 162);}
+    </style>
+</head>
+<body>
+    <h1>Mídias em HTML</h1>
+    <h2>Inserindo áudio</h2>
+
+    <p>A tag <code>&lt;audio&gt;</code> é usada para incorporar conteúdo sonoro em um documento, como música ou outros fluxos de áudio.</p>
+
+    <p>A tag <code>&lt;audio&gt;</code> contém uma ou mais <source>tags com diferentes fontes de áudio. O navegador escolherá a primeira fonte que ele suporta. Caso todas falhem, adicionaremos um parágrafo que permite o download do arquivo. Qualquer texto entre as tags <code>&lt;audio&gt;</code> e <code>&lt;/audio&gt;</code> só será exibido em navegadores que não suportam o áudio inserido.</p>
+
+    <p><strong>Dica:</strong> A tag <code>&lt;audio&gt;</code> funciona similarmente às tags <code>&lt;picture&gt;</code> e <code>&lt;video&gt;</code>. Você configura fontes diferentes e a primeira fonte que se encaixa nas preferências é a que está sendo usada.</p>
+
+    <p>Há três formatos de áudio suportados em HTML: MP3, WAV e OGG.</p>
+
+    <p>Principais atributos da tag <code>&lt;audio&gt;</code>:</p>
+
+    <p>
+        <ul>
+            <li><code>preload</code>: especifica se e como o autor acha que o áudio deve ser carregado quando a página for carregada. Valores:</li>
+                <ul>
+                    <li><code>auto</code> (padrão): vai carregar o arquivo de áudio assim que a página for carregada, mesmo que o usuário nunca aperte o play;</li>
+                    <li><code>metadata</code>: carrega apenas as informações sobre o arquivo (tamanho, tempo, etc.)</li>
+                    <li><code>none</code>: o áudio não será pré-carregado, a menos que o usuário consulte o arquivo.</li>
+                </ul>
+            <li><code>controls</code>: especifica que os controles de áudio devem ser exibidos;</li>
+            <li><code>autoplay</code>: especifica que o áudio iniciará automaticamente;</li>
+            <li><code>loop</code>: especifica que o áudio será reiniciado sempre que terminar;</li>
+            <li><code>muted</code>: o áudio será inicializado silenciado;</li>
+            <li><code>played</code>: adiciona um objeto sinalizando que o áudio foi reproduzido;</li>
+            <li><code>src</code>: indica a URL do arquivo utilizado.</li>
+        </ul>
+    </p>
+
+    <p>Exemplo de áudio:</p>
+        <pre>
+            <code>
+            &lt;audio preload="metadata" autoplay controls loop>
+                &lt;source src="áudio/Temple of treasures.mp3" type="audio/mp3">
+                &lt;source src="áudio/Temple of treasures.ogg" type="audio/ogg">
+                &lt;source src="áudio/Temple of treasures.wav" type="audio/wav">
+                &lt;p&gt;nfelizmente seu navegador não consegue reproduzir áudio. 
+                    &lt;a href="midia/guanacast-33.mp3" download="guanacast-33.mp3" type="audio/mpeg"&gt;&lt;/a&gt;
+                &lt;/p&gt;
+            &lt;/audio&gt;
+            </code>
+        </pre>
+
+<audio style="padding: 0px 90px;" preload="none" controls>
+    <source src="áudio/Temple of treasures.mp3" type="audio/mp3">
+</audio>
+
+<h2>Inserindo vídeos hospedados localmente</h2>
+    <p>A tag <code>&lt;video&gt;</code> é usada para incorporar conteúdo de vídeo em um documento, caso o arquivo esteja hospedado no nosso próprio servidor.</p>
+
+    <p>Semelhante ao elemento <code>&lt;img&gt;</code>, incluímos o caminho da mídia que queremos exibir dentro do atributo <code>src</code>. Também podemos incluir outros atributos para especificar informações, como largura (<code>width</code>) e altura (<code>height</code>) do vídeo, se queremos que ele seja reproduzido automaticamente e em loop, se queremos mostrar os controles de vídeo padrão do navegador e etc.</p>
+
+    <p>O conteúdo dentro das tags de abertura e fechamento é exibido como uma alternativa (fallback) em navegadores que não suportam o elemento.</p>
+
+    <p>Há três formatos de vídeo suportados em HTML: MP4, WebM e OGG.</p>
+
+    <p>O exemplo abaixo mostra um uso do elemento <code>&lt;video&gt;</code>.</p>
+
+    <p><pre><code>
+        &lt;video width="500" poster="mídia/imagem-céu-700.jpg" controls&gt;
+            &lt;source src="mídia/video-sd-960.mp4" type="video/mp4"&gt;
+            &lt;source src="mídia/video-sd-960.webm" type="video/webm"&gt;
+            &lt;p&gt;Seu navegador não tem compatibilidade com reprodução de vídeo.&lt;/p&gt;
+        &lt;/video&gt;
+    </code></pre></p>
+
+    <h2>Inserindo vídeos do YouTube ou Vimeo</h2>
+
+    <p>Quando colocamos vídeos do nosso próprio servidor, podemos passar por problemas como alto consumo de banda, site lento e incompatibilidades com algus navegadores. Por isso, podemos incorporar vídeos do YouTube ou Vimeo, serviços para a hospedagem de vídeos que vão evitar consumir nossos próprios recursos de host contratado.</p>
+
+    <p>Para incorporar vídeos que você subiu no YouTube ou Vimeo, existem recursos no botão "compartilhar" que te dão o código pronto em HTML5.</p>
+
+    <p><iframe width="500" height="315" src="https://www.youtube.com/embed/FdE5G95B7Mg?si=VTn_gd2BXPYrTXJs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+</body>
+</html>

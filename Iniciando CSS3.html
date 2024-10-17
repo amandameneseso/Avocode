@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Iniciando CSS3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Aplicando estilos</h1>
+    <h2>A forma mais simples de aplicar estilos: CSS inline style</h2>
+    <p>Vamos começar pela técnica mais básica para aplicar estilos em nosso site, que é usando as CSS dentro de parâmetros de HTML5. Esse método é mais usado para fazer pequenas configurações pontuais no conteúdo. Esse método consiste em adicionar o parâmetro <code>style=""</code> dentro da tag desejada. Vamos começar aplicando um estilo diferente ao parágrafo abaixo.</p>
+
+    <p>&lt;p style="color: rgb(151, 169, 108);"&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor non reprehenderit tenetur eum totam sequi, ratione eos deserunt possimus aspernatur. Alias atque inventore possimus nisi. Tempora distinctio reprehenderit debitis illum!&lt;/p&gt;</p>
+    <p>O resultado visual deve ser:</p>
+   
+    <p style="color: rgb(151, 169, 108);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor non reprehenderit tenetur eum totam sequi, ratione eos deserunt possimus aspernatur. Alias atque inventore possimus nisi. Tempora distinctio reprehenderit debitis illum!</p>
+
+    <h2>Estilizando de maneira mais interessante: CSS internal style</h2>
+    <p>Para aplicar estilos de forma mais dinâmica e prática, podemos adicionar uma tag <code>&lt;style&gt;</code> dentro da área  <code>&lt;head&gt;</code> do nosso documento HTML. <br> Obs.: As configurações pontuais (HTML style) vão prevalecer sobre as configurações gerais (CSS style).</p>
+
+    <p>
+        <pre><code>
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Estilos Locais / Internos&lt;/title&gt;
+            &lt;style&gt;
+                body {
+                    background-color: lightsteelblue;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 20px;}
+            &lt;/style&gt;
+        &lt;/head&gt;
+        </code></pre>
+    </p>
+
+    <h2>A técnica mais versátil: CSS external style</h2>
+    <p>Manter as folhas de estilo fora do código HTML, além de uma maior organização, faz com que tudo seja reaproveitado de maneira mais eficiente nas outras páginas. Para isso, utilizamos a tag <code>&lt;link&gt;</code>, dentro da área <code>&lt;head&gt;</code> para criar a página "style.css".</p>
+
+    <p>
+        <pre><code>
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Estilos Externos&lt;/title&gt;
+            &lt;link rel="stylesheet" href="style.css"&gt;
+        &lt;/head&gt;
+        </code></pre>
+    </p>
+    
+</body>
+</html>

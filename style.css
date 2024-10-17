@@ -1,17 +1,48 @@
 @charset "UTF-8";
 
-body {background-color: rgb(58, 77, 58); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+body {
+    background-color: rgb(58, 77, 58);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
 
-h1 {color: rgb(177, 168, 129); text-align: center; padding: 40px 0px;}
+h1 {
+    color: rgb(219, 179, 162);
+    text-align: center;
+    padding: 40px 0px;}
 
-h2 {color: rgb(177, 168, 129); padding: 20px 40px;}
+h2 {
+    color: rgb(219, 179, 162);
+    padding: 20px 40px;}
 
-h3 {color: rgb(177, 168, 129); padding: 20px 55px;}
+h3 {
+    color: rgb(219, 179, 162);
+    padding: 20px 55px;}
 
-p {color: rgb(208, 219, 192); font-size: 18px; padding: 0px 40px;}
+p {
+    color: rgb(208, 219, 192);
+    font-size: 16px;
+    padding: 0px 40px;
+    text-align: justify;}
 
-pre {color: rgb(168, 168, 145);}
+a {
+    color: rgb(214, 193, 172);
+    text-decoration: none;}
 
-blockquote {color: rgb(168, 168, 145);font-size: 14px;}
+body a:hover {color: white;}
+
+pre {
+    color: rgb(167, 184, 143);
+    padding: 0px 40px;}
+
+blockquote {
+    color: rgb(167, 184, 143);
+    font-size: 14px;}
+
+ul {
+    color: rgb(167, 184, 143);
+    padding: 0px 80px;}
+
+ol {
+    color: rgb(167, 184, 143);
+    padding: 0px 80px;}
 
        
