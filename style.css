@@ -2,7 +2,9 @@
 
 body {
     background-color: rgb(58, 77, 58);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 20px 20px 50px 20px;
+    }
 
 h1 {
     color: rgb(219, 179, 162);
@@ -21,13 +23,15 @@ p {
     color: rgb(208, 219, 192);
     font-size: 16px;
     padding: 0px 40px;
-    text-align: justify;}
+    text-align: justify;
+    text-indent: 30px;}
 
 a {
     color: rgb(214, 193, 172);
-    text-decoration: none;}
+    text-decoration: none;
+    transition: all 200ms ease-in-out;}
 
-body a:hover {color: white;}
+body a:hover {color: rgb(208, 219, 192);}
 
 pre {
     color: rgb(167, 184, 143);
@@ -44,5 +48,8 @@ ul {
 ol {
     color: rgb(167, 184, 143);
     padding: 0px 80px;}
+
+li {
+    padding: 3.5px 0px;}
 
        

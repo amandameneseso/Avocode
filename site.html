@@ -8,30 +8,34 @@
     <style>
         body {
             background-color: rgb(58, 77, 58);
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 20px;
+        }
         
         nav ul {
             color: rgb(208, 219, 192);
             display: flex;
             justify-content: space-around;
             list-style-type: none;
-            padding: 15px;
+            padding: 12px;
             background-color: rgb(34, 54, 36);
             border-radius: 10px;
-            box-shadow: 2px 2px 6px rgb(109, 133, 94);}
+            box-shadow: 0px 0px 10px rgba(109, 129, 97, 0.566);}
 
         a {
             color: rgb(219, 179, 162);
             text-decoration: none;
-            font-size: 16px;}
+            font-size: 16px;
+            transition: all 200ms ease-in-out;}
 
         nav a:hover {
-            color: rgb(255, 255, 255);}
+            color: rgb(208, 219, 192);}
 
         p {
             color: rgb(208, 219, 192);
             font-size: 16px;
-            text-align: justify;}
+            text-align: justify;
+            text-indent: 30px;}
 
         img {
             width: 170px;
@@ -44,13 +48,20 @@
             padding: 10px 20px;}
 
         ol {
-            color: rgb(219, 179, 162);}
+            color: rgb(219, 179, 162);
+            padding: 0px 70px;
+            columns: 2;}
+
+        main li {padding: 3.5px 4px;}
 
         main a:hover {
-            color: rgb(255, 255, 255);}
+            color: rgb(208, 219, 192);}
+        
+        h2 {display: none;}
 
         .center {
-            text-align: center;}
+            text-align: center;
+            padding: 20px;}
 
         .container {
             padding: 0px 50px;}
@@ -60,6 +71,14 @@
             font-size: 25px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             color: rgb(219, 179, 162);}
+
+        footer p {
+            text-align: center;
+            padding: 30px 0 0 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 12px;
+        }
+
     </style>
 </head>
 <body>
@@ -83,13 +102,12 @@
 
         <main>
             <h1>Olá, meu nome é Avocode!</h1>
-            <p>Estou aqui para te convidar a embarcar em uma aventura divertida no mundo da programação! Estou criando um site onde vou ensinar tudo sobre HTML5 e CSS3 de maneira simples e alegre.</p>
-            <p>Como um abacate que adora tecnologia, percebo que o mundo digital está em constante evolução, e aprender HTML5 é fundamental para quem deseja criar páginas incríveis e interativas.</p>
+            <p>Estou aqui para te convidar a embarcar em uma aventura divertida no mundo da programação! Estou criando um site onde vou ensinar tudo sobre HTML5 e CSS3 de maneira simples e alegre. Como um abacate que adora tecnologia, percebo que o mundo digital está em constante evolução, e aprender HTML5 é fundamental para quem deseja criar páginas incríveis e interativas.</p>
             <p>Neste site, você encontrará tutoriais passo a passo, dicas práticas e recursos valiosos que vão desde o básico até conceitos mais avançados. Prepare-se para mergulhar no mundo do código e descobrir como o abacate pode ser a sua fruta favorita na programação!
             <p>Vamos nessa? 🥑💻</p>
             
             <ol>
-                <li>HTML5</li>
+                <li><strong>HTML5</strong>
                     <ul>
                         <li><a href="Primeiros passos em HTML5.html" target="_self">Primeiros passos em HTML5</a></li>
                         <li><a href="Formatação de textos.html">Formatação de textos</a></li>
@@ -100,13 +118,23 @@
                         <li><a href="Adicionando áudio e vídeo.html">Adicionando áudio e vídeo</a></li>
                         <li><a href="Principais tags e suas funções.html">Principais tags e suas funções</a></li>
                     </ul>
-                <li>CSS3</li>
+                </li>
+                <li><strong>CSS3</strong>
                     <ul>
                         <li><a href="Iniciando CSS3.html">Iniciando CSS3</a></li>
                         <li><a href="Cores e degradê.html">Cores e degradê</a></li>
+                        <li><a href="Fontes.html">Fontes</a></li>
+                        <li><a href="Seletores personalizados.html">Seletores personalizados</a></li>
+                        <li><a href="Modelo de caixas.html">Modelo de caixas</a></li>
+                        <li><a href="Outras personalizações.html">Outras personalizações</a></li>
+                        <li><a href="Principais propriedades e suas funções.html">Principais propriedades e suas funções</a></li>
                     </ul>
+                </li>
             </ol>
         </main>
+        <footer>
+            <p>Made with &lt;3 by AvoCode</p>
+        </footer>
     </div>
     
 </body>

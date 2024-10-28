@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Seletores personalizados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Seletores personalizados</h1>
+    <p>Agora que nós já passamos pelos elementos mais importantes do design, que são as cores, as imagens e as fontes, vamos falar um pouco sobre formatações especiais que vão permitir organizar esses conteúdos na tela, indicando seus tamanhos, espaçamentos, sombras e tudo mais.</p>
+
+    <h2>"id" e "class"</h2>
+    <p>No CSS, sempre que fazemos uma configuração de estilo para um elemento do HTML em um seletor, como por exemplo um h1, todas as unidades desse elemento ficam igualmente marcadas com essa configuração de estilo.</p>
+    <p>No entanto, às vezes, de forma específica, iremos precisar personalizar apenas <strong>uma unidade</strong> de um elemento, sem alterar o estilo das demais unidades desse mesmo elemento (uma unidade de h1, por exemplo). Para fazer isso, temos que aprender a utilizar os comandos de id (#) e de class (.) de maneira eficiente.</p>
+    <p>Ao criar nosso documento em HTML, podemos <strong>identificar</strong> um determinado elemento único com um "<code>id</code>" ou <strong>agrupar</strong> elementos múltiplos que devam ter características semelhantes com um "<code>class</code>".</p>
+    <p>Para usar o "<code>id</code>" dentro do código HTML, devemos dar uma identificação para a tag específica do HTML que queremos personalizar, essa identificação é feita dentro da tag desejada com o comando "<code>id</code>". Essa identificação irá diferenciar o h1 com "<code>id</code>" dos outros h1s sem "<code>id</code>". Exemplo:</p>
+    
+    <p>
+        <pre><code>
+        &lt;h1 id="principal"&gt;Criando Sites com HTML e CSS&lt;/h1&gt;</code></pre>
+    </p>
+
+    <p>Após inserir o comando "<code>id</code>" dentro da tag, é preciso dar um nome (de sua preferência) para essa identificação. Feita a configuração, isso vai diferenciar essa unidade (com id) de todos os seus pares (mesmo elemento). Com isso iremos conseguir personalizar configurações de estilo para determinadas unidades específicas, sem alterar os seus pares.</p>
+    <p>Agora, para configurar especificamente o estilo desse id que denominamos como "principal" no exemplo, devemos ir até o nosso código CSS e abrir um seletor personalizado para esse id que criamos. Esse seletor deve possuir o nome do elemento a que a unidade marcada pertence e o identificador "#principal" (# + nome do id), da seguinte forma:</p>
+    
+    <p>
+        <pre><code>          h1#principal {font-size: 20px;
+
+        }</code></pre>
+    </p>
+
+    <p>Dessa forma, toda configuração que fizermos dentro desse seletor personalizado será válida somente para a tag que tem o respectivo id.</p>
+    <p>Observação: Não precisamos necessariamente escrever o nome do elemento a que a unidade marcada pertence (h1, no caso do exemplo). Isso faria com que conseguíssemos colocar qualquer tag que quiséssemos como esse id "#principal", podendo alterar o estilo de várias unidades de elementos de forma personalizada. Mas é recomendado escrever "elemento + # + nome do id", com o nome do elemento na frente, já que só é permitido usar somente um id e o seu respectivo nome por documento HTML. O uso de "class" que é o indicado para a alteração personalizada do estilo de várias unidades.</p>
+
+    <p>Quanto aos ids, nós temos uma grande limitação: dentro de um documento HTML, só se pode ter um elemento com o "id" e o seu respectivo nome. Você pode ter mais de um id em sua página tranquilamente. O que não pode é utilizar dois com o mesmo nome. O id é como um CPF (1 número por pessoa) enquanto a class é o nome (várias pessoas podem ter o mesmo nome).</p>
+    
+    <p>Pensando nisso, quando temos duas unidades de elementos ou mais e queremos aplicar uma configuração personalizada de estilo em todas elas, nós não devemos usar o "<code>id</code>", e sim o "<code>class</code>".
+    </p>
+    
+    <p>Uma "<code>class</code>" também faz configurações personalizadas, mas podemos ter várias unidades de elemento com uma mesma classe. Sendo que, diferente do id, que é identificado com "#" no CSS, o class é identificado com "." no CSS.</p>
+    <p>No HTML:</p>
+    <p>
+        <pre><code>
+        &lt;h1 class="principal"&gt;Título principal&lt;/h1&gt;</code></pre>
+    </p>
+    <p>
+        <pre><code>
+        &lt;p class="principal"&gt;Lorem ipsum&lt;/h1&gt;</code></pre>
+    </p>
+<p>No CSS:</p>
+    <p>
+        <pre><code>
+        .principal {font-size: 20px;}</code></pre>
+    </p>
+
+    <p>Ao criar o seletor personalizado de uma classe no CSS, geralmente não especificamos um nome de elemento na frente da sua representação ( . ) como é feito no id (ex: h1#teste), simplesmente inserimos o ponto e o nome da class. Dessa forma, toda unidade de elemento que pertence à determinada classe vai simplesmente incorporar as configurações de estilo do respectivo seletor personalizado sem depender de uma especificação de p, h1, h2 e etc.</p>
+
+    <p>Observação: No HTML temos a tag "&lt;span&gt;", ela não tem uma função específica, serve apenas para demarcar um trecho de texto caso quisermos fazer algum tipo de alteração de estilo nesse trecho com uma class. Ele deve ser usado somente quando nenhum outro elemento semântico for apropriado. "&lt;span&gt;" é muito parecido com o elemento "&lt;div&gt;", entretanto "&lt;div&gt;" é um elemento de nível de bloco enquanto "&lt;span&gt;" é um elemento em linha. Exemplo:</p>
+
+    <p>
+        <pre><code>
+        &lt;span class="negrito"&gt;Lorem ipsum&lt;/span&gt;</code></pre>
+    </p>
+
+    <p>Referente às classes, uma coisa que podemos fazer é colocar duas classes ou mais num mesmo elemento/tag do HTML, isso é possível e para fazer basta digitar, ao lado classe atual e depois de dar um espaçamento, o nome da próxima classe que deseja inserir. Exemplo:</p>
+
+    <p>
+        <pre><code>
+        &lt;h1 class="principal avançado"&gt;CSS Avaçado&lt;/h2&gt;</code></pre>
+    </p>
+
+    <p>Também é possível colocar um "id" e uma "class" num mesmo elemento/tag do HTML, para fazer isso é só abrir uma class com o seu respectivo nome logo após o "id" que já existe ou vise versa. Exemplo:</p> 
+
+    <p>
+        <pre><code>
+        &lt;h1 id="principal" class="destaque"&gt;Criando Sites com HTML e CSS&lt;/h1&gt;</code></pre>
+    </p>
+
+    <p>Observação: Quando "id" e "class" estiverem juntos num mesmo elemento/tag, as configurações do "id" irão sempre sobrepor as configurações do "class" de uma mesma propriedade de estilo na hierarquia. A configuração mais específica sempre irá sobrepor a mais genérica.</p>
+
+    <h2>Pseudo-classes</h2>
+    <p>As pseudo-classes são relativas a um elemento ou uma classe. Uma pseudo-classe é uma palavra-chave adicionada às declarações de um seletor. Elas são relacionadas ao <strong>estado</strong> de um determinado <strong>elemento</strong>. No CSS, as Pseudo-classes são representadas por "dois pontos" (:).</p>
+
+    <p>Para usar as funcionalidades de Pseudo-classes, no código CSS, devemos abrir um seletor personalizado para o elemento que queremos determinar um estado, digitando "dois pontos" ( : ) e especificando o estado desejado, abrindo chaves posteriormente.</p>
+
+    <p>Alguns exemplos de <strong>estados</strong> de elementos (pseudo-classes) são: ativo, marcado, vazio, habilitado e etc.</p> 
+
+    <p>Por exemplo, podem ser usadas para:</p>
+    <ul>
+        <li>Estilizar um elemento quando um usuário move o mouse sobre ele</li>
+        <li>Estilize links visitados e não visitados de forma diferente</li>
+        <li>Estilize um elemento quando ele receber foco</li>
+        <li>Estilo de elementos de formulário válidos/inválidos/obrigatórios/opcionais</li>
+    </ul>
+
+    <p>O estado (pseudo-classe) "hover" significa: "quando eu passar o cursor por cima", e permite que o elemento fique estilizado apenas quando estamos com o cursor por cima dele. No exemplo abaixo, tudo o que estiver dentro de "<code>div</code>" terá um background marrom quando o cursor estiver em cima do elemento:</p>
+
+    <p>
+        <pre><code>
+        div:hover {
+        background-color: brown;
+    }</code></pre>
+    </p>
+
+    <p>A pseudo-classe "visited" é bastante usada em âncoras/links, ela serve para ativar uma configuração de estilo quando uma unidade de elemento for visitada. Já a pseudo-classe "link" é um estado de elemento que serve para ativar uma configuração de estilo quando a unidade de elemento ainda não foi visitada.</p>
+
+    <p>As pseudo-classes em CSS são:</p>
+    <p>
+        <ul>
+            <li>:active: Seleciona o link ativo</li>
+            <li>:hover: Seleciona links ao passar o mouse</li>
+            <li> :link: Seleciona todos os links não visitados</li>
+            <li>:visited: Seleciona todos os links visitados</li>
+            <li>:checked: Seleciona cada elemento &lt;input&gt; marcado</li>
+            <li>:disabled: Seleciona cada elemento &lt;input&gt; desabilitado</li>
+            <li>:empty: Seleciona cada elemento &lt;p&gt; que não tem filhos</li>
+            <li>:enabled: Seleciona cada elemento &lt;input&gt; habilitado</li>
+            <li>:first-child: Seleciona todos os elementos &lt;p&gt; que são primeiro filho de seu pai</li>
+            <li>:first-of-type: Seleciona cada elemento &lt;p&gt; queoprimeiro elemento &lt;p&gt; de seu pai</li>
+            <li>:focus: Seleciona o elemento &lt;input&gt; que tem foco</li>
+            <li>:in-range: Seleciona elementos &lt;input&gt; com um valor dentro de um intervalo especificado</li>
+            <li>:invalid: Seleciona todos os elementos &lt;ingt; com um valor inválido</li>
+            <li>:lang(language): Seleciona cada elemento &lt;p&gt; com um valor de atributo lang começando com "it"</li>
+            <li>:last-child: Seleciona todos os elementos &lt;p&gt; que são o último filho de seu pai</li>
+            <li>:last-of-type: Seleciona cada elemento &lt;p&gt; que é o último elemento &lt;p&gt; de seu pai</li>
+            <li>:not(selector): Seleciona todos os elementos que não são um elemento &lt;p&gt;</li>
+            <li>:nth-child(n): Seleciona cada elemento &lt;p&gt; que é o segundo filho de seu pai</li>
+            <li>:nth-last-child(n): Seleciona cada elemento &lt;p&gt; que é o segundo filho de seu pai, contando a partir do último filho</li>
+            <li>:nth-last-of-type(n): Seleciona cada elemento &lt;p&gt; que é o segundo elemento &lt;p&gt; de seu pai, contando a partir do último filho</li>
+            <li>:nth-of-type(n): Seleciona cada elemento &lt;p&gt; que é o segundo elemento &lt;p&gt; de seu pai</li>
+            <li>:only-of-type: Seleciona cada elemento &lt;p&gt; que é o único elemento &lt;p&gt; de seu pai</li>
+            <li>:only-child: Seleciona cada elemento &lt;p&gt; que é o único filho de seu pai</li>
+            <li>:optional: Seleciona elementos &lt;input&gt; sem atributo "obrigatório"</li>
+            <li>:out-of-range: Seleciona elementos &lt;input&gt; com um valor fora de um intervalo especificado</li>
+            <li>:read-only: Seleciona elementos &lt;input&gt; com um atributo "readonly" especificado</li>
+            <li>:read-write: Seleciona elementos &lt;input&gt; sem atributo "readonly"</li>
+            <li>:required: Seleciona elementos &lt;input&gt; com um atributo "obrigatório" especificado
+            <li>:root: Seleciona o elemento raiz do documento</li>
+            <li>:target: Seleciona o elemento #news ativo atual (clicado em um URL que contém esse nome de âncora)</li>
+            <li>:valid: Seleciona todos os elementos &lt;input&gt; com um valor válido</li>
+        </ul>
+    </p>
+
+    <h2>Pseudo-elementos</h2>
+    <p>Os pseudo-elementos podem agir nas classes, nos elementos, nos id's e etc. Eles mexem diretamente no conteúdo periférico do elemento. No CSS, os pseudo-elementos são representados por dois pontos duplos (::)</p>
+
+    <p>Suponha que queremos que todo link no final tenha uma indicação de que é um link. Podemos abrir um seletor personalizado para links e usar o pseudo-elemento "<code>::after</code>" para fazer isso, como no exemplo:.</p>
+    <p>
+        <pre><code>
+        a::after {
+            content: ' ⇦';
+            color: darkgray;
+            font-weight: normal;
+    }</code></pre>
+    </p>
+
+<p>O código acima faz com que manipulemos o conteúdo periférico posterior (pseudo-elemento "after") de links. A propriedade de estilo "content" detém o valor que foi determinado para aparecer logo em seguida de todo link que inserirmos no site (seta para esquerda). Além disso, as outras propriedades de estilo do exemplo configuram o estilo de cor e peso desse conteúdo periférico posterior.</p>
+
+<p>Também existe o pseudo-elemento "before", que funciona como o "after" mas de forma oposta, fazendo com que manipulemos o conteúdo periférico que antecede os elementos.</p>
+
+<p>Nota: Também conseguimos configurar pseudo-elementos e mexer em conteúdos periféricos quando usamos classes (class) . Exemplo:</p>
+
+<p>
+    <pre><code>
+    .especial::before {
+        content: '⇨ ';
+        color: darkgray;
+        font-weight: normal;
+        }
+
+    .especial::after {
+        content: ' ⇦';
+        color: darkgrey;
+        font-weight: normal;
+        }</code></pre>
+</p>
+
+<p>O código no exemplo acima utiliza pseudo-elementos para manipular conteúdo periférico de links que pertencem à classe (class) "especial".</p>
+
+</body>
+</html>
