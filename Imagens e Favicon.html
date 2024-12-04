@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Imagens e Favicon</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        pre {padding: 0px 60px;}
+        img {padding: 10px 60px;}
+    </style>
+</head>
+<body>
+    <h1>Testando imagens</h1>
+    <p>A tag <code>&lt;img&gt;</code> é responsável por carregar imagens que estão na pasta do projeto atual ou em links externos. Essa tag tem como parâmetros básicos o <code>src</code>, que indica a fonte da imagem, e <code>alt</code>, que indica a descrição da imagem caso ela não carregue no navegador.</p>
+    <p>Abaixo você vai ver uma imagem que está na mesma pasta usando &lt;img&gt;:</p>
+    <pre><code>&ltimg src="imagens/logo-html-full.png" alt="Logo HTML5"&gt;</code></pre>
+    <img src="imagens/logo-html-full.png" alt="Logo HTML5">
+    <p>Imagem redimensionada para 130 de largura:</p>
+    <pre><code>&lt;img src="imagens/logo-html-130.png" alt="Logo HTML5"&gt;</code></pre>
+    <img src="imagens/logo-html-130.png" alt="Logo HTML5">
+    <p>Podemos também carregar imagens que estão em sub-pastas, buscando a imagem nas sub-pastas dentro do parâmetro <code>src</code> usando ctrl + espaço:</p>
+    <img src="Imagens/logo-css-130.png" alt="Logo CSS">
+    <p>Também podemos carregar imagens externas, copiando o endereço da imagem:</p>
+    <pre><code>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Javascript_badge.svg" alt="Logo JavaScript"&gt;</code></pre>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Javascript_badge.svg" alt="Logo JavaScript"> 
+
+    <h1>Usando ícone de favoritos (Favicon)</h1>
+    <p>Favicon é o pequeno ícone que aparece ao lado do nome do site que visitamos, na parte superior do navegador. Para usar um favicon, é preciso ter o arquivo do ícone, que geralmente está no formato .ico. Para adicionar o ícone à página, basta incluir uma tag "<code>link</code>" dentro de "<code>head</code>", escolhendo a opção "<code>link:favicon</code>". Se seu arquivo não se chamar "favicon.ico", você deve adaptar o parâmetro <code>href</code> para o nome do arquivo.</p>
+    
+    <p><a href="http://www.iconarchive.com/" target="_blank">Ícones prontos</a></p>
+
+    <p><a href="https://www.favicon.cc/" target="_blank">Desenhar ícone</a></p>
+
+    <p><a href="https://favicon.io/">Criar ícone personalizado</a></p>
+
+    
+</body>
+</html>
