@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Olá, Javascript</h1>
+
+    <p>DevTools > console</p>
+    <p>alert("")</p>
+    <p>console.log("")</p>
+    <p>let</p>
+
+    <h3>Tipos de dados</h3>
+    
+    <p>string</p>
+    <p>Exemplo: let nome = "Amanda"</p>
+    <p>number</p>
+    <p>Exemplo: let idade = 26</p>
+    <p>boolean</p>
+    <p>Exemplo: let logado = true</p>
+    <p>array [""]</p>
+    <p>Exemplo: let lista = ["ovo, massa, corante"]</p>
+    <p>objeto {""}</p>
+    <p>Exemplo: let nomeCompleto = { nome: "Amanda", idade = 26}</p>
+
+    <h3>Ponto e vírgula</h3>
+    <p>Separar códigos em uma mesma linha</p>
+
+    <h3>let, var e const</h3>
+    <p>const > não varia</p>
+
+    <h3>Template String</h3>
+    <p> let idade = 31;<br>
+
+        let idadeString = `${idade} anos`<br>
+        
+        console.log(`a sua idade é ${idadeString}`)</p>
+
+    <p> let nome = "Ranilo";<br>
+        let sobrenome = "Cabral";<br>
+        
+        let nomeCompleto = `Nome completo: ${nome} ${sobrenome} da Silva`;<br>
+        console.log (nomeCompleto);
+        </p>
+
+    <h3>Condicionais If e else</h3>
+    <p>If é usado para executar um bloco de código se uma condição for verdadeira.</p>
+    <p>Else é usado para executar um bloco de código se a condição if for falsa.</p>
+    <p> let idade = 26;<br>
+
+        if (idade > 17) {
+            console.log ("Você é maior de idade");<br>
+        } else {<br>
+            console.log ("Você é menor de idade");<br>
+        }</p>
+
+    <p>Obs: Condicional de igualdade: == (considera variáveis de tipos diferentes, ex.: 20 [number] e "20" [string]); Igualdade estrita: === <br>
+        Maior ou igual: >= ; estrito: >==<br>
+        Diferente: != ; estrito: !==</p>
+    
+    <h3>Condições múltiplas</h3>
+    <p>Condições podem ser combinadas para verificar várias condições ao mesmo tempo.</p>
+    <p>&&: AND lógico</p>
+    <p>||: OR lógico</p>
+
+    <h3>Condicional dupla (else if)</h3>
+    <p>Usado para verificar uma nova condição se a primeira for falsa. Permite a construção de múltiplas condições em sequência. Exemplo:</p>
+    <p><pre>
+        let nota = 69
+            if (nota >= 90) {
+                console.log ("A")
+            }   else if (nota >= 80) {
+                console.log ("B")
+            }   else if (nota >= 70) {
+                console.log ("C")
+            }   else {
+                console.log ("Reprovado")
+            }
+    </pre></p>
+
+    <h3>Operador ternário</h3>
+    <p>Maneira curta de escrever uma estrutura condicional if-else. </p>
+    <p>Sintaxe: condição ? valorSeVerdadeiro : valorSeFalso. </p>
+    <p><pre>
+        let idade = 18;
+        let éAdulto = (idade > 17 ? "Sim" : "Não");
+        console.log (éAdulto); //"Sim"
+    </pre></p>
+
+    <p><pre>
+        let éMembro = true;
+        let frete = éMembro ? 2 : 10;
+        console.log (éMembro ? "Você é membro" : "Você não é membro");
+        console.log ("Seu frete é", frete);
+    </pre></p>
+
+    <h3>Switch</h3>
+    <p>Usado para executar diferentes blocos de código com base no valor de uma expressão. Útil quando você precisa comparar o valor de uma variável contra vários valores diferentes.</p>
+    <p><pre>
+        let profissao = "atleta";
+        console.log ("Profissão: " + profissao)
+
+        switch (profissao) {
+            case "fiscal":
+                console.log ("Sua camisa será verde");
+                break;
+            case "bombeiro":
+                console.log ("Sua camisa será vermelha");
+                break;
+            case "policial":
+                console.log ("Sua camisa será azul");
+                break;
+            default:
+                console.log ("Sua camisa será preta");
+                break;
+        }
+    </pre></p>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
+
+
+<!-- código rastreamento teclado 12727773922 -->

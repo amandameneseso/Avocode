@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 20px 50px 20px 50px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, Javascript</h1>
+
+    <h2>Funções</h2>
+    <p>Funções são blocos de código que executam uma tarefa específica ou calculam um valor. Elas ajudam a organizar o código e podem ser reutilizadas em diferentes partes do programa.</p>
+
+    <h3>Estrutura de uma Função</h3>
+    <p>Definição da Função: Começa com a palavra-chave <code>function</code> seguida pelo nome da função, parênteses ( ) (onde podem ser listados os parâmetros) e um bloco de código { }.</p>
+    <p>Parâmetros: Valores que uma função pode receber para trabalhar, definidos em ( ).</p>
+    <p>Retorno: Uma função pode (ou não) retornar um valor usando a palavra-chave <code>return</code>.</p>
+    
+    <p><strong>Exemplo Básico: Função para somar dois números</strong>
+    </p>
+
+    <p><pre><code>
+        function somar(a, b) {
+        return a + b;
+    }
+    
+    // Chamando a função
+    let resultado = somar(5, 3);
+    console.log(resultado); // Saída: 8</code></pre></code></p>
+
+    <h3>Arrow Function</h3>
+    <p>Arrow functions (ou funções de seta) oferecem uma sintaxe mais curta e concisa para escrever funções. Elas são especialmente úteis para funções pequenas e quando se deseja evitar o uso repetitivo da palavra-chave function.</p>
+
+    <p><strong>Sintaxe básica da Arrow function:</strong></p>
+    <p><pre><code>
+        const soma = (a, b) => {
+            return a + b;
+        };
+    </code></pre></p>
+
+    <p>Ou, para uma função de uma única linha com retorno implícito, não é necessário o bloco { } nem a palavra-chave <code>return</code>:</p>
+    <p><pre><code>
+        const soma = (a,b) => (a + b);
+    </code></pre></p>
+
+    <h3>Variáveis dentro e fora da função</h3>
+    <p>Variável declarada dentro da função: só existe dentro da função (escopo local)</p>
+    <p>Variável declarada fora da função: acessível globalmente (escopo global)</p>
+    <p>Obs.: variáveis com o mesmo nome local e global: local tem preferência</p>
+    <p>Exemplo:</p>
+
+    <p><pre>
+            <code>
+        function add() {
+            let count = 0;
+            count++;
+        }
+        add();
+        add();
+        console.log(count);
+            </code>
+    </pre></p>
+
+    <p>Este código vai gerar um erro, porque a variável <code>count</code> está declarada dentro da função <code>add</code>, portanto, ela tem escopo local. Isso significa que <code>count</code> só existe dentro da função <code>add</code> e não está acessível fora dela. Quando você tenta fazer <code>console.log(count);</code> fora da função, o JavaScript não encontra a variável <code>count</code> e exibe um erro de referência (<code>ReferenceError: count is not defined</code>). Para corrigir isso, você pode declarar <code>count</code> fora da função <code>add</code> se quiser que ele seja acessível globalmente. Aqui está uma versão corrigida:</p>
+
+    <p><pre>
+            <code>
+        let count = 0;
+        function add() {
+            count++;
+        }
+        add();
+        add();
+        console.log(count); // Agora, count será 2
+            </code>
+    </pre></p>
+
+    <h3>Função dentro de função</h3>
+    <p>Vamos ver as seguintes funções:</p>
+
+    <p><pre>
+        <code>
+        function square(x) {
+            return x * x;
+        } //calcula o quadrado de x, retornando x * x
+        
+        function addSquares(a,b) {
+            let sqrA = square(a);
+            let sqrB = square(b);
+            return sqrA + sqrB;
+        } //calcula o quadrado de a e b usando square e, em seguida, soma esses valores.
+        
+        console.log (addSquares(2, 3)); //exibirá 13 (4 + 9)
+        </code>
+    </pre></p>
+
+    <p>Para ter uma função dentro da outra, podemos declarar uma função aninhada. No exemplo, podemos definir <code>square</code> dentro de <code>addSquares</code> em vez de tê-la como uma função separada. Dessa forma, <code>square</code> só estará disponível dentro de <code>addSquares</code>. Veja como ficaria:</p>
+
+    <p><pre>
+        <code>
+        function addSquares(a, b) {
+            function square(x) {
+                return x * x;
+            }
+        
+            let sqrA = square(a);
+            let sqrB = square(b);
+            return sqrA + sqrB;
+        }
+        
+        console.log(addSquares(2, 3)); // exibirá 13
+        </code>
+    </pre></p>
+
+    <p>Para simplificar, podemos modificar a função <code>square</code> para ser uma arrow function dentro da função <code>addSquares</code>. Veja como ficaria:</p>
+
+    <p><pre>
+        <code>
+        function addSquares(a, b) {
+            const square = (x) => x * x;
+        
+            let sqrA = square(a);
+            let sqrB = square(b);
+            return sqrA + sqrB;
+        }
+        
+        console.log(addSquares(2, 3)); // exibirá 13
+        </code>
+    </pre></p>
+
+    <h2>Array</h2>
+    <p>Um array é uma estrutura de dados usada para armazenar múltiplos valores em uma única variável. Com arrays, podemos armazenar dados ordenados e acessar os elementos pelo índice.</p>
+
+    <h3>Declaração de um array</h3>
+    <p>Para declarar um array, você pode usar colchetes [ ] ou o construtor new Array( ):</p>
+
+    <p><pre>
+        <code>
+        let frutas = ["maçã", "banana", "laranja"]; // usando colchetes
+        let numeros = new Array(1, 2, 3, 4); // usando o construtor
+        </code>
+    </pre></p>
+
+    <h3>Acessando elementos do array</h3>
+    <p>Os elementos de um array são indexados começando do zero. Para acessar um elemento, você usa o índice:</p>
+
+    <p><pre>
+        <code>
+        console.log(frutas[0]); // "maçã"
+        console.log(numeros[2]); // 3
+        </code>
+    </pre></p>
+
+    <h3>Métodos comuns para manipular arrays</h3>
+    <p><code>push</code>: Adiciona um elemento ao final do array:</p>
+
+    <p><pre>
+        <code>
+        frutas.push("uva");
+        // ["maçã", "banana", "laranja", "uva"]
+        </code>
+    </pre></p>
+
+    <p><code>pop</code>: Remove o último elemento do array:</p>
+
+    <p><pre>
+        <code>
+        frutas.pop();
+        // ["maçã", "banana", "laranja"]
+        </code>
+    </pre></p>
+
+    <p><code>shift</code>: Remove o primeiro elemento do array:</p>
+
+    <p><pre>
+        <code>
+        frutas.shift();
+        // ["banana", "laranja"]
+        </code>
+    </pre></p>
+
+    <p><code>unshift</code>: Adiciona um elemento no início do array:</p>
+
+    <p><pre>
+        <code>
+        frutas.unshift("manga");
+        // ["manga", "banana", "laranja"]
+        </code>
+    </pre></p>
+
+    <p><code>length</code>: Retorna o número de elementos no array:</p>
+
+    <p><pre>
+        <code>
+        console.log(frutas.length);
+        // 3
+        </code>
+    </pre></p>
+
+    <p><code>join</code>: retorna uma string concatenando todos os elementos do array:</p>
+
+    <p><pre>
+        <code>
+        console.log(frutas.join(", "))
+        // manga, banana, laranja
+        </code>
+    </pre></p>
+
+    <p><code>sort</code>: ordena um array em ordem alfabética:</p>
+
+    <p><pre>
+        <code>
+        let frutas = ["manga", "banana", "laranja"];
+        frutas.sort();
+        console.log (frutas)
+        // ["banana", "laranja", "manga"]
+        </code>
+    </pre></p>
+
+    <p>Nota 1: 
+    <p><pre>
+        <code>frutas.sort()
+        frutas.reverse() // inverte a ordem do array
+        </code>
+    </pre></p></p>
+
+    <p>Nota 2: Por padrão, a função <code>sort()</code> classifica os valores como strings. Se os números forem classificados como strings, "25" é maior que "100", porque "2" é maior que "1". Por isso, o método <code>sort()</code> produzirá resultados incorretos ao classificar números. Você pode corrigir isso fornecendo uma função de comparação: </p>
+
+    <p><pre>
+        <code>
+        let num = [25, 100, 5, 60, 40];
+        num.sort((a, b) => a - b);
+        // [5, 25, 40, 60, 100]
+        </code>
+    </pre></p>
+
+    <p>Para ordenar um array de números de forma decrescente, basta usar o método <code>sort()</code> com uma função de comparação que retorne <code>b - a</code>.</p>
+
+    <p>Alterar valores específicos:</p>
+
+    <p><pre>
+        <code>
+        let frutas = ["manga", "banana", "laranja"];
+        frutas[1] = "pêra";
+        console.log (frutas) // ["manga", "pêra", "laranja"]
+        </code>
+    </pre></p>
+
+    <h3>Percorrendo arrays</h3>
+    <p>Percorrer um array significa iterar (ou "passar por") cada elemento do array para executar uma ação. Existem várias formas de fazer isso em JavaScript, e cada método possui características específicas que podem ser úteis em diferentes situações.</p>
+
+    <p><strong>1. <code>for loop</code></strong></p>
+    <p>O <code>for loop</code> é um dos métodos mais tradicionais para percorrer arrays. Com ele, você controla exatamente o índice e o número de iterações. Sua estrutura é: <code>for (inicio; condição; incremento)</code>.</p>
+
+    <p><pre>
+        <code>
+        let frutas = ["maçã", "banana", "laranja"];
+
+        for (let n = 0; n < frutas.length; n++) {
+            console.log(frutas[n]);
+        } // saída: maçã
+                    banana
+                    laranja
+        </code>
+    </pre></p>
+
+    <p>Explicação:</p>
+    <ul>
+        <li>A variável <code>n</code> começa em <code>0</code> (primeiro índice do array).</li>
+        <li>A condição <code>n < frutas.length</code> garante que o loop será executado enquanto <code>n</code> for menor que o comprimento do array.</li>
+        <li>A cada iteração, <code>n</code> aumenta em 1 (usando <code>n++</code>), e acessamos <code>frutas[n]</code>, que retorna o elemento na posição <code>n</code>.</li>
+    </ul>
+
+    <p><strong>1.1 <code>for... in</code></strong></p>
+
+    <p>Embora <code>for...in</code> seja mais adequado para objetos, ele também funciona com arrays, mas percorre os <strong>índices dos elementos</strong> (não os valores dos elementos diretamente).</p>
+
+    <p><pre>
+        <code>
+        let frutas = ["maçã", "banana", "laranja"];
+
+        for (let indice in frutas) {
+            console.log(indice, frutas[indice]);
+        } // saída: 0 maçã
+                    1 banana
+                    2 laranja
+        </code>
+    </pre></p>
+
+    <p>Explicação:</p>
+    <ul>
+        <li><code>for...in</code> retorna os índices (0, 1, 2, ...) ao invés dos valores.</li>
+        <li>É preciso acessar <code>frutas[indice]</code> para obter o valor do elemento.</li>
+    </ul>
+
+    <p><strong>1.2 <code>for... of</code></strong></p>
+
+    <p>O for...of itera diretamente sobre os <strong>valores dos elementos</strong> do array.</p>
+
+    <p><pre>
+        <code>
+        let frutas = ["maçã", "banana", "laranja"];
+
+        for (let fruta of frutas) {
+            console.log(fruta);
+        } // saída: maçã
+                    banana
+                    laranja
+        </code>
+    </pre></p>
+
+    <p>Explicação:</p>
+    <ul>
+        <li>No <code>for...of</code>, você não precisa lidar com índices.</li>
+        <li>A variável <code>fruta</code> recebe diretamente o valor de cada elemento em cada iteração.</li>
+    </ul>
+
+    <p><strong>2. <code>forEach</code></strong></p>
+    <p>O <code>forEach</code> é um método específico de arrays que simplifica o processo de iterar pelos elementos. Ele recebe uma função de callback, que será executada para cada elemento do array.</p>
+
+    <p><pre>
+        <code>
+        let frutas = ["maçã", "banana", "laranja"];
+
+        frutas.forEach((fruta) => {
+            console.log(fruta);
+        }); // saída: maçã
+                      banana
+                      laranja
+        </code>
+    </pre></p>
+
+    <p>Explicação:</p>
+    <ul>
+        <li>A função <code>forEach</code> executa a função de callback para cada elemento do array.
+        </li>
+        <li>O parâmetro <code>fruta</code> representa o valor atual do elemento em cada iteração.
+        </li>
+        <li>Essa função é chamada automaticamente para cada item do array, eliminando a necessidade de usar um contador (<code>n</code>).
+        </li>
+    </ul>
+
+    <p><strong>3. <code>while</code></strong></p>
+
+    <p>O loop while é outra maneira de iterar sobre elementos em JavaScript. Diferente do <code>for</code>, o <code>while</code> executa o bloco de código enquanto uma condição é verdadeira. Ele é útil quando não sabemos exatamente o número de iterações necessárias ou quando a condição depende de outros fatores que podem mudar durante o loop.</p>
+
+    <p>Vamos usar o <code>while</code> para percorrer o array <code>frutas</code> como no exemplo anterior:</p>
+
+    <p><pre>
+        <code>
+        let frutas = ["maçã", "banana", "laranja"];
+        let n = 0; // Inicializamos a variável de contagem fora do loop
+
+        while (n < frutas.length) { // O loop continua enquanto 'numero' for menor que o total de elementos em 'frutas'
+        console.log(frutas[n]); // Imprime o elemento atual do array
+        n++; // Incrementa a variável de contagem para evitar loop infinito
+        } // saída: maçã
+                    banana
+                    laranja
+        </code>
+    </pre></p>
+
+    <p>Explicação:</p>
+    <ul>
+        <li><code>let n = 0;</code>: Iniciamos <code>n</code> em 0 para que ele comece no primeiro índice do array.</li>
+        <li><code>while (n < frutas.length)</code>: O loop continuará enquanto <code>n</code> for menor que o comprimento do array (<code>frutas.length</code>).</li>
+        <li><code>console.log(frutas[n]);</code>: Imprime o elemento atual no índice <code>n</code>.</li>
+        <li><code>n++;</code>: Incrementa <code>n</code> em 1 a cada iteração, para que possamos acessar o próximo elemento do array.</li>
+    </ul>
+
+    <p><strong>4. <code>map</code></strong></p>
+
+    <p>O <code>map</code> também percorre cada elemento do array, mas sua principal função é transformar o array, criando um novo array com os resultados de uma função aplicada a cada elemento.</p>
+
+    <p><pre>
+        <code>
+        let numeros = [1, 2, 3, 4];
+        let numerosDobro = numeros.map((num) => num * 2);
+        console.log(numerosDobro); // [2, 4, 6, 8]
+        </code>
+    </pre></p>
+
+    <p>Explicação:</p>
+    <ul>
+        <li><code>map</code> cria um novo array sem modificar o original.
+        </li>
+        <li>Para cada elemento, aplica a função de callback e retorna o resultado como novo elemento do array.
+        </li>
+    </ul>
+
+    <p><strong>5. <code>filter</code></strong></p>
+
+    <p>Usado para criar um novo array contendo todos os elementos do array original que passam em um teste definido por uma função. Esse método é muito útil para selecionar elementos de um array com base em alguma condição.</p>
+
+    <p>Exemplo: Filtrar números maiores que 10</p>
+
+    <p><pre>
+        <code>
+        let numeros = [5, 12, 8, 130, 44];
+        let maioresQueDez = numeros.filter(num => num > 10);
+        console.log(maioresQueDez); // [12, 130, 44]
+        </code>
+    </pre></p>
+
+    <p>Explicação:</p>
+    <ul>
+        <li>A função callback <code>num => num > 10</code> retorna <code>true</code> para números maiores que 10, e esses números são incluídos no novo array.
+        </li>
+    </ul>
+
+    <p><strong>6. <code>every</code> e <code>some</code></strong></p>
+
+    <p>Os métodos <code>.every()</code> e <code>.some()</code> são usados para verificar condições em arrays. Eles avaliam se <strong>todos</strong> os elementos (no caso de <code>.every()</code>) ou <strong>algum</strong> elemento (no caso de <code>.some()</code>) passam em um teste definido por uma função de callback. Esses métodos são muito úteis para validar dados em arrays.</p>
+
+    <p><strong><code>every()</code></strong></p>
+
+    <p>O método <code>.every()</code> verifica se todos os elementos do array passam em uma condição. Ele retorna <code>true</code> se todos os elementos atenderem ao teste e <code>false</code> se algum elemento não atender.</p>
+
+    <p>Exemplo: Verificar se todos os números são pares</p>
+
+    <p><pre>
+        <code>
+        let numeros = [2, 4, 6, 8, 9];
+        let todosPares = numeros.every(num => num % 2 === 0);
+        console.log(todosPares); // false
+        </code>
+    </pre></p>
+
+    <p><strong><code>some()</code></strong></p>
+
+    <p>O método <code>.some()</code> verifica se pelo menos um elemento do array passa na condição. Ele retorna <code>true</code> se <strong>algum</strong> elemento atender ao teste e <code>false</code> se nenhum elemento atender.</p>
+
+    <p>Exemplo: Verificar se algum número é maior que 10</p>
+    <p><pre>
+        <code>
+        let numeros = [5, 8, 12, 3];
+        let algumMaiorQueDez = numeros.some(num => num > 10);
+        console.log(algumMaiorQueDez); // true
+        </code>
+    </pre></p>
+
+    <p><strong>7. <code>includes</code></strong></p>
+    
+    <p>O método <code>.includes()</code> é usado para verificar se um array ou string contém um elemento ou substring específico. Ele é simples e direto, retornando <code>true</code> se o elemento for encontrado e <code>false</code> caso contrário. Exemplo:</p>
+
+    <p><pre>
+        <code>
+        let frutas = ["maçã", "banana", "laranja"];
+        console.log(frutas.includes("banana")); // true
+        console.log(frutas.includes("uva"));    // false
+        </code>
+    </pre></p>
+
+    <h2>Objetos</h2>
+    <p>Em JavaScript, um objeto é uma estrutura que permite armazenar múltiplos valores como pares chave-valor. Um objeto pode conter tanto dados (como strings e números) quanto funcionalidades (funções, que nesse contexto chamamos de métodos).</p>
+
+    <h3>Criando um Objeto</h3>
+    <p>Um objeto básico pode ser criado usando chaves {} e especificando propriedades e valores. No exemplo abaixo, podemos perceber que um objeto pode conter outro objeto e arrays dentro dele mesmo. Um array também pode conter um objeto.</p>
+
+    <p><pre>
+        <code>
+        const personagem = {
+            nome: "Ranilo",
+            idade: 31,
+            pais: "Brasil",
+            olhos: ['castanho', 'preto'],
+            caracteristicas: {
+                forca: 100,
+                magia: 100,
+                stamina: 100
+            },
+            saudacao: function() {
+                return `Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`;
+            }
+            };
+            
+            console.log(personagem.nome); // Saída: Ranilo
+            console.log(personagem.saudacao()); // Saída: Olá, meu nome é Ranilo e tenho 31 anos.
+        </code>
+    </pre></p>
+
+    <p><strong>Nota</strong>: O <strong><code>this</code></strong> em JavaScript é uma referência especial usada dentro de funções para acessar o <strong>contexto</strong> atual em que a função está sendo executada. O valor de <code>this</code> pode variar dependendo de onde e como a função é chamada. Vamos entender melhor seu comportamento em diferentes contextos:</p>
+
+    <p><strong>Fora de qualquer Objeto (no contexto global):</strong> No contexto global (fora de uma função ou objeto), <code>this</code> se refere ao objeto global (<code>window</code> no navegador e <code>global</code> no Node.js).</p>
+
+    <p><pre>
+        <code>
+        console.log(this); // No navegador, exibe `window`, que é o objeto global.
+        </code>
+    </pre></p>
+
+    <p><strong>Em um Objeto (método de objeto):</strong> Quando <code>this</code> é usado em um método de um objeto (funçao dentro de objeto), ele aponta para o próprio objeto.</p>
+
+    <p><pre>
+        <code>
+        const pessoa = {
+            nome: "Ranilo",
+            idade: 31,
+            saudacao: function() {
+                return `Olá, meu nome é ${this.nome}`;  // `this` refere-se ao objeto `pessoa`
+            }
+            };
+        console.log(pessoa.saudacao());  // Saída: Olá, meu nome é Ranilo
+        </code>
+    </pre></p>
+
+    <p>Aqui, <code>this.nome</code> refere-se ao <code>nome</code> dentro do objeto <code>pessoa</code>.</p>
+
+    <p><strong>Dentro de funções (no modo não estrito e estrito):</strong> Em uma função chamada de maneira "solta" (não como método de objeto), <code>this</code> se refere ao contexto global (window ou global), a menos que a função esteja no modo estrito ('<code>use strict</code>'), onde this será undefined. No modo estrito, <code>this</code> em funções globais fica <code>undefined</code>, pois o JavaScript tenta proteger contra atribuições acidentais ao objeto global.</p>
+
+    <p><pre>
+        <code>
+        function teste() {
+            console.log(this);
+        }
+        
+        teste(); // No modo não estrito, `this` é `window` (ou `global`). No modo estrito, `this` é `undefined`.            
+        </code>
+    </pre></p>
+
+    <p><strong>Arrow functions:</strong> Arrow functions não têm seu próprio <code>this</code>. Em vez disso, elas herdam o <code>this</code> do escopo em que foram definidas, o que significa que <code>this</code> em uma arrow function é igual ao <code>this</code> fora dela.</p>
+
+    <p><pre>
+        <code>
+        const pessoa = {
+            nome: "Ranilo",
+            dizerNome: function() {
+                const arrowFunc = () => console.log(this.nome);
+                arrowFunc();
+            }
+        };
+        
+        pessoa.dizerNome(); // Saída: "Ranilo"            
+        </code>
+    </pre></p>
+
+    <p>Aqui, <code>this</code> em <code>arrowFunc</code> ainda aponta para <code>pessoa</code>, porque a arrow function herda o <code>this</code> do método <code>dizerNome</code>.</p>
+
+    <p><strong>Resumindo:</strong></p>
+    <p>
+        <ul>
+            <li><strong>this fora de tudo (em contexto global):</strong> Aponta para o ambiente principal (window).
+            </li>
+            <li><strong>this dentro de um objeto:</strong> Aponta para o próprio objeto.
+            </li>
+            <li><strong>this em uma função normal:</strong> Depende de como e onde a função foi chamada.
+            </li>
+            <li><strong>this em uma arrow function:</strong> Sempre é o mesmo de onde a função foi escrita (mantém o valor lexical do contexto em que foi definido).
+            </li>
+        </ul>
+    </p>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

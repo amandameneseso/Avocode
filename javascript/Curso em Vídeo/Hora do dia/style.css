@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/* Reset básico para remover margens e bordas padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #384569;
+    font: normal 15pt Arial;
+    margin: 0;
+}
+
+header {
+    background-color: #384569;
+    color: white;
+    text-align: center;
+    margin: 40px;
+    padding: 20px 0;
+    letter-spacing: 2px;
+}
+
+#msg {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    width: 370px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.288);
+}
+
+div {
+    text-align: center;
+    padding: 30px;
+}
+
+#manha {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito de zoom na imagem quando o usuário passa o mouse sobre ela */
+#imagem img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Vídeo</title>
+    <style>
+        body{background-color: rgb(184, 228, 180);}
+        </style>
+</head>
+<body>
+    <h1>Vídeos com HTML5</h1>
+    <h2>Inserindo vídeos hospedados localmente</h2>
+    <p>A tag <code>&lt;video&gt;</code> é usada para incorporar conteúdo de vídeo em um documento, caso o arquivo esteja hospedado no nosso próprio servidor.</p>
+
+    <p>Semelhante ao elemento <code>&lt;img&gt;</code>, incluímos o caminho da mídia que queremos exibir dentro do atributo <code>src</code>. Também podemos incluir outros atributos para especificar informações, como largura (<code>width</code>) e altura (<code>height</code>) do vídeo, se queremos que ele seja reproduzido automaticamente e em loop, se queremos mostrar os controles de vídeo padrão do navegador e etc.</p>
+
+    <p>O conteúdo dentro das tags de abertura e fechamento é exibido como uma alternativa (fallback) em navegadores que não suportam o elemento.</p>
+
+    <p>Há três formatos de vídeo suportados em HTML: MP4, WebM e OGG.</p>
+
+    <p>O exemplo abaixo mostra um uso do elemento <code>&lt;video&gt;</code>.</p>
+
+    <p><pre><code>
+        &lt;video width="500" poster="mídia/imagem-céu-700.jpg" controls&gt;
+            &lt;source src="mídia/video-sd-960.mp4" type="video/mp4"&gt;
+            &lt;source src="mídia/video-sd-960.webm" type="video/webm"&gt;
+            &lt;p&gt;Seu navegador não tem compatibilidade com reprodução de vídeo.&lt;/p&gt;
+            &lt;/video&gt;
+    </code></pre></p>
+
+    <p>
+        <video width="500" poster="mídia/imagem-céu-700.jpg" controls>
+            <source src="mídia/video-sd-960.mp4" type="video/mp4">
+            <source src="mídia/video-sd-960.webm" type="video/webm">
+        </video>
+    </p>
+
+    <h2>Inserindo vídeos do YouTube ou Vimeo</h2>
+
+    <p>Quando colocamos vídeos do nosso próprio servidor, podemos passar por problemas com alto consumo de banda, site lento e incompatibilidades com algus navegadores. Por isso, podemos incorporar vídeos do YouTube ou Vimeo, serviços para a hospedagem de vídeos que vão evitar consumir nossos próprios recursos de host contratado.</p>
+
+    <p>Para incorporar vídeos que vpcê subiu no YouTube ou Vimeo, existem recursos no botão "compartilhar" que te dão o código pronto em HTML5.</p>
+
+    <p><iframe width="500" height="315" src="https://www.youtube.com/embed/FdE5G95B7Mg?si=VTn_gd2BXPYrTXJs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+    
+</body>
+</html>

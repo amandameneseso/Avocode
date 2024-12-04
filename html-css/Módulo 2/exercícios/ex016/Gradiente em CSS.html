@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Gradiente em CSS</title>
+    <style>
+        body {background-image: linear-gradient(rgb(255, 255, 255), rgb(160, 202, 147), rgb(208, 148, 166)); background-attachment: fixed;}
+        h1 { background-image: inherit;}
+    
+    </style>
+</head>
+<body>
+    <h1>Testando gradiente</h1>
+    <p>Podemos gerar gradientes e aplicarmos a componentes visuais usando folhas de estilo. Um gradiente é considerado pelo navegador como se fosse uma imagem, por isso usamos a propriedade <code>background-image</code> na declaração CSS. Para criar um gradiente usamos a função <code>linear gradient</code>. Também é possível gerar gradientes radiais, utilizando a função <code>radial-gradient</code>. Também é importante utilizar o parâmetro <code>background-attachment: fixed</code> se desejar que o degradê fixe na janela inteira.</p>
+    <p>O primeiro parâmetro da função indica o ângulo de inclinação (para indicar 90 graus, utilizamos "<code>90deg</code>" ou "<code>to right</code>") e as seguintes indicam as cores do degradê a ser criado. Você pode indicar quantas cores quiser.</p>
+    <pre><code>
+        &lt;style&gt;
+            body {background-image: linear-gradient(rgb(255, 255, 255), rgb(160, 202, 147), rgb(208, 148, 166)); background-attachment: fixed;}
+        &lt;/style&gt;
+    </code></pre>
+    
+</body>
+</html>

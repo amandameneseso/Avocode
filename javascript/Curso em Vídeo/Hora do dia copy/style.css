@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/* Reset básico para remover margens e bordas padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais do body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9; /* Fundo claro para a página */
+    color: #333; /* Cor do texto */
+    text-align: center;
+    margin: 0;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #005f6b; /* Cor de fundo mais escura */
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* Estilo da seção de conteúdo */
+section {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo da mensagem */
+#msg {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+#msg h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Estilo da imagem */
+#imagem {
+    margin-top: 20px;
+}
+
+#imagem img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito de zoom na imagem quando o usuário passa o mouse sobre ela */
+#imagem img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #005f6b;
+    color: white;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #msg {
+        font-size: 1.2rem;
+    }
+
+    #imagem img {
+        max-width: 80%;
+    }
+}
