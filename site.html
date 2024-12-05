@@ -4,162 +4,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>AvoCode</title>
+    <title>Olá, mundo!</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        .barra {
-            background-color: #f4ebe4;
-            padding: 10px;
-        }
-
         body {
-            background-color: rgb(58, 77, 58);
+            background-color: rgba(218, 218, 190, 0.815);
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-        
-        nav ul {
-            color: rgb(208, 219, 192);
             display: flex;
-            justify-content: space-around;
-            list-style-type: none;
+            flex-direction: column;
+            min-height: 100vh; /* Faz o corpo ocupar toda a altura da janela */
+        }
+
+        .barra {
+            background-color: rgb(58, 77, 58);
             padding: 12px;
-            background-color: rgb(34, 54, 36);
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(109, 129, 97, 0.566);}
+            margin-bottom: 40px;
+        }
 
-        a {
-            color: rgb(219, 179, 162);
-            text-decoration: none;
-            font-size: 16px;
-            transition: all 200ms ease-in-out;}
-
-        nav a:hover {
-            color: rgb(208, 219, 192);}
-
-        p {
-            color: rgb(208, 219, 192);
-            font-size: 16px;
-            text-align: justify;
-            text-indent: 30px;
-            margin-top: 20px;
-            margin-bottom: 20px;}
+        .center {
+            text-align: center;
+            padding: 20px;
+        }
 
         img {
             width: 170px;
             height: 170px;
-            border: 1px solid rgb(173, 186, 153);
-            border-radius: 50%;}
+            border-radius: 50%;
+        }
+
+        main {
+            flex: 1; /* Garante que o conteúdo principal ocupe o espaço restante */
+            padding: 0px 50px;
+        }
+
+        main h1 {
+            font-family: "Sono", monospace;
+            text-align: center;
+            font-size: 27px;
+            color: rgb(165, 112, 99);
+        }
+
+        p {
+            color: rgb(165, 112, 99);
+            font-size: 16px;
+            text-align: justify;
+            text-indent: 30px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
 
         main ul {
             color: rgb(208, 219, 192);
-            padding: 10px 20px;}
-
-        ol {
-            color: rgb(219, 179, 162);
-            padding: 0px 70px;
-            columns: 2;
-            list-style-type: none;}
+            padding: 10px 20px;
+            list-style-type: none;
+            text-align: center;
+        }
 
         main li {
-            padding: 3.5px 4px;
+            padding: 4px 4px;
+            font-weight: 600;
+        }
+
+        a {
+            color: rgb(165, 112, 99);
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 200ms ease-in-out;
         }
 
         main a:hover {
-            color: rgb(208, 219, 192);}
-        
-        h2 {display: none;}
-
-        .center {
-            text-align: center;
-            padding: 20px;}
-
-        .container {
-            padding: 0px 50px;}
-
-        main h1 {
-            text-align: center;
-            font-size: 25px;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            color: rgb(219, 179, 162);}
-
-        footer {
             color: rgb(208, 219, 192);
-            bottom: 0;
+        }
+        
+        h2 {
+            display: none;
+        }
+
+        h3 {
+            font-family: "Sono", monospace;
+            color: rgba(58, 77, 58, 0.733);
+            background-color: #75282825;
+            border-radius: 6px;
+        }
+
+        .container-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Três colunas de tamanho igual */
+            gap: 30px; /* Espaçamento entre as colunas */
+            padding: 10px; /* Espaçamento interno ao redor */
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .coluna {
+            color: rgb(219, 179, 162);
+            background-color: #75282817; 
+            list-style-type: none;
+        }
+
+        .coluna h3 {
+            text-align: center;
+            padding: 6px;
+            font-size: 18px;
+            
+        }
+     
+        footer {
+            color: rgb(165, 112, 99);
+            font-weight: 600;
             width: 100%; /* Ocupa toda a largura */
             text-align: center;
-            padding: 25px 0;
-            box-sizing: border-box;
+            font-family: "Sono";
+            font-size: 14px;
+            margin-top: auto;
+            padding: 18px;
+            display: flex;
+            justify-content: center; /* Centraliza o conteúdo */
+            align-items: center; /* Alinha o conteúdo verticalmente */
         }
 
     </style>
 </head>
 <body>
-    <div class="barra"></div>
-    
-    <div class="container">
-        <nav>
-            <ul>
-                <li>
-                <a href="site.html"><strong>Sobre mim</strong></a>
-                </li>
-                <li>
-                <a href="artigos.html" target="_self"><strong>Artigos</strong></a>
-                </li>
-            </ul>
-        </nav>
-
-        <header>
-            <div class="center">
-                <img src="imagens/abacate acenando 3.1.png" alt="Abacate">
-            </div>
-        </header>
-
-        <main>
-            <h1>Olá, meu nome é Avocode!</h1>
-            <p>Estou aqui para te convidar a embarcar em uma aventura divertida no mundo da programação! Estou criando um site onde vou ensinar tudo sobre HTML5 e CSS3 de maneira simples e alegre. Como um abacate que adora tecnologia, percebo que o mundo digital está em constante evolução, e aprender HTML5 é fundamental para quem deseja criar páginas incríveis e interativas.</p>
-            <p>Neste site, você encontrará tutoriais passo a passo, dicas práticas e recursos valiosos que vão desde o básico até conceitos mais avançados. Prepare-se para mergulhar no mundo do código e descobrir como o abacate pode ser a sua fruta favorita na programação!
-            <p>Vamos nessa? 🥑💻</p>
-            
-            <ol>
-                <li><strong>☆ HTML5</strong>
-                    <ul>
-                        <li><a href="Primeiros passos em HTML5.html" target="_self">Primeiros passos em HTML5</a></li>
-                        <li><a href="Formatação de textos.html">Formatação de textos</a></li>
-                        <li><a href="Trabalhando com listas.html">Trabalhando com listas</a></li>
-                        <li><a href="Trabalhando com links.html">Trabalhando com links</a></li>
-                        <li><a href="Imagens e Favicon.html">Imagens e Favicon</a></li>
-                        <li><a href="Imagens dinâmicas.html">Imagens dinâmicas</a></li>
-                        <li><a href="Adicionando áudio e vídeo.html">Adicionando áudio e vídeo</a></li>
-                        <li><a href="Principais tags e suas funções.html">Principais tags e suas funções</a></li>
-                    </ul>
-                </li>
-                <li><strong>☆ CSS3</strong>
-                    <ul>
-                        <li><a href="Iniciando CSS3.html">Iniciando CSS3</a></li>
-                        <li><a href="Cores e degradê.html">Cores e degradê</a></li>
-                        <li><a href="Fontes.html">Fontes</a></li>
-                        <li><a href="Seletores personalizados.html">Seletores personalizados</a></li>
-                        <li><a href="Modelo de caixas.html">Modelo de caixas</a></li>
-                        <li><a href="Outras personalizações.html">Outras personalizações</a></li>
-                        <li><a href="Principais propriedades e suas funções.html">Principais propriedades e suas funções</a></li>
-                    </ul>
-                </li>
-                <li><strong>☆ JavaScript</strong>
-                    <ul>
-                        <li><a href="#">Fundamentos da linguagem</a></li>
-                    </ul>
-                </li>
-            </ol>
-        </main>
-        <footer>
-            Made with &lt;3 by AvoCode
-        </footer>
+    <div class="barra">
     </div>
-    
+
+    <main>
+        <h1>&lt;p&gt; Olá, mundo! &lt;/p&gt;</h1>
+        
+        <div class="center">
+            <img src="imagens/abacate acenando 3.1.png" alt="Abacate">
+        </div>
+        
+        <p>Oi, meu nome é Avocode! Estou aqui para te convidar a embarcar em uma aventura divertida no mundo da programação! Estou criando um site onde vou ensinar tudo sobre HTML5 e CSS3 de maneira simples e alegre. Como um abacate que adora tecnologia, percebo que o mundo digital está em constante evolução, e aprender HTML5 é fundamental para quem deseja criar páginas incríveis e interativas.</p>
+        <p>Neste site, você encontrará tutoriais passo a passo, dicas práticas e recursos valiosos que vão desde o básico até conceitos mais avançados. Prepare-se para mergulhar no mundo do código e descobrir como o abacate pode ser a sua fruta favorita na programação!
+        <p>Vamos nessa? 🥑💻</p>
+        
+        <ol class="container-grid">
+            <li class="coluna"><h3><strong>☆ HTML5</strong></h3>
+                <ul>
+                    <li><a href="Primeiros passos em HTML5.html" target="_self">Primeiros passos em HTML5</a></li>
+                    <li><a href="Formatação de textos.html">Formatação de textos</a></li>
+                    <li><a href="Trabalhando com listas.html">Trabalhando com listas</a></li>
+                    <li><a href="Trabalhando com links.html">Trabalhando com links</a></li>
+                    <li><a href="Imagens e Favicon.html">Imagens e Favicon</a></li>
+                    <li><a href="Imagens dinâmicas.html">Imagens dinâmicas</a></li>
+                    <li><a href="Adicionando áudio e vídeo.html">Adicionando áudio e vídeo</a></li>
+                    <li><a href="Principais tags e suas funções.html">Principais tags e suas funções</a></li>
+                </ul>
+            </li>
+            <li class="coluna"><h3><strong>☆ CSS3</strong></h3>
+                <ul>
+                    <li><a href="Iniciando CSS3.html">Iniciando CSS3</a></li>
+                    <li><a href="Cores e degradê.html">Cores e degradê</a></li>
+                    <li><a href="Fontes.html">Fontes</a></li>
+                    <li><a href="Seletores personalizados.html">Seletores personalizados</a></li>
+                    <li><a href="Modelo de caixas.html">Modelo de caixas</a></li>
+                    <li><a href="Outras personalizações.html">Outras personalizações</a></li>
+                    <li><a href="Principais propriedades e suas funções.html">Principais propriedades e suas funções</a></li>
+                </ul>
+            </li>
+            <li class="coluna"><h3><strong>☆ JavaScript</strong></h3>
+                <ul>
+                    <li><a href="Fundamentos da linguagem.html">Fundamentos da linguagem</a></li>
+                </ul>
+            </li>
+        </ol>
+    </main>
+
+    <footer>
+        Made with &lt;3 by Avocode
+    </footer>
+
 </body>
 </html>
