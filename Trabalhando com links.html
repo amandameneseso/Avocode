@@ -32,7 +32,7 @@
     </ul>
     
     <h2>Usando links internos</h2>
-    <p>É possível também acessar um link interno no site. O arquivo do link deve estar na mesma pasta que o link principal.</p>
+    <p>É possível também acessar um link interno no site. O arquivo do link deve estar na mesma pasta que o link principal. Exemplo:</p>
     <p>Esta é a <code>&lt;a href="pag002.html" rel="next"&gt;segunda página&lt;/a&gt;</code> deste site.</p>
     <p>Esta é a <a href="pag002.html" rel="next">segunda página</a> deste site.</p>
     <p>Para criar link interno de um arquivo em uma sub-pasta, basta informar o caminho. Para se referir à pasta atual do servidor, pode usar ./ antes do nome do arquivo. Se quiser se referir à pasta imediatamente superior na hierarquia, use ../ para voltar um nível para a pasta mais externa.</p>
@@ -47,5 +47,20 @@
     </ul>
     <p>Atributo <code>type</code>: Especifica o <em>media type</em> do documento. <a href="https://www.iana.org/assignments/media-types/media-types.xhtml" target="_blank" rel="external">Lista de <em>media types</em></a>.</p>
     <p>Obs.: No Google Chrome, quando não é adicionado o atributo <code>download</code>, o link exibirá o arquivo em uma nova aba ou janela. Quando adicionado o atributo <code>download</code>, o arquivo será baixado. Também é possível utilizar o atributo <code>target="_blank"</code> para abrir o arquivo em uma nova janela.</p>
+
+    <a href="index.html" class="button-previous" target="_self">
+        <div class="arrow-wrapper">
+            <div class="arrow"></div>
+        </div>
+    </a>
+
+    <a href="index.html" class="button-home" target="_self">home</a>
+
+    <a href="Formatação de textos.html" class="button-next" target="_self">
+        <div class="arrow-wrapper">
+            <div class="arrow"></div>
+        </div>
+    </a>
+
 </body>
 </html>

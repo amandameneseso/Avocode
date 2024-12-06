@@ -1,11 +1,21 @@
 @charset "UTF-8";
 
+:root {
+    --button-primary-color: rgb(182, 131, 118);
+    --button-secondary-color: #fff;
+    --button-hover-color: rgba(182, 131, 118, 0.801);
+    --button-arrow-width: 10px;
+    --button-arrow-stroke: 2px;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
 
 body {
     background-color: rgb(58, 77, 58);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 20px 20px 50px 20px;
+    position: relative;
+    padding-bottom: 80px; /* Adiciona um espaço na parte inferior do body para que o botão não sobreponha o conteúdo */
     }
 
 h1 {
@@ -71,5 +81,149 @@ li {
 div img {
     padding: 20px;
 }
+
+/* botões */ 
+.button-next {
+    position: absolute;
+    right: 20px; /* Distância da parte direita */
+    bottom: 10px; /* Distância da parte inferior */
+    border: 0;
+    border-radius: 50px;
+    color: var(--button-secondary-color);
+    padding: 1em 1.5em;
+    background: var(--button-primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    max-width: max-content; /* Impede expansão além do conteúdo */
+}
+
+.button-next .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-next .arrow {
+    margin-top: 1px;
+    width: var(--button-arrow-width);
+    background: var(--button-primary-color);
+    height: var(--button-arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+
+.button-next .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--button-secondary-color);
+    border-width: 0 var(--button-arrow-stroke) var(--button-arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+.button-next:hover {
+    background-color: var(--button-hover-color);
+}
+
+.button-next:hover .arrow {
+    background: var(--button-secondary-color);
+}
+
+.button-next:hover .arrow::before {
+    right: 0; /* Ajusta a seta ao mover */
+}
+
+.button-previous {
+    position: absolute;
+    left: 20px; /* Distância da parte esquerda */
+    bottom: 10px; /* Distância da parte inferior */
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 50px;
+    color: var(--button-secondary-color);
+    padding: 1em 1.5em;
+    background: var(--button-primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    max-width: max-content; /* Impede expansão além do conteúdo */
+}
+
+.button-previous .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-previous .arrow {
+    margin-top: 1px;
+    width: var(--button-arrow-width);
+    background: var(--button-primary-color);
+    height: var(--button-arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+
+.button-previous .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--button-secondary-color);
+    border-width: 0 var(--button-arrow-stroke) var(--button-arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    left: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(135deg); /* Ajusta a seta para a esquerda */
+}
+
+.button-previous:hover {
+    background-color: var(--button-hover-color);
+}
+
+.button-previous:hover .arrow {
+    background: var(--button-secondary-color);
+}
+
+.button-previous:hover .arrow::before {
+    left: 0px; /* Ajusta a seta ao mover */
+}
+
+.button-home {
+    position: absolute;
+    bottom: 10px; /* Distância da parte inferior */
+    left: 50%; /* Centraliza o botão horizontalmente */
+    transform: translateX(-50%); /* Ajuste para garantir o centro exato */
+    border: 0;
+    border-radius: 50px;
+    color: var(--button-secondary-color);
+    padding: 0.5em 1.5em;
+    background: var(--button-primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    max-width: max-content; /* Impede expansão além do conteúdo */
+}
+
+.button-home:hover {
+    background-color: var(--button-hover-color);
+}
+
+
+
+
 
        
