@@ -11,12 +11,21 @@
 }
 
 body {
-    background-color: rgb(58, 77, 58);
+    background-color: rgba(206, 195, 178);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 20px 20px 50px 20px;
+    margin: 0;
+    padding: 0;
+}
+
+main {
     position: relative;
-    padding-bottom: 80px; /* Adiciona um espaço na parte inferior do body para que o botão não sobreponha o conteúdo */
-    }
+    background-color: rgb(58, 77, 58);
+    max-width: 1200px;
+    padding: 100px 30px;
+    padding-top: 20px;
+    text-align: justify;
+    margin: auto;
+}
 
 h1 {
     font-family: "Sono", monospace;
@@ -28,19 +37,19 @@ h1 {
 h2 {
     font-family: "Sono", monospace;
     color: rgb(219, 179, 162);
-    padding: 20px 40px;
+    padding: 20px 80px;
 }
 
 h3 {
     font-family: "Sono", monospace;
     color: rgb(219, 179, 162);
-    padding: 20px 55px;
+    padding: 20px 100px;
 }
 
 p {
     color: rgb(208, 219, 192);
     font-size: 16px;
-    padding: 0px 40px;
+    padding: 0px 80px;
     text-align: justify;
     text-indent: 30px;
 }
@@ -56,7 +65,7 @@ body a:hover {color: rgb(208, 219, 192);
 
 pre {
     color: rgb(167, 184, 143);
-    padding: 0px 40px;
+    padding: 0px 100px;
 }
 
 blockquote {
@@ -76,6 +85,7 @@ ol {
 
 li {
     padding: 3.5px 0px;
+    margin-left: 60px;
 }
 
 div img {
@@ -85,12 +95,12 @@ div img {
 /* botões */ 
 .button-next {
     position: absolute;
-    right: 20px; /* Distância da parte direita */
-    bottom: 10px; /* Distância da parte inferior */
+    right: 110px; /* Distância da parte direita */
+    bottom: 42px;
     border: 0;
     border-radius: 50px;
     color: var(--button-secondary-color);
-    padding: 1em 1.5em;
+    padding: 16px 24px;
     background: var(--button-primary-color);
     display: flex;
     transition: 0.2s background;
@@ -143,13 +153,13 @@ div img {
 
 .button-previous {
     position: absolute;
-    left: 20px; /* Distância da parte esquerda */
-    bottom: 10px; /* Distância da parte inferior */
+    left: 110px; /* Distância da parte esquerda */
+    bottom: 42px; /* Distância da parte inferior */
     box-sizing: border-box;
     border: 0;
     border-radius: 50px;
     color: var(--button-secondary-color);
-    padding: 1em 1.5em;
+    padding: 16px 24px;
     background: var(--button-primary-color);
     display: flex;
     transition: 0.2s background;
@@ -202,7 +212,7 @@ div img {
 
 .button-home {
     position: absolute;
-    bottom: 10px; /* Distância da parte inferior */
+    bottom: 42px; /* Distância da parte inferior */
     left: 50%; /* Centraliza o botão horizontalmente */
     transform: translateX(-50%); /* Ajuste para garantir o centro exato */
     border: 0;

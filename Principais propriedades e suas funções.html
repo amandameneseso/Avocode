@@ -14,74 +14,67 @@
     </style>
 </head>
 <body>
-    <h1>Principais propriedades e suas funções</h1>
-    <h2>Layout e posição</h2>
-    <ul>
-        <li><strong>display</strong>: Define como o elemento será exibido. Exemplos comuns incluem block, inline, inline-block, flex, grid e none.</li>
-        <li><strong>position</strong>: Controla a posição do elemento na página. Valores comuns: static (padrão), relative, absolute, fixed e sticky.</li>
-        <li><strong>top, right, bottom, left</strong>: Define a posição do elemento em relação ao seu contêiner pai, geralmente em conjunto com position.</li>
-        <li><strong>float e clear</strong>: Utilizados para flutuar elementos à direita ou esquerda (embora float seja menos usado hoje, especialmente com flexbox e grid disponíveis).</li>
-        <li><strong>z-index</strong>: Controla a sobreposição de elementos quando eles estão empilhados uns sobre os outros (funciona apenas com position configurado).</li>
-    </ul>
-
-    <h2>Modelo de Caixa</h2>
-    <ul>
-        <li><strong>width e height</strong>: Definem a largura e altura do elemento.</li>
-        <li><strong>padding</strong>: Espaçamento interno do elemento, ou seja, entre o conteúdo e a borda.</li>
-        <li><strong>margin</strong>: Espaçamento externo, ou seja, entre o elemento e outros elementos.</li>
-        <li><strong>border</strong>: Define a borda ao redor de um elemento, incluindo estilo, largura e cor. Exemplo: border: 1px solid black;.</li>
-        <li><strong>box-sizing</strong>: Controla como a largura e a altura de um elemento são calculadas. border-box inclui padding e border dentro da largura e altura totais, enquanto content-box não inclui.</li>
-    </ul>
-
-    <h2>Estilo de Texto</h2>
-    <ul>
-        <li><strong>font-family</strong>: Define a fonte do texto. Pode incluir uma lista de fontes de fallback, por exemplo, font-family: Arial, sans-serif;.</li>
-        <li><strong>font-size</strong>: Define o tamanho da fonte. Pode ser em px, em, rem, %, etc.</li>
-        <li><strong>font-weight</strong>: Define a espessura do texto (como bold, normal, ou valores numéricos como 400, 700).</li>
-        <li><strong>color</strong>: Define a cor do texto.</li>
-        <li><strong>text-align</strong>: Define o alinhamento do texto (left, right, center, justify).</li>
-        <li><strong>line-height</strong>: Define o espaçamento entre as linhas do texto.</li>
-        <li><strong>text-decoration</strong>: Adiciona decorações como underline, line-through e none ao texto.</li>
-    </ul>
-
-    <h2>Estilo de Fundo</h2>
-    <ul>
-        <li><strong>background-color</strong>: Define a cor de fundo do elemento.</li>
-        <li><strong>background-image</strong>: Aplica uma imagem de fundo ao elemento. É possível adicionar "linear-gradiente", adicionar cores e criar degradê.</li>
-        <li><strong>background-position</strong>: Define a posição da imagem de fundo.</li>
-        <li><strong>background-size</strong>: Controla o tamanho da imagem de fundo (cover, contain, ou valores específicos).</li>
-        <li><strong>background-repeat</strong>: Define se a imagem de fundo deve ser repetida (repeat, no-repeat, repeat-x, repeat-y).</li>
-    </ul>
-
-    <h2>Estilo de Borda e Contorno</h2>
-    <ul>
-        <li><strong>border-radius</strong>: Cria cantos arredondados no elemento.</li>
-        <li><strong>outline</strong>: Define uma borda externa ao redor do elemento, mas não afeta o layout (usado, por exemplo, para focos de acessibilidade).</li>
-    </ul>
-
-    <h2>Efeitos e Transformações</h2>
-    <ul>
-        <li><strong>box-shadow</strong>: Adiciona sombra ao redor do elemento.</li>
-        <li><strong>text-shadow</strong>: Adiciona sombra ao texto.</li>
-        <li><strong>opacity</strong>: Controla a transparência do elemento (0 é completamente transparente, e 1 é completamente opaco).</li>
-        <li><strong>transform</strong>: Aplica transformações ao elemento, como rotate, scale, translate e skew.</li>
-        <li><strong>transition</strong>: Define transições animadas para propriedades (como background-color ou opacity) quando mudam de valor.</li>
-        <li><strong>animation</strong>: Controla animações mais complexas, permitindo keyframes e ciclos de repetição.</li>
-    </ul>
-
-    <h2>Flexbox e Grid</h2>
-    <ul>
-        <li><strong>display: flex</strong> e propriedades relacionadas (justify-content, align-items, flex-direction, flex-wrap, etc.) ajudam a alinhar elementos dentro de um contêiner flexível.</li>
-        <li><strong>display: grid</strong> e propriedades relacionadas (grid-template-columns, grid-template-rows, gap, align-items, justify-items, etc.) ajudam a criar layouts em grade.</li>
-    </ul>
-
-    <a href="Outras personalizações.html" class="button-previous" target="_self">
-        <div class="arrow-wrapper">
-            <div class="arrow"></div>
-        </div>
-    </a>
-
-    <a href="index.html" class="button-home" target="_self">home</a>
-
+    <main>
+        <h1>Principais propriedades e suas funções</h1>
+        <h2>Layout e posição</h2>
+        <ul>
+            <li><strong>display</strong>: Define como o elemento será exibido. Exemplos comuns incluem block, inline, inline-block, flex, grid e none.</li>
+            <li><strong>position</strong>: Controla a posição do elemento na página. Valores comuns: static (padrão), relative, absolute, fixed e sticky.</li>
+            <li><strong>top, right, bottom, left</strong>: Define a posição do elemento em relação ao seu contêiner pai, geralmente em conjunto com position.</li>
+            <li><strong>float e clear</strong>: Utilizados para flutuar elementos à direita ou esquerda (embora float seja menos usado hoje, especialmente com flexbox e grid disponíveis).</li>
+            <li><strong>z-index</strong>: Controla a sobreposição de elementos quando eles estão empilhados uns sobre os outros (funciona apenas com position configurado).</li>
+        </ul>
+        <h2>Modelo de Caixa</h2>
+        <ul>
+            <li><strong>width e height</strong>: Definem a largura e altura do elemento.</li>
+            <li><strong>padding</strong>: Espaçamento interno do elemento, ou seja, entre o conteúdo e a borda.</li>
+            <li><strong>margin</strong>: Espaçamento externo, ou seja, entre o elemento e outros elementos.</li>
+            <li><strong>border</strong>: Define a borda ao redor de um elemento, incluindo estilo, largura e cor. Exemplo: border: 1px solid black;.</li>
+            <li><strong>box-sizing</strong>: Controla como a largura e a altura de um elemento são calculadas. border-box inclui padding e border dentro da largura e altura totais, enquanto content-box não inclui.</li>
+        </ul>
+        <h2>Estilo de Texto</h2>
+        <ul>
+            <li><strong>font-family</strong>: Define a fonte do texto. Pode incluir uma lista de fontes de fallback, por exemplo, font-family: Arial, sans-serif;.</li>
+            <li><strong>font-size</strong>: Define o tamanho da fonte. Pode ser em px, em, rem, %, etc.</li>
+            <li><strong>font-weight</strong>: Define a espessura do texto (como bold, normal, ou valores numéricos como 400, 700).</li>
+            <li><strong>color</strong>: Define a cor do texto.</li>
+            <li><strong>text-align</strong>: Define o alinhamento do texto (left, right, center, justify).</li>
+            <li><strong>line-height</strong>: Define o espaçamento entre as linhas do texto.</li>
+            <li><strong>text-decoration</strong>: Adiciona decorações como underline, line-through e none ao texto.</li>
+        </ul>
+        <h2>Estilo de Fundo</h2>
+        <ul>
+            <li><strong>background-color</strong>: Define a cor de fundo do elemento.</li>
+            <li><strong>background-image</strong>: Aplica uma imagem de fundo ao elemento. É possível adicionar "linear-gradiente", adicionar cores e criar degradê.</li>
+            <li><strong>background-position</strong>: Define a posição da imagem de fundo.</li>
+            <li><strong>background-size</strong>: Controla o tamanho da imagem de fundo (cover, contain, ou valores específicos).</li>
+            <li><strong>background-repeat</strong>: Define se a imagem de fundo deve ser repetida (repeat, no-repeat, repeat-x, repeat-y).</li>
+        </ul>
+        <h2>Estilo de Borda e Contorno</h2>
+        <ul>
+            <li><strong>border-radius</strong>: Cria cantos arredondados no elemento.</li>
+            <li><strong>outline</strong>: Define uma borda externa ao redor do elemento, mas não afeta o layout (usado, por exemplo, para focos de acessibilidade).</li>
+        </ul>
+        <h2>Efeitos e Transformações</h2>
+        <ul>
+            <li><strong>box-shadow</strong>: Adiciona sombra ao redor do elemento.</li>
+            <li><strong>text-shadow</strong>: Adiciona sombra ao texto.</li>
+            <li><strong>opacity</strong>: Controla a transparência do elemento (0 é completamente transparente, e 1 é completamente opaco).</li>
+            <li><strong>transform</strong>: Aplica transformações ao elemento, como rotate, scale, translate e skew.</li>
+            <li><strong>transition</strong>: Define transições animadas para propriedades (como background-color ou opacity) quando mudam de valor.</li>
+            <li><strong>animation</strong>: Controla animações mais complexas, permitindo keyframes e ciclos de repetição.</li>
+        </ul>
+        <h2>Flexbox e Grid</h2>
+        <ul>
+            <li><strong>display: flex</strong> e propriedades relacionadas (justify-content, align-items, flex-direction, flex-wrap, etc.) ajudam a alinhar elementos dentro de um contêiner flexível.</li>
+            <li><strong>display: grid</strong> e propriedades relacionadas (grid-template-columns, grid-template-rows, gap, align-items, justify-items, etc.) ajudam a criar layouts em grade.</li>
+        </ul>
+        <a href="Outras personalizações.html" class="button-previous" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
+        <a href="index.html" class="button-home" target="_self">home</a>
+    </main>
 </body>
 </html>

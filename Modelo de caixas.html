@@ -8,135 +8,110 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Modelo de caixas</h1>
-    
-    <p>Os conceitos do Modelo de Caixas (Box Model) são aplicáveis ao HTML e ao CSS. Se trata de conjuntos que irão facilitar muito na hora de organizarmos o design e as partes do nosso site.</p>
-
-    <p>Quando temos um documento HTML, tudo aquilo que é exibido na tela, é exibido em forma de caixa, de tal modo que a grande maioria das caixas na HTML podem estar uma dentro da outra. Elas são <em>containers</em> que armazenam conteúdos ou até mesmo outras caixas. Dessa forma, podemos formar hierarquias de caixas.</p>
-
-    <p>Considerando que todos os elementos de um site estão dentro de uma caixa, quando formatamos um elemento com o CSS através de seletores, na verdade estamos configurando a caixa que vai estar exibindo esse elemento.</p>
-
-    <p>Anatomia das caixas:</p>
-    <p><ul>
-        <li>Conteúdo: Menor unidade de caixa. Por padrão, toda caixa é composta apenas pelo conteúdo e não possui padding, border, outline e margin. Uma exceção é o elemento <code>&lt;body&gt;</code>, que já vem com uma margin de 8px. Todo conteúdo possui uma <strong>largura</strong> (<code>width</code>) e uma <strong>altura</strong> (height) e a esse conjunto de propriedades damos o nome de <code>box-size</code> (tamanho da caixa).</li>
-        <li>Padding (acolchoamento): Fica em volta do conteúdo e forma uma lacuna entre o conteúdo e a borda.</li>
-        <li>Border (borda): Envolve o conteúdo e o padding. Podemos traçar uma linha em volta da parte de onteúdo (que define o tamanho da caixa) e chamamos essa linha de borda. Sendo assim, uma borda é uma linha que circunda o seu conteúdo. </li>
-        <li>Outline (contorno): Fica do lado de fora da borda e dentro da margem.</li>
-        <li>Margin: Ao desenvolver um site, eventualmente iremos ter caixas uma embaixo da outra de forma seguida e, se uma dessas caixas estiver configurada com um espaçamento "padding", pode ser que elas fiquem muito próximas uma da outra e acabem "grudando" na borda do elemento de cima. Pensando nisso, podemos criar, além de um espaço interno (padding), um espaçamento externo logo após a borda, chamado de margem.
-        </li>
-    </ul></p>
-
-    <div style="text-align: center;">
-        <img src="imagens/modelo de caixas.png" alt="Modelo de caixas" style="width: 340px;">
-    </div>
-
-    <p>Vamos criar um exemplo simples para exemplificar todos esses componentes, configurando as propriedades do modelo de caixa de um título &lt;h1&gt;:</p>
-
-    <p>
-        <pre><code>
-        &lt;style&gt;
-            h1 {
-                width: 300px;
-                height: 50px;
-                background-color: lightgray
-                border-width: 10px;
-                border-style: solid;
-                border-color: red;
-                padding: 20px;
-                outline-width: 30px;
-                outline-style: solid;
-                outline-color: blue;
-                margin: 50px;
-            }
-        &lt;/style&gt;
-        </code></pre>
-    </p>
-
-    <p>As linhas "width" e "height" configuram o <code>size</code> da caixa (largura e altura, respectivamente) e fará com que ela tenha 300x50 pixels. As linhas que iniciam com "border" configuram a borda sólida, vermelha e com 10 pixels de espessura. A linha "padding" cria um espaço interno de preenchimento (da borda para dentro) de 20 pixels e a linha "margin" cria um expaço externo (da borda para fora) de 50 pixels. As linhas "outline" configuram o contorno, que faz parte da margem, criando um contorno azul, sólido e com 30 pixels de espessura. O resultado visual do código anterior será:</p>
-
-    <div style="text-align: center;">
-        <img src="imagens/exemplo modelo de caixas.png" alt="Modelo de caixas" style="width: 340px;">
-    </div>
-
-    <p>Olhando de perto, podemos analisar as medidas configuradas no código apresentado. As medidas de <code>height</code> e <code>width</code> (300x50) são medidas apenas pela parte pontilhada do conteúdo.</p>
-
-    <p>A <code>border</code> de 10px ficou em vermelho e o <code>outline</code> de 30px ficou em azul. o <code>padding</code> de 20px fica da borda para dentro e a <code>margin</code> de 50px fica da borda para fora.</p>
-
-    <p>Nota: As propriedades <code>border-style</code> e <code>outline-style</code> podem ter vários valores: solid (sólida), dotted (pontilhada), dashed (tracejada), double (dupla), groove (3D).</p>
-
-    <p>Nota 2: Um recurso muito útil nos navegadores é a opção "inspecionar", que permite ver o código-fonte. Com ela, é possível testar tamanhos de caixas para cada elemento.</p>
-
-    <h3>Dá pra simplificar?</h3>
-
-    <p>As configurações de <code>border</code> e <code>outline</code> também possuem shorthands para simplificar o código anterior. A ordem para as duas configurações é sempre a mesma para as duas shorthands: largura (width), estilo (style) e cor (color).</p>
-
-    <p>
-        <pre><code>
-        &lt;style&gt;
-            h1 {
-                border: 10px solid red;
-                outline: 30px solid blue;
-            }
-        &lt;/style&gt;
-        </code></pre>
-    </p>
-
-    <h3>Padding e margem personalizados</h3>
-
-    <p>Todo elemento de caixa possui quatro valores para <code>padding</code> e quatro para <code>margin</code>, sempre nessa ordem: superior (top), direita (right), inferior (bottom), esquerda (left). É importante declarar nessa ordem, pois é necessário ser condizente com a direção e sentido padrão do Modelo de Caixas do DevTools , que segue a direção de um ponteiro de relógio.</p>
+    <main>
+        <h1>Modelo de caixas</h1>
         
-    <p>Quando colocamos um único valor de dimensão para o preenchimento ou margem, esse mesmo valor é aplicado a todas as direções, por exemplo: "<code>padding: 10px;</code>". Mas também podemos fazer códigos como:</p>
-
-    <p>
-        <pre><code>
-        &lt;style&gt;
-            h1 {
-                padding-top: 10px;
-                padding-right: 15px;
-                padding-bottom: 20px;
-                padding-left: 25px;
-            }
-        &lt;/style&gt;
-        </code></pre>
-    </p>
-
-    <p>Também é possível usar shorthand nesse caso. Essa simplificação só é possível quando as medidas top e bottom forem iguais entre si e o mesmo também ocorrer entre as medidas right e left: </p>
-
-    <p>
-        <pre><code>
-        &lt;style&gt;
-            h1 {
-                padding: 10px 20px;
-                margin: 0px 15px;
-            }
-        &lt;/style&gt;
-        </code></pre>
-    </p>
-
-    <p>Um recurso muito usado é a centralização de blocos. Para centralizar uma caixa, use a seguinte declaração no seletor: <code>margin: auto;</code>. Se quisermos centralizar um elemento de forma automática, mas ainda assim, alterar o margin do sentido de cima (top) ou de baixo (bottom), devemos inserir a seguinte declaração shorthand: "<code>margin: 10px auto 10px auto;</code>".</p>
-
-    <h3>Tipos de caixa:</h3>
-    <p><ul>
-        <li>Box-level/block-level: Em uma caixa do tipo "box-level / block-level", o elemento sempre irá se iniciar em uma nova linha e ocupará a largura total da tela ou do elemento onde ele está contido (100% do viewport), sendo que irá pular para a próxima linha antes de continuar o conteúdo posterior e aí sim inserir outros boxes. As caixas desse tipo são isoladas e independentes. Exemplos: &lt;div&gt;, &lt;p&gt;, &lt;main&gt;, &lt;h1&gt;.</li>
-        <li>Inline-level: Não inicia em uma nova linha, e sim no ponto exato onde foi definida, no meio de um parágrafo por exemplo. A largura dele vai ocupar apenas o tamanho relativo ao seu conteúdo, sendo que não irá quebrar a linha ao terminar, continuando o conteúdo de forma direta. Exemplos: &lt;span&gt;, &lt;a&gt;, &lt;button&gt;, &lt;img&gt;.
-        </li>
-    </ul></p>
-
-    <p>É possível configurar um elemento block-level para apresentar as propriedades de um elemento inline-level e vice-versa utilizando as propriedades de estilo "<code>display: inline</code>" e "<code>display: block</code>".</p>
-
-    <a href="Seletores personalizados.html" class="button-previous" target="_self">
-        <div class="arrow-wrapper">
-            <div class="arrow"></div>
+        <p>Os conceitos do Modelo de Caixas (Box Model) são aplicáveis ao HTML e ao CSS. Se trata de conjuntos que irão facilitar muito na hora de organizarmos o design e as partes do nosso site.</p>
+        <p>Quando temos um documento HTML, tudo aquilo que é exibido na tela, é exibido em forma de caixa, de tal modo que a grande maioria das caixas na HTML podem estar uma dentro da outra. Elas são <em>containers</em> que armazenam conteúdos ou até mesmo outras caixas. Dessa forma, podemos formar hierarquias de caixas.</p>
+        <p>Considerando que todos os elementos de um site estão dentro de uma caixa, quando formatamos um elemento com o CSS através de seletores, na verdade estamos configurando a caixa que vai estar exibindo esse elemento.</p>
+        <p>Anatomia das caixas:</p>
+        <p><ul>
+            <li>Conteúdo: Menor unidade de caixa. Por padrão, toda caixa é composta apenas pelo conteúdo e não possui padding, border, outline e margin. Uma exceção é o elemento <code>&lt;body&gt;</code>, que já vem com uma margin de 8px. Todo conteúdo possui uma <strong>largura</strong> (<code>width</code>) e uma <strong>altura</strong> (height) e a esse conjunto de propriedades damos o nome de <code>box-size</code> (tamanho da caixa).</li>
+            <li>Padding (acolchoamento): Fica em volta do conteúdo e forma uma lacuna entre o conteúdo e a borda.</li>
+            <li>Border (borda): Envolve o conteúdo e o padding. Podemos traçar uma linha em volta da parte de onteúdo (que define o tamanho da caixa) e chamamos essa linha de borda. Sendo assim, uma borda é uma linha que circunda o seu conteúdo. </li>
+            <li>Outline (contorno): Fica do lado de fora da borda e dentro da margem.</li>
+            <li>Margin: Ao desenvolver um site, eventualmente iremos ter caixas uma embaixo da outra de forma seguida e, se uma dessas caixas estiver configurada com um espaçamento "padding", pode ser que elas fiquem muito próximas uma da outra e acabem "grudando" na borda do elemento de cima. Pensando nisso, podemos criar, além de um espaço interno (padding), um espaçamento externo logo após a borda, chamado de margem.
+            </li>
+        </ul></p>
+        <div style="text-align: center;">
+            <img src="imagens/modelo de caixas.png" alt="Modelo de caixas" style="width: 340px;">
         </div>
-    </a>
-
-    <a href="index.html" class="button-home" target="_self">home</a>
-
-    <a href="Outras personalizações.html" class="button-next" target="_self">
-        <div class="arrow-wrapper">
-            <div class="arrow"></div>
+        <p>Vamos criar um exemplo simples para exemplificar todos esses componentes, configurando as propriedades do modelo de caixa de um título &lt;h1&gt;:</p>
+        <p>
+            <pre><code>
+            &lt;style&gt;
+                h1 {
+                    width: 300px;
+                    height: 50px;
+                    background-color: lightgray
+                    border-width: 10px;
+                    border-style: solid;
+                    border-color: red;
+                    padding: 20px;
+                    outline-width: 30px;
+                    outline-style: solid;
+                    outline-color: blue;
+                    margin: 50px;
+                }
+            &lt;/style&gt;
+            </code></pre>
+        </p>
+        <p>As linhas "width" e "height" configuram o <code>size</code> da caixa (largura e altura, respectivamente) e fará com que ela tenha 300x50 pixels. As linhas que iniciam com "border" configuram a borda sólida, vermelha e com 10 pixels de espessura. A linha "padding" cria um espaço interno de preenchimento (da borda para dentro) de 20 pixels e a linha "margin" cria um expaço externo (da borda para fora) de 50 pixels. As linhas "outline" configuram o contorno, que faz parte da margem, criando um contorno azul, sólido e com 30 pixels de espessura. O resultado visual do código anterior será:</p>
+        <div style="text-align: center;">
+            <img src="imagens/exemplo modelo de caixas.png" alt="Modelo de caixas" style="width: 340px;">
         </div>
-    </a>
-    
+        <p>Olhando de perto, podemos analisar as medidas configuradas no código apresentado. As medidas de <code>height</code> e <code>width</code> (300x50) são medidas apenas pela parte pontilhada do conteúdo.</p>
+        <p>A <code>border</code> de 10px ficou em vermelho e o <code>outline</code> de 30px ficou em azul. o <code>padding</code> de 20px fica da borda para dentro e a <code>margin</code> de 50px fica da borda para fora.</p>
+        <p>Nota: As propriedades <code>border-style</code> e <code>outline-style</code> podem ter vários valores: solid (sólida), dotted (pontilhada), dashed (tracejada), double (dupla), groove (3D).</p>
+        <p>Nota 2: Um recurso muito útil nos navegadores é a opção "inspecionar", que permite ver o código-fonte. Com ela, é possível testar tamanhos de caixas para cada elemento.</p>
+        <h3>Dá pra simplificar?</h3>
+        <p>As configurações de <code>border</code> e <code>outline</code> também possuem shorthands para simplificar o código anterior. A ordem para as duas configurações é sempre a mesma para as duas shorthands: largura (width), estilo (style) e cor (color).</p>
+        <p>
+            <pre><code>
+            &lt;style&gt;
+                h1 {
+                    border: 10px solid red;
+                    outline: 30px solid blue;
+                }
+            &lt;/style&gt;
+            </code></pre>
+        </p>
+        <h3>Padding e margem personalizados</h3>
+        <p>Todo elemento de caixa possui quatro valores para <code>padding</code> e quatro para <code>margin</code>, sempre nessa ordem: superior (top), direita (right), inferior (bottom), esquerda (left). É importante declarar nessa ordem, pois é necessário ser condizente com a direção e sentido padrão do Modelo de Caixas do DevTools , que segue a direção de um ponteiro de relógio.</p>
+        
+        <p>Quando colocamos um único valor de dimensão para o preenchimento ou margem, esse mesmo valor é aplicado a todas as direções, por exemplo: "<code>padding: 10px;</code>". Mas também podemos fazer códigos como:</p>
+        <p>
+            <pre><code>
+            &lt;style&gt;
+                h1 {
+                    padding-top: 10px;
+                    padding-right: 15px;
+                    padding-bottom: 20px;
+                    padding-left: 25px;
+                }
+            &lt;/style&gt;
+            </code></pre>
+        </p>
+        <p>Também é possível usar shorthand nesse caso. Essa simplificação só é possível quando as medidas top e bottom forem iguais entre si e o mesmo também ocorrer entre as medidas right e left: </p>
+        <p>
+            <pre><code>
+            &lt;style&gt;
+                h1 {
+                    padding: 10px 20px;
+                    margin: 0px 15px;
+                }
+            &lt;/style&gt;
+            </code></pre>
+        </p>
+        <p>Um recurso muito usado é a centralização de blocos. Para centralizar uma caixa, use a seguinte declaração no seletor: <code>margin: auto;</code>. Se quisermos centralizar um elemento de forma automática, mas ainda assim, alterar o margin do sentido de cima (top) ou de baixo (bottom), devemos inserir a seguinte declaração shorthand: "<code>margin: 10px auto 10px auto;</code>".</p>
+        <h3>Tipos de caixa:</h3>
+        <p><ul>
+            <li>Box-level/block-level: Em uma caixa do tipo "box-level / block-level", o elemento sempre irá se iniciar em uma nova linha e ocupará a largura total da tela ou do elemento onde ele está contido (100% do viewport), sendo que irá pular para a próxima linha antes de continuar o conteúdo posterior e aí sim inserir outros boxes. As caixas desse tipo são isoladas e independentes. Exemplos: &lt;div&gt;, &lt;p&gt;, &lt;main&gt;, &lt;h1&gt;.</li>
+            <li>Inline-level: Não inicia em uma nova linha, e sim no ponto exato onde foi definida, no meio de um parágrafo por exemplo. A largura dele vai ocupar apenas o tamanho relativo ao seu conteúdo, sendo que não irá quebrar a linha ao terminar, continuando o conteúdo de forma direta. Exemplos: &lt;span&gt;, &lt;a&gt;, &lt;button&gt;, &lt;img&gt;.
+            </li>
+        </ul></p>
+        <p>É possível configurar um elemento block-level para apresentar as propriedades de um elemento inline-level e vice-versa utilizando as propriedades de estilo "<code>display: inline</code>" e "<code>display: block</code>".</p>
+        <a href="Seletores personalizados.html" class="button-previous" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
+        <a href="index.html" class="button-home" target="_self">home</a>
+        <a href="Outras personalizações.html" class="button-next" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
+    </main>
 </body>
 </html>

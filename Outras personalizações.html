@@ -8,294 +8,219 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Outras personalizações</h1>
-    <h2>Grouping Tags e Semantic Tags</h2>
-    <p>A linguagem HTML padrão tinha apenas duas tags de agrupamento: a <code>&lt;div&gt;</code> e a <code>&lt;span&gt;</code>. A diferença entre elas é que a primeira é um elemento agrupador do tipo block-level e a segunda é inline-level. No mais, eles agem exatamente da mesma maneira, servindo para juntar vários outros elementos HTML.</p>
-
-    <p>Com o surgimento da HTML5, surgiram as tags semânticas de agrupamento. Isso nao significa que as <code>&lt;div&gt;</code> e <code>&lt;span&gt;</code> ficaram obsoletas, mas seu uso agora faz menos sentido, pois temos tags para dividir as partes do nosso documento HTML.</p>
-
-    <p>Principais agregadores semânticos da HTML:</p>
-
-    <p>
-        <ul>
-            <li><code>&lt;header&gt;</code>: área de cabeçalho. Pode ser o cabeçalho principal de um site ou até mesmo o cabeçalho de uma seção ou artigo. Normalmente inclui títulos h1 a h6 e subtítulos. Podem também conter menus de navegação.</li>
-            <li><code>&lt;nav&gt;</code>: área com link de navegação. Pode estar dentro de um <code>&lt;header&gt;</code>.</li>
-            <li><code>&lt;main&gt;</code>: delimita o conteúdo principal do site. Normalmente concentra seções (&lt;section&gt;), artigos (&lt;article&gt;) e conteúdos periféricos (&lt;aside&gt;).</li>
-            <li><code>&lt;section&gt;</code>: cria seções. Pode conter o conteúdo diretamente no seu corpo ou dividir os conteúdos em artigos com conteúdos específicos. Segundo a documentação oficial da W3C, "uma seção é um agrupamento temático de conteúdos, tipicamente com um cabeçalho".</li>
-            <li><code>&lt;article&gt;</code>: elemento que contém um conteúdo que pode ser lido de forma independente e diz respeito a um mesmo assunto. Podemos usar um <code>&lt;article&gt;</code> para delimitar um post de blog ou fórum, uma notícia, etc.</li>
-            <li><code>&lt;aside&gt;</code>: delimita um conteúdo periférico complementar ao conteúdo principal de um artigo ou seção. </li>
-            <li><code>&lt;footer&gt;</code>: cria um rodapé para o site inteiro, seção ou artigo. É um conteúdo que não faz parte diretamento do conteúdo do site nem é um conteúdo periférico, mas pode conter informações sobre a autoria do conteúdo, links adicionais, mapa do site, documentos relacionados.</li>
-        </ul>
-    </p>
-
-    <p>A seguir vemos um exemplo de estrutura de um site:</p>
-
-    <div style="text-align: center;">
-        <img src="imagens/estrutura do site.png" alt="Estrutura de site" style="width: 550px;">
-    </div>
-
-    <h2>Sombras e bordas arredondadas</h2>
-
-    <p>Para inserir sombras, temos que utilizar a propriedade de estilo shorthand "<code>box-shadow</code>", essa propriedade pode possuir até 5 parâmetros que devem ser preenchidos obrigatoriamente na seguinte ordem:</p>
-
-    <p>
-        <ul>
-            <li>Deslocamento horizontal (h-offset)- o quanto a sombra irá andar para o lado direito ou esquerdo (valor em negativo para ir pra esquerda, ex: "-10px"; positivo para a direita). Valor obrigatório.</li>
-            <li>Deslocamento vertical (v-offset) - o quanto a sombra irá andar para baixo ou para cima (valor em negativo para ir pra cima, ex: "-10px"; positivo para baixo) Valor obrigatório.</li>
-            <li>Embaçamento (blur) - raio de desfoque. Quanto maior o número, mais desfocada será a sombra. Valor opcional.</li>
-            <li>Alcance (spread) - raio de propagação. Um valor positivo aumenta o tamanho da sombra. Valor opcional.</li>
-            <li>Cor - cor e transparência da sombra. O valor padrão é a cor do texto. Valor opcional.</li>
-        </ul>
-    </p>
-
-    <p>Exemplo de Shorthand (sem o valor "spread"):</p>
-
-    <p>
-        <pre><code>
-        &lt;style&gt;
-            h1 {
-            box-shadow: 1px 1px 1px black;}
-        &lt;/style&gt;</code></pre>
-    </p>
-
-    <p>Também é possível inserirmos sombras do lado de dentro de uma caixa. Para fazer isso basta inserir o parâmetro "inset" como o primeiro valor na shorthand, exemplo: "<code>box-shadow: inset 1px 1px 1px black;".</code> 
-    </p>
-
-    <p>Podemos criar caixas com vértices arredondadas. Para fazer isso utilizamos a propriedade de estilo "<code>border-radius</code>". As principais propriedades de estilo para vértices arredondados (border-radius) são: 
-    </p>
-
-    <p>
-        <ul>
-            <li>border-top-left-radius (arredondamento da parte superior esquerda da box)
-            </li>
-            <li>border-top-right-radius (arredondamento da parte superior direita da box)
-            </li>
-            <li>border-bottom-right-radius (arredondamento da parte inferior direita da box)
-            </li>
-            <li>border-bottom-left-radius (arredondamento da parte inferior esquerda da box) 
-            </li>
-        </ul>
-    </p>
-
-    <p>A ordem das proposições acima devem seguir o sentido horário. A direção correta é: top-left, top-right, bottom-right, bottom-left.</p>
-
-    <p>Também podemos utilizar uma shorthand para inserir e simplificar todas essas declarações de border-radius em uma única linha, exemplo:</p>
-
-    <p>
-        <pre><code>
-        &lt;style&gt;
-            h1 {
-            border-radius: 15px 10px 15px 10px;}
-        &lt;/style&gt;
-        </code></pre>
-    </p>
-
-    <p>Semelhante ao padding e margin, se quisermos configurar os quatro lados do border-radius de uma só vez e constituir um border-radius igualitário (mesmo valor nos quatro lados), podemos simplesmente inserir uma única vez o valor desejado, esse valor será inserido nos quatro lados do elemento automaticamente, exemplo: "<code>border-radius: 10px;</code>".</p>
-
-    <p>Também podemos colocar só dois valores em uma propriedade border-radius, exemplo: "<code>border-radius: 10px 20px;</code>". Quando colocamos somente dois valores, significa que os sentidos <strong>superior esquerdo</strong> e <strong>inferior direito</strong> são representados pelo primeiro valor e os sentidos <strong>superior direito</strong> e <strong>inferior esquerdo</strong> são representados pelo segundo valor. </p>
-
-    <p>Nota: Quando temos um elemento na forma quadrada (uma &lt;div&gt; com altura e largura de 100px, por exemplo) podemos transformar esse elemento em um círculo/bola com a propriedade de estilo "border-radius" com o valor "50%" ou "100px".</p>
-
-    <h2>Variáveis em CSS</h2>
-
-    <p>As variáveis são muito úteis porque guardam valores para serem usados no nosso projeto/programa.</p>
-
-    <p>Para declarar variáveis em CSS, devemos criar uma Pseudo-classe especial dentro do documento CSS, que é uma espécie de referência dentro desse documento.</p>
-
-    <p>As variáveis CSS são definidas dentro da Pseudo-classe "root" (:root {...}). Essa pseudo-classe define as configurações para a "raiz da árvore", que vai servir para o documento inteiro.</p>
-
-    <p>Tudo o que colocarmos e definirmos dentro dessa pseudo-classe será válido para todo o documento, já que essa pseudoclasse (root) tem uma especificidade muito alta, ou seja, aplicado ao HTML, :root representa o elemento &lt;html&gt; e é idêntico ao seletor html, abrangendo todo o projeto. Dessa forma, podemos criar variáveis globais dentro de root.</p>
-
-    <p>Observação: Por exemplo, em linguagens de programação, normalmente temos uma "área principal", que é onde podemos declarar as nossas variáveis globais. No CSS, essa "área principal" é na Pseudo-classe root.</p>
-
-    <p>Todas as variáveis em CSS tem que começar com "dois traços" (--), após isso é preciso dar um nome (de sua preferência) para essa variável, posteriormente inserindo o valor da variável (código da cor nesse caso). Exemplo:</p>
-
-    <p>
-        <pre><code>
-        :root {
-            --cor0: #ebe5c5;
-            --cor1: #83e1ab;
-            --cor2: #3ddc84;
-            --cor3: #2fa866;
-            --cor4: #1a5c37;
-            --cor5: #063d1e;
-        }
-        </code></pre>
-    </p>
-
-    <p>Nota: Referente ao nome que damos para as nossas variáveis, ele é de sua preferência e você pode nomear como no exemplo acima, mas você também pode nomear de acordo com a função da variável. Por exemplo, no caso das cores da nossa paleta, podemos nomear cada cor (variável) com o seu respectivo encargo, exemplo: "cor-de-destaque", "cor-de-fundo" e etc.</p>
-
-    <p>Depois de declarar as suas variáveis globais de cor dentro do root, na hora de formatarmos um elemento, ao invés de digitar ou copiar e colar um código de cor, simplesmente usamos o atalho "Ctrl + Espaço", avançamos até o fim da lista de sugestões e lá estará a nossa Paleta de Cores declarada no root (valores guardados por variáveis). Posteriormente basta escolher a cor desejada e adicioná-la.</p>
-
-    <p>Ao selecionar variáveis na lista de sugestões como valor da respectiva propriedade, o VSC coloca a função "var(--ex-nome);" como o valor (também é possível digitar a especificação da variável ao invés de usar a lista).</p>
-
-    <p>Lembrando que nos exemplos anteriores, usamos variáveis contendo valores de cores, mas ainda dentro do mesmo seletor root que abrimos, podemos também declarar variáveis de fontes de texto, por exemplo. E tudo irá funcionar exatamente como as variáveis de cores. Exemplo:</p>
-
-    <p>
-        <pre><code>
-        :root {
-            --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
-            --fonte-destaque: 'Bebas Neue', sans-serif;
-            --fonte-android: 'Android', sans-serif;
-        }
-        </code></pre>
-    </p>
-
-    <h2>Responsividade</h2>
-
-    <p>No assunto sobre imagens dinâmicas, aprendemos a deixar a imagem responsiva utilizando a tag &lt;picture&gt;, mas existem outras maneiras de melhorar a responsividade das imagens.</p>
-
-    <p>Cada abordagem tem suas vantagens e desvantagens dependendo do contexto:</p>
-
-    <p><strong>1. Usando max-width:100% e height: auto</strong></p>
-
-    <ul>
-        <li>Vantagens:</li>
-        <p>Simplicidade: Essa é uma das soluções mais simples e amplamente compatíveis para tornar uma imagem responsiva.</p>
-        <p>Tamanho fluido: A imagem se adapta automaticamente ao contêiner pai sem distorção, mantendo sua proporção.</p>
-        <li>Desvantagens:</li>
-        <p>Útil para um único arquivo de imagem: Se você precisa servir o mesmo arquivo de imagem para todos os dispositivos, isso funciona bem. No entanto, em conexões mais lentas, a imagem pode carregar devagar em telas menores, pois sempre carrega o arquivo de resolução completa.</p>
-        <li>Melhor para:</li>
-        <p>Imagens que não exigem várias versões de tamanhos.</p>
-        <p>Situações onde a simplicidade e a compatibilidade são prioridades.</p>
-    </ul>
-
-    <p><strong>2. Usando &lt;picture&gt; com &lt;source&gt; para imagens responsivas</strong></p>
-    <ul>
-        <li>Vantagens:</li>
-        <p>Carregamento adaptativo: O navegador carrega automaticamente a versão de imagem mais apropriada com base na largura da tela, o que melhora o desempenho em dispositivos móveis, economizando dados.</p>
-        <p>Mais controle sobre a imagem exibida: Permite o uso de imagens específicas para diferentes resoluções, até com proporções ou estilos distintos.</p>
-        <li>Desvantagens:</li>
-        <p>Complexidade: Requer um pouco mais de código e pode ser mais complexo de configurar corretamente.</p>
-        <p>Mais arquivos de imagem: Precisa de várias versões da imagem, o que pode exigir mais armazenamento e planejamento.</p>
-        <li>Melhor para:</li>
-        <p>Sites ou apps com grande foco em performance, onde o carregamento de imagens menores para dispositivos móveis é importante.</p>
-        <p>Imagens principais ou de destaque, onde diferentes resoluções ou cortes são importantes para a experiência do usuário.</p>
-    </ul>
-
-    <p><strong>3. Usando min-width: 10% e max-width: 100%</strong></p>
-    <ul>
-        <li>Vantagens:</li>
-        <p>Flexibilidade controlada: Permite definir um tamanho mínimo para a imagem enquanto ela ainda se adapta ao contêiner, o que pode ser útil para casos onde uma imagem nunca deve ser muito pequena.</p>
-        <li>Desvantagens:</li>
-        <p>Inconsistência visual: O uso de um valor como 10% no min-width pode causar distorções em telas de tamanhos muito diferentes, especialmente em dispositivos móveis, se não for combinado com height: auto.</p>
-        <p>Menos controle de desempenho: Não reduz o peso da imagem, como faz a abordagem com <picture>, podendo levar a tempos de carregamento mais longos em dispositivos com largura de tela pequena.</p>
-        <li>Melhor para:</li>
-        <p>Situações onde um limite mínimo de largura é necessário, mas essa abordagem geralmente não é a mais eficiente para responsividade, especialmente em páginas com muitos usuários móveis.</p>
-    </ul>
-
-    <p><strong>Conclusão</strong></p>
-    <p>Escolha a técnica com base no objetivo e contexto:</p>
-    <p>Para maior simplicidade e compatibilidade, use max-width: 100% e height: auto.</p>
-    <p>Para performance otimizada em dispositivos móveis, use o <picture> com <source> para fornecer diferentes versões da imagem.</p>
-    <p>Para casos específicos com um limite mínimo, min-width combinado com max-width pode ser útil, mas geralmente não é a melhor solução para responsividade total.</p>
-
-    <h2>Uso do seletor * em CSS</h2>
-
-    <p>O seletor universal * em CSS aplica estilos a todos os elementos de uma página, funcionando como um "curinga". Ele é útil em várias situações, mas deve ser usado com cautela, pois pode impactar o desempenho e a especificidade dos estilos.</p>
-
-    <p>Exemplos de Uso</p>
-    <p><strong>1. Reset CSS Básico</strong></p>
-    <p>O seletor * é comumente usado para garantir que todos os elementos tenham um padding e uma margem inicial de zero. Isso ajuda a padronizar a aparência entre diferentes navegadores. Essa prática de reset CSS evita inconsistências causadas pelo comportamento padrão de margens e preenchimentos dos navegadores.</p>
-
-    <p>
-        <pre><code>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box; /* Inclui padding e border no tamanho total */
-            }
-        </code></pre>
-    </p>
-    
-    <p><strong>2. Definir Fontes e Cores Globais</strong></p>
-    <p>Você pode aplicar uma fonte ou cor padrão para todos os elementos da página. Esse uso é útil quando você deseja que todos os textos herdem uma fonte ou cor específica, mas ele também pode ser feito diretamente em body para evitar afetar elementos como ícones.</p>
-
-    <p>
-        <pre><code>
-        * {
-            font-family: Arial, sans-serif;
-            color: #333;
-            }
-              
-        </code></pre>
-    </p>
-
-    <p><strong>Desvantagens e Cautela</strong></p>
-    <p>Embora o * seja poderoso, ele pode impactar a performance da página, especialmente em sites complexos com muitos elementos. Isso ocorre porque o navegador precisa aplicar o estilo a cada elemento, o que pode ser custoso em termos de processamento.</p>
-
-    <p><strong>Alternativas ao Uso do *</strong></p>
-    <p>Use :root ou body para definir variáveis e estilos globais em vez de *, pois isso reduz o impacto de desempenho.</p>
-    <p>Restringir o uso do * apenas para casos onde realmente todos os elementos precisam ser estilizados.</p>
-
-    <h2>Propriedade "position"</h2>
-
-    <p>O posicionamento padrão de todo elemento no HTML é o "estático". Todo elemento estático é posicionado no canto superior esquerdo no corpo do documento ou do elemento onde ele está contido. Esta é a posição 0 de um elemento no corpo do documento.</p>
-
-    <p>A Propriedade de Estilo "position" é utilizada para determinar o posicionamento e hierarquia dos elementos na página do documento.</p>
-
-    <p>Propriedades auxiliares do position:</p>
-
-    <p>A Propriedade de Estilo "position" vem acompanhada e é usada em conjunto com quatro outras propriedades auxiliares (são propriedades e não valores para position), que são: </p>
-
-    <p>top - (topo)</p>
-    <p>bottom - (baixo)</p>
-    <p>right - (direita)</p>
-    <p>left - (esquerda)</p>
-
-    <p>Essas quatro propriedades irão determinar a localização final do objeto, deslocando o elemento conforme for especificado.</p>
-
-    <p>Por exemplo, se usamos a propriedade "top" com o valor de 20px em um elemento, o mesmo vai se deslocar do topo num total de 20px para baixo.</p>
-
-    <p>Valores da propriedade position:</p>
-
-    <p>Para a propriedade position, é possível atribuir 5 valores, que são: static, relative, absolute, fixed e sticky.</p>
-
-    <p><strong>Static (estático):</strong></p>
-
-    <p>O valor padrão da propriedade position é o static. Se não determinarmos nada, é esse valor que vai prevalecer por "debaixo dos panos". Ele não indica posicionamento algum, ou seja, é o valor para "nenhum posicionamento específico" do elemento. A função dele é manter a hierarquia de posicionamento conforme já estabelecido no documento HTML.</p>
-
-    <p>Isso significa que aquelas quatro outras propriedades já citadas (top, bottom, left e right) não funcionarão, não irão alterar a posição do elemento se usadas juntamente com esse valor, visto que o position já está como "static" por padrão.</p>
-
-    <p><strong>Relative (relativo):</strong></p>
-
-    <p>O valor relative posiciona um elemento em relação à sua posição "normal", ou seja, as quatro propriedades auxiliares (top, bottom, left e right) vão fazer com que o elemento seja ajustado <strong>a partir da sua posição original</strong>.</p>
-
-    <p>Após ter definido o tipo de position (relative, nesse caso), a posição do elemento é definida através das quatro propriedades auxiliares do position: top, bottom, left e right, que indicam a distância com relação ao topo, base, esquerda e direita, respectivamente, tomando como referência de posicionamento (no caso do valor relative) a posição original do elemento (se não configurarmos valores de posicionamento com as propriedades auxiliares, o elemento simplesmente fica no mesmo lugar).</p>
-
-    <p><strong>Absolute (absoluto):</strong></p>
-
-    <p>Um elemento com o valor absolute para position vai ser disposto, com as propriedades auxiliares, de forma relativa ao seu elemento pai, <strong>desde que esse elemento pai tenha um position com um valor diferente de "static" como definido</strong>.</p>
- 
-    <p>Se o elemento pai não ter um position com um valor diferente de "static" definido, o valor absolute faz com que o elemento configurado "saia" da hierarquia estabelecida pelo HTML. </p>
-
-    <p>Um elemento com o position absolute é disposto em relação ao elemento de nível superior mais próximo dele que possui um position com um valor diferente de "static" definido. E como já foi dito, caso não exista nenhum elemento hierarquicamente de nível superior (pai ou "avô") que tenha um position sem ser o "static" definido, o position absolute será absoluto ao corpo da página (body).</p>
-
-    <p>Na prática, em elementos do tipo filho com o pai sem a propriedade position, o valor absolute "transforma" filhos de elementos em filhos da página (body). Assim, é possível posicionarmos um elemento filho (transformado) em qualquer lugar da página (fora do pai), independentemente do que temos lá. Isso pode ser útil em casos que precisamos posicionar um alerta em nossa página, por exemplo, e não queremos "quebrar" o layout.</p>
-
-    <p>Dessa forma, note que o position absolute possui dois comportamentos diferentes, que se manifestam dependendo da configuração do elemento pai ou elemento de nível superior.</p>
-
-    <p><strong>Fixed (fixo):</strong></p>
-
-    <p>O elemento é posicionado em relação à janela de visualização (viewport) e permanece fixo enquanto a página é rolada. Ideal para criar barras de navegação fixas, botões flutuantes ou elementos que precisam permanecer visíveis durante a rolagem.</p>
-
-    <p><strong>Sticky (adesivo):</strong></p>
-
-    <p>Combina características de relative e fixed. O elemento é inicialmente posicionado de forma relativa, mas "gruda" no topo (ou outro ponto especificado) quando a página é rolada até um determinado ponto. Funciona apenas dentro dos limites do contêiner pai. Útil para cabeçalhos ou menus que devem ficar visíveis durante a rolagem, mas dentro de um contêiner específico.</p>
-
-    <a href="Modelo de caixas.html" class="button-previous" target="_self">
-        <div class="arrow-wrapper">
-            <div class="arrow"></div>
+    <main>
+        <h1>Outras personalizações</h1>
+        <h2>Grouping Tags e Semantic Tags</h2>
+        <p>A linguagem HTML padrão tinha apenas duas tags de agrupamento: a <code>&lt;div&gt;</code> e a <code>&lt;span&gt;</code>. A diferença entre elas é que a primeira é um elemento agrupador do tipo block-level e a segunda é inline-level. No mais, eles agem exatamente da mesma maneira, servindo para juntar vários outros elementos HTML.</p>
+        <p>Com o surgimento da HTML5, surgiram as tags semânticas de agrupamento. Isso nao significa que as <code>&lt;div&gt;</code> e <code>&lt;span&gt;</code> ficaram obsoletas, mas seu uso agora faz menos sentido, pois temos tags para dividir as partes do nosso documento HTML.</p>
+        <p>Principais agregadores semânticos da HTML:</p>
+        <p>
+            <ul>
+                <li><code>&lt;header&gt;</code>: área de cabeçalho. Pode ser o cabeçalho principal de um site ou até mesmo o cabeçalho de uma seção ou artigo. Normalmente inclui títulos h1 a h6 e subtítulos. Podem também conter menus de navegação.</li>
+                <li><code>&lt;nav&gt;</code>: área com link de navegação. Pode estar dentro de um <code>&lt;header&gt;</code>.</li>
+                <li><code>&lt;main&gt;</code>: delimita o conteúdo principal do site. Normalmente concentra seções (&lt;section&gt;), artigos (&lt;article&gt;) e conteúdos periféricos (&lt;aside&gt;).</li>
+                <li><code>&lt;section&gt;</code>: cria seções. Pode conter o conteúdo diretamente no seu corpo ou dividir os conteúdos em artigos com conteúdos específicos. Segundo a documentação oficial da W3C, "uma seção é um agrupamento temático de conteúdos, tipicamente com um cabeçalho".</li>
+                <li><code>&lt;article&gt;</code>: elemento que contém um conteúdo que pode ser lido de forma independente e diz respeito a um mesmo assunto. Podemos usar um <code>&lt;article&gt;</code> para delimitar um post de blog ou fórum, uma notícia, etc.</li>
+                <li><code>&lt;aside&gt;</code>: delimita um conteúdo periférico complementar ao conteúdo principal de um artigo ou seção. </li>
+                <li><code>&lt;footer&gt;</code>: cria um rodapé para o site inteiro, seção ou artigo. É um conteúdo que não faz parte diretamento do conteúdo do site nem é um conteúdo periférico, mas pode conter informações sobre a autoria do conteúdo, links adicionais, mapa do site, documentos relacionados.</li>
+            </ul>
+        </p>
+        <p>A seguir vemos um exemplo de estrutura de um site:</p>
+        <div style="text-align: center;">
+            <img src="imagens/estrutura do site.png" alt="Estrutura de site" style="width: 550px;">
         </div>
-    </a>
-
-    <a href="index.html" class="button-home" target="_self">home</a>
-
-    <a href="Principais propriedades e suas funções.html" class="button-next" target="_self">
-        <div class="arrow-wrapper">
-            <div class="arrow"></div>
-        </div>
-    </a>
-
+        <h2>Sombras e bordas arredondadas</h2>
+        <p>Para inserir sombras, temos que utilizar a propriedade de estilo shorthand "<code>box-shadow</code>", essa propriedade pode possuir até 5 parâmetros que devem ser preenchidos obrigatoriamente na seguinte ordem:</p>
+        <p>
+            <ul>
+                <li>Deslocamento horizontal (h-offset)- o quanto a sombra irá andar para o lado direito ou esquerdo (valor em negativo para ir pra esquerda, ex: "-10px"; positivo para a direita). Valor obrigatório.</li>
+                <li>Deslocamento vertical (v-offset) - o quanto a sombra irá andar para baixo ou para cima (valor em negativo para ir pra cima, ex: "-10px"; positivo para baixo) Valor obrigatório.</li>
+                <li>Embaçamento (blur) - raio de desfoque. Quanto maior o número, mais desfocada será a sombra. Valor opcional.</li>
+                <li>Alcance (spread) - raio de propagação. Um valor positivo aumenta o tamanho da sombra. Valor opcional.</li>
+                <li>Cor - cor e transparência da sombra. O valor padrão é a cor do texto. Valor opcional.</li>
+            </ul>
+        </p>
+        <p>Exemplo de Shorthand (sem o valor "spread"):</p>
+        <p>
+            <pre><code>
+            &lt;style&gt;
+                h1 {
+                box-shadow: 1px 1px 1px black;}
+            &lt;/style&gt;</code></pre>
+        </p>
+        <p>Também é possível inserirmos sombras do lado de dentro de uma caixa. Para fazer isso basta inserir o parâmetro "inset" como o primeiro valor na shorthand, exemplo: "<code>box-shadow: inset 1px 1px 1px black;".</code>
+        </p>
+        <p>Podemos criar caixas com vértices arredondadas. Para fazer isso utilizamos a propriedade de estilo "<code>border-radius</code>". As principais propriedades de estilo para vértices arredondados (border-radius) são:
+        </p>
+        <p>
+            <ul>
+                <li>border-top-left-radius (arredondamento da parte superior esquerda da box)
+                </li>
+                <li>border-top-right-radius (arredondamento da parte superior direita da box)
+                </li>
+                <li>border-bottom-right-radius (arredondamento da parte inferior direita da box)
+                </li>
+                <li>border-bottom-left-radius (arredondamento da parte inferior esquerda da box)
+                </li>
+            </ul>
+        </p>
+        <p>A ordem das proposições acima devem seguir o sentido horário. A direção correta é: top-left, top-right, bottom-right, bottom-left.</p>
+        <p>Também podemos utilizar uma shorthand para inserir e simplificar todas essas declarações de border-radius em uma única linha, exemplo:</p>
+        <p>
+            <pre><code>
+            &lt;style&gt;
+                h1 {
+                border-radius: 15px 10px 15px 10px;}
+            &lt;/style&gt;
+            </code></pre>
+        </p>
+        <p>Semelhante ao padding e margin, se quisermos configurar os quatro lados do border-radius de uma só vez e constituir um border-radius igualitário (mesmo valor nos quatro lados), podemos simplesmente inserir uma única vez o valor desejado, esse valor será inserido nos quatro lados do elemento automaticamente, exemplo: "<code>border-radius: 10px;</code>".</p>
+        <p>Também podemos colocar só dois valores em uma propriedade border-radius, exemplo: "<code>border-radius: 10px 20px;</code>". Quando colocamos somente dois valores, significa que os sentidos <strong>superior esquerdo</strong> e <strong>inferior direito</strong> são representados pelo primeiro valor e os sentidos <strong>superior direito</strong> e <strong>inferior esquerdo</strong> são representados pelo segundo valor. </p>
+        <p>Nota: Quando temos um elemento na forma quadrada (uma &lt;div&gt; com altura e largura de 100px, por exemplo) podemos transformar esse elemento em um círculo/bola com a propriedade de estilo "border-radius" com o valor "50%" ou "100px".</p>
+        <h2>Variáveis em CSS</h2>
+        <p>As variáveis são muito úteis porque guardam valores para serem usados no nosso projeto/programa.</p>
+        <p>Para declarar variáveis em CSS, devemos criar uma Pseudo-classe especial dentro do documento CSS, que é uma espécie de referência dentro desse documento.</p>
+        <p>As variáveis CSS são definidas dentro da Pseudo-classe "root" (:root {...}). Essa pseudo-classe define as configurações para a "raiz da árvore", que vai servir para o documento inteiro.</p>
+        <p>Tudo o que colocarmos e definirmos dentro dessa pseudo-classe será válido para todo o documento, já que essa pseudoclasse (root) tem uma especificidade muito alta, ou seja, aplicado ao HTML, :root representa o elemento &lt;html&gt; e é idêntico ao seletor html, abrangendo todo o projeto. Dessa forma, podemos criar variáveis globais dentro de root.</p>
+        <p>Observação: Por exemplo, em linguagens de programação, normalmente temos uma "área principal", que é onde podemos declarar as nossas variáveis globais. No CSS, essa "área principal" é na Pseudo-classe root.</p>
+        <p>Todas as variáveis em CSS tem que começar com "dois traços" (--), após isso é preciso dar um nome (de sua preferência) para essa variável, posteriormente inserindo o valor da variável (código da cor nesse caso). Exemplo:</p>
+        <p>
+            <pre><code>
+            :root {
+                --cor0: #ebe5c5;
+                --cor1: #83e1ab;
+                --cor2: #3ddc84;
+                --cor3: #2fa866;
+                --cor4: #1a5c37;
+                --cor5: #063d1e;
+            }
+            </code></pre>
+        </p>
+        <p>Nota: Referente ao nome que damos para as nossas variáveis, ele é de sua preferência e você pode nomear como no exemplo acima, mas você também pode nomear de acordo com a função da variável. Por exemplo, no caso das cores da nossa paleta, podemos nomear cada cor (variável) com o seu respectivo encargo, exemplo: "cor-de-destaque", "cor-de-fundo" e etc.</p>
+        <p>Depois de declarar as suas variáveis globais de cor dentro do root, na hora de formatarmos um elemento, ao invés de digitar ou copiar e colar um código de cor, simplesmente usamos o atalho "Ctrl + Espaço", avançamos até o fim da lista de sugestões e lá estará a nossa Paleta de Cores declarada no root (valores guardados por variáveis). Posteriormente basta escolher a cor desejada e adicioná-la.</p>
+        <p>Ao selecionar variáveis na lista de sugestões como valor da respectiva propriedade, o VSC coloca a função "var(--ex-nome);" como o valor (também é possível digitar a especificação da variável ao invés de usar a lista).</p>
+        <p>Lembrando que nos exemplos anteriores, usamos variáveis contendo valores de cores, mas ainda dentro do mesmo seletor root que abrimos, podemos também declarar variáveis de fontes de texto, por exemplo. E tudo irá funcionar exatamente como as variáveis de cores. Exemplo:</p>
+        <p>
+            <pre><code>
+            :root {
+                --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+                --fonte-destaque: 'Bebas Neue', sans-serif;
+                --fonte-android: 'Android', sans-serif;
+            }
+            </code></pre>
+        </p>
+        <h2>Responsividade</h2>
+        <p>No assunto sobre imagens dinâmicas, aprendemos a deixar a imagem responsiva utilizando a tag &lt;picture&gt;, mas existem outras maneiras de melhorar a responsividade das imagens.</p>
+        <p>Cada abordagem tem suas vantagens e desvantagens dependendo do contexto:</p>
+        <p><strong>1. Usando max-width:100% e height: auto</strong></p>
+        <ul>
+            <li>Vantagens:</li>
+            <p>Simplicidade: Essa é uma das soluções mais simples e amplamente compatíveis para tornar uma imagem responsiva.</p>
+            <p>Tamanho fluido: A imagem se adapta automaticamente ao contêiner pai sem distorção, mantendo sua proporção.</p>
+            <li>Desvantagens:</li>
+            <p>Útil para um único arquivo de imagem: Se você precisa servir o mesmo arquivo de imagem para todos os dispositivos, isso funciona bem. No entanto, em conexões mais lentas, a imagem pode carregar devagar em telas menores, pois sempre carrega o arquivo de resolução completa.</p>
+            <li>Melhor para:</li>
+            <p>Imagens que não exigem várias versões de tamanhos.</p>
+            <p>Situações onde a simplicidade e a compatibilidade são prioridades.</p>
+        </ul>
+        <p><strong>2. Usando &lt;picture&gt; com &lt;source&gt; para imagens responsivas</strong></p>
+        <ul>
+            <li>Vantagens:</li>
+            <p>Carregamento adaptativo: O navegador carrega automaticamente a versão de imagem mais apropriada com base na largura da tela, o que melhora o desempenho em dispositivos móveis, economizando dados.</p>
+            <p>Mais controle sobre a imagem exibida: Permite o uso de imagens específicas para diferentes resoluções, até com proporções ou estilos distintos.</p>
+            <li>Desvantagens:</li>
+            <p>Complexidade: Requer um pouco mais de código e pode ser mais complexo de configurar corretamente.</p>
+            <p>Mais arquivos de imagem: Precisa de várias versões da imagem, o que pode exigir mais armazenamento e planejamento.</p>
+            <li>Melhor para:</li>
+            <p>Sites ou apps com grande foco em performance, onde o carregamento de imagens menores para dispositivos móveis é importante.</p>
+            <p>Imagens principais ou de destaque, onde diferentes resoluções ou cortes são importantes para a experiência do usuário.</p>
+        </ul>
+        <p><strong>3. Usando min-width: 10% e max-width: 100%</strong></p>
+        <ul>
+            <li>Vantagens:</li>
+            <p>Flexibilidade controlada: Permite definir um tamanho mínimo para a imagem enquanto ela ainda se adapta ao contêiner, o que pode ser útil para casos onde uma imagem nunca deve ser muito pequena.</p>
+            <li>Desvantagens:</li>
+            <p>Inconsistência visual: O uso de um valor como 10% no min-width pode causar distorções em telas de tamanhos muito diferentes, especialmente em dispositivos móveis, se não for combinado com height: auto.</p>
+            <p>Menos controle de desempenho: Não reduz o peso da imagem, como faz a abordagem com <picture>, podendo levar a tempos de carregamento mais longos em dispositivos com largura de tela pequena.</p>
+            <li>Melhor para:</li>
+            <p>Situações onde um limite mínimo de largura é necessário, mas essa abordagem geralmente não é a mais eficiente para responsividade, especialmente em páginas com muitos usuários móveis.</p>
+        </ul>
+        <p><strong>Conclusão</strong></p>
+        <p>Escolha a técnica com base no objetivo e contexto:</p>
+        <p>Para maior simplicidade e compatibilidade, use max-width: 100% e height: auto.</p>
+        <p>Para performance otimizada em dispositivos móveis, use o <picture> com <source> para fornecer diferentes versões da imagem.</p>
+        <p>Para casos específicos com um limite mínimo, min-width combinado com max-width pode ser útil, mas geralmente não é a melhor solução para responsividade total.</p>
+        <h2>Uso do seletor * em CSS</h2>
+        <p>O seletor universal * em CSS aplica estilos a todos os elementos de uma página, funcionando como um "curinga". Ele é útil em várias situações, mas deve ser usado com cautela, pois pode impactar o desempenho e a especificidade dos estilos.</p>
+        <p>Exemplos de Uso</p>
+        <p><strong>1. Reset CSS Básico</strong></p>
+        <p>O seletor * é comumente usado para garantir que todos os elementos tenham um padding e uma margem inicial de zero. Isso ajuda a padronizar a aparência entre diferentes navegadores. Essa prática de reset CSS evita inconsistências causadas pelo comportamento padrão de margens e preenchimentos dos navegadores.</p>
+        <p>
+            <pre><code>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box; /* Inclui padding e border no tamanho total */
+                }
+            </code></pre>
+        </p>
+        
+        <p><strong>2. Definir Fontes e Cores Globais</strong></p>
+        <p>Você pode aplicar uma fonte ou cor padrão para todos os elementos da página. Esse uso é útil quando você deseja que todos os textos herdem uma fonte ou cor específica, mas ele também pode ser feito diretamente em body para evitar afetar elementos como ícones.</p>
+        <p>
+            <pre><code>
+            * {
+                font-family: Arial, sans-serif;
+                color: #333;
+                }
+        
+            </code></pre>
+        </p>
+        <p><strong>Desvantagens e Cautela</strong></p>
+        <p>Embora o * seja poderoso, ele pode impactar a performance da página, especialmente em sites complexos com muitos elementos. Isso ocorre porque o navegador precisa aplicar o estilo a cada elemento, o que pode ser custoso em termos de processamento.</p>
+        <p><strong>Alternativas ao Uso do *</strong></p>
+        <p>Use :root ou body para definir variáveis e estilos globais em vez de *, pois isso reduz o impacto de desempenho.</p>
+        <p>Restringir o uso do * apenas para casos onde realmente todos os elementos precisam ser estilizados.</p>
+        <h2>Propriedade "position"</h2>
+        <p>O posicionamento padrão de todo elemento no HTML é o "estático". Todo elemento estático é posicionado no canto superior esquerdo no corpo do documento ou do elemento onde ele está contido. Esta é a posição 0 de um elemento no corpo do documento.</p>
+        <p>A Propriedade de Estilo "position" é utilizada para determinar o posicionamento e hierarquia dos elementos na página do documento.</p>
+        <p>Propriedades auxiliares do position:</p>
+        <p>A Propriedade de Estilo "position" vem acompanhada e é usada em conjunto com quatro outras propriedades auxiliares (são propriedades e não valores para position), que são: </p>
+        <p>top - (topo)</p>
+        <p>bottom - (baixo)</p>
+        <p>right - (direita)</p>
+        <p>left - (esquerda)</p>
+        <p>Essas quatro propriedades irão determinar a localização final do objeto, deslocando o elemento conforme for especificado.</p>
+        <p>Por exemplo, se usamos a propriedade "top" com o valor de 20px em um elemento, o mesmo vai se deslocar do topo num total de 20px para baixo.</p>
+        <p>Valores da propriedade position:</p>
+        <p>Para a propriedade position, é possível atribuir 5 valores, que são: static, relative, absolute, fixed e sticky.</p>
+        <p><strong>Static (estático):</strong></p>
+        <p>O valor padrão da propriedade position é o static. Se não determinarmos nada, é esse valor que vai prevalecer por "debaixo dos panos". Ele não indica posicionamento algum, ou seja, é o valor para "nenhum posicionamento específico" do elemento. A função dele é manter a hierarquia de posicionamento conforme já estabelecido no documento HTML.</p>
+        <p>Isso significa que aquelas quatro outras propriedades já citadas (top, bottom, left e right) não funcionarão, não irão alterar a posição do elemento se usadas juntamente com esse valor, visto que o position já está como "static" por padrão.</p>
+        <p><strong>Relative (relativo):</strong></p>
+        <p>O valor relative posiciona um elemento em relação à sua posição "normal", ou seja, as quatro propriedades auxiliares (top, bottom, left e right) vão fazer com que o elemento seja ajustado <strong>a partir da sua posição original</strong>.</p>
+        <p>Após ter definido o tipo de position (relative, nesse caso), a posição do elemento é definida através das quatro propriedades auxiliares do position: top, bottom, left e right, que indicam a distância com relação ao topo, base, esquerda e direita, respectivamente, tomando como referência de posicionamento (no caso do valor relative) a posição original do elemento (se não configurarmos valores de posicionamento com as propriedades auxiliares, o elemento simplesmente fica no mesmo lugar).</p>
+        <p><strong>Absolute (absoluto):</strong></p>
+        <p>Um elemento com o valor absolute para position vai ser disposto, com as propriedades auxiliares, de forma relativa ao seu elemento pai, <strong>desde que esse elemento pai tenha um position com um valor diferente de "static" como definido</strong>.</p>
+        <p>Se o elemento pai não ter um position com um valor diferente de "static" definido, o valor absolute faz com que o elemento configurado "saia" da hierarquia estabelecida pelo HTML. </p>
+        <p>Um elemento com o position absolute é disposto em relação ao elemento de nível superior mais próximo dele que possui um position com um valor diferente de "static" definido. E como já foi dito, caso não exista nenhum elemento hierarquicamente de nível superior (pai ou "avô") que tenha um position sem ser o "static" definido, o position absolute será absoluto ao corpo da página (body).</p>
+        <p>Na prática, em elementos do tipo filho com o pai sem a propriedade position, o valor absolute "transforma" filhos de elementos em filhos da página (body). Assim, é possível posicionarmos um elemento filho (transformado) em qualquer lugar da página (fora do pai), independentemente do que temos lá. Isso pode ser útil em casos que precisamos posicionar um alerta em nossa página, por exemplo, e não queremos "quebrar" o layout.</p>
+        <p>Dessa forma, note que o position absolute possui dois comportamentos diferentes, que se manifestam dependendo da configuração do elemento pai ou elemento de nível superior.</p>
+        <p><strong>Fixed (fixo):</strong></p>
+        <p>O elemento é posicionado em relação à janela de visualização (viewport) e permanece fixo enquanto a página é rolada. Ideal para criar barras de navegação fixas, botões flutuantes ou elementos que precisam permanecer visíveis durante a rolagem.</p>
+        <p><strong>Sticky (adesivo):</strong></p>
+        <p>Combina características de relative e fixed. O elemento é inicialmente posicionado de forma relativa, mas "gruda" no topo (ou outro ponto especificado) quando a página é rolada até um determinado ponto. Funciona apenas dentro dos limites do contêiner pai. Útil para cabeçalhos ou menus que devem ficar visíveis durante a rolagem, mas dentro de um contêiner específico.</p>
+        <a href="Modelo de caixas.html" class="button-previous" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
+        <a href="index.html" class="button-home" target="_self">home</a>
+        <a href="Principais propriedades e suas funções.html" class="button-next" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
+    </main>
 </body>
 </html>
