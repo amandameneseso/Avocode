@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
+
 :root {
     --button-primary-color: rgb(182, 131, 118);
     --button-secondary-color: #fff;
@@ -7,8 +9,6 @@
     --button-arrow-width: 10px;
     --button-arrow-stroke: 2px;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
 
 body {
     background-color: rgb(58, 77, 58);

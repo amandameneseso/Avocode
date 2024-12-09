@@ -49,7 +49,7 @@
         <pre><code>
         &lt;p class="principal"&gt;Lorem ipsum&lt;/h1&gt;</code></pre>
     </p>
-<p>No CSS:</p>
+    <p>No CSS:</p>
     <p>
         <pre><code>
         .principal {font-size: 20px;}</code></pre>
@@ -156,28 +156,42 @@
     }</code></pre>
     </p>
 
-<p>O código acima faz com que manipulemos o conteúdo periférico posterior (pseudo-elemento "after") de links. A propriedade de estilo "content" detém o valor que foi determinado para aparecer logo em seguida de todo link que inserirmos no site (seta para esquerda). Além disso, as outras propriedades de estilo do exemplo configuram o estilo de cor e peso desse conteúdo periférico posterior.</p>
+    <p>O código acima faz com que manipulemos o conteúdo periférico posterior (pseudo-elemento "after") de links. A propriedade de estilo "content" detém o valor que foi determinado para aparecer logo em seguida de todo link que inserirmos no site (seta para esquerda). Além disso, as outras propriedades de estilo do exemplo configuram o estilo de cor e peso desse conteúdo periférico posterior.</p>
 
-<p>Também existe o pseudo-elemento "before", que funciona como o "after" mas de forma oposta, fazendo com que manipulemos o conteúdo periférico que antecede os elementos.</p>
+    <p>Também existe o pseudo-elemento "before", que funciona como o "after" mas de forma oposta, fazendo com que manipulemos o conteúdo periférico que antecede os elementos.</p>
 
-<p>Nota: Também conseguimos configurar pseudo-elementos e mexer em conteúdos periféricos quando usamos classes (class) . Exemplo:</p>
+    <p>Nota: Também conseguimos configurar pseudo-elementos e mexer em conteúdos periféricos quando usamos classes (class) . Exemplo:</p>
 
-<p>
-    <pre><code>
-    .especial::before {
-        content: '⇨ ';
-        color: darkgray;
-        font-weight: normal;
-        }
+    <p>
+        <pre><code>
+        .especial::before {
+            content: '⇨ ';
+            color: darkgray;
+            font-weight: normal;
+            }
 
-    .especial::after {
-        content: ' ⇦';
-        color: darkgrey;
-        font-weight: normal;
-        }</code></pre>
-</p>
+        .especial::after {
+            content: ' ⇦';
+            color: darkgrey;
+            font-weight: normal;
+            }</code></pre>
+    </p>
 
-<p>O código no exemplo acima utiliza pseudo-elementos para manipular conteúdo periférico de links que pertencem à classe (class) "especial".</p>
+    <p>O código no exemplo acima utiliza pseudo-elementos para manipular conteúdo periférico de links que pertencem à classe (class) "especial".</p>
+
+    <a href="Fontes.html" class="button-previous" target="_self">
+        <div class="arrow-wrapper">
+            <div class="arrow"></div>
+        </div>
+    </a>
+
+    <a href="index.html" class="button-home" target="_self">home</a>
+
+    <a href="Modelo de caixas.html" class="button-next" target="_self">
+        <div class="arrow-wrapper">
+            <div class="arrow"></div>
+        </div>
+    </a>
 
 </body>
 </html>
