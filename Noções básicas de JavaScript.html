@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noções básicas de JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .container p {
+            line-height: 1.5;
+        }
+
+        .container img {
+            width: 160px;
+            height: auto;
+            /* margin: -35px 0px 0px 260px; */
+            padding: 50px;
+            transform: rotate(1deg);
+        }
+
+        ul {
+            background-color: rgba(206, 195, 178, 0.070);
+            margin: 40px 150px;
+            padding: 12px 0px;
+            border-radius: 10px;
+        }
+
+        li {
+            margin: 12px 50px;
+        }
+
+        button {
+            background-color: rgba(206, 195, 178); /* Cor de fundo */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 5px;
+            border: none;
+            padding: 6px;
+        }
+
+        button:hover {
+            background-color: rgba(206, 195, 178, 0.900);
+        }
+
+        button:active {
+            background-color: rgba(206, 195, 178, 0.800);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center; /* Centraliza os botões horizontalmente */
+            gap: 20px; /* Espaçamento de 15px entre os botões */
+            margin-top: 30px; /* Espaço acima dos botões */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Noções básicas de JavaScript</h1>
+
+        <h2>O que é JavaScript?</h2>
+
+        <p><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank">JavaScript</a> é uma linguagem de script extremamente poderosa utilizada no lado do cliente. Ele é amplamente usado para melhorar a interação do usuário com páginas da web. Em outras palavras, o JavaScript permite tornar sua página da web mais dinâmica e interativa. Além disso, o JavaScript é amplamente aplicado no desenvolvimento de jogos e também no desenvolvimento de aplicativos móveis.</p>
+        
+        <ul>
+            <li>Linguagem de programação mais popular do mundo.
+            </li>
+            <li>Linguagem de programação da Web.
+            </li>
+            <li>Fácil de aprender.
+            </li>
+        </ul>
+
+        <h2>História</h2>
+
+        <p>O JavaScript foi desenvolvido por Brendan Eich em 1995, sendo inicialmente introduzido no navegador Netscape, que era muito popular na época. A linguagem foi criada para adicionar interatividade às páginas da web, algo que os navegadores ainda não suportavam de forma nativa. Originalmente, o JavaScript era chamado de LiveScript, mas foi renomeado para JavaScript como uma estratégia de marketing para aproveitar a popularidade da linguagem Java, que estava em alta naquele momento.</p>
+
+        <p>A sintaxe do JavaScript foi influenciada principalmente pela linguagem C, o que torna sua curva de aprendizado mais amigável para quem já possui experiência com linguagens baseadas em C, como C++ e Java. Além disso, algumas de suas características foram inspiradas por outras linguagens, como o Scheme e o Self, especialmente no que diz respeito à sua natureza funcional e ao modelo de prototipagem.</p>
+
+        <p>Com o tempo, o JavaScript evoluiu significativamente. Hoje, ele é amplamente utilizado tanto no front-end (navegadores) quanto no back-end (com o Node.js), além de ser uma escolha popular para o desenvolvimento de aplicativos móveis, jogos e até mesmo inteligência artificial. Essa versatilidade fez do JavaScript uma das linguagens mais populares e essenciais para qualquer desenvolvedor web moderno.</p>
+
+        <h2>Como executar JavaScript?</h2>
+
+        <p>Sendo uma linguagem de script, o JavaScript não é executado de forma independente, como linguagens de programação tradicionais. Ele depende de um ambiente de execução, e nos navegadores modernos, esse ambiente é o <strong>motor JavaScript</strong> integrado. Por exemplo, o Google Chrome utiliza o motor <strong>V8</strong>, enquanto o Firefox usa o <strong>SpiderMonkey</strong>. Esses motores são responsáveis por interpretar e executar o código JavaScript, permitindo que ele interaja com os elementos da página e ofereça funcionalidades dinâmicas.</p>
+
+        <p>Quando um usuário acessa uma página HTML que contém JavaScript, o navegador faz o download do código junto com o restante da página. A execução ocorre diretamente no cliente, ou seja, no computador do usuário, garantindo uma experiência interativa sem a necessidade de comunicação constante com o servidor.</p>
+
+        <h3>Onde mais o JavaScript pode ser executado?</h3>
+
+        <p>Embora o navegador seja o ambiente mais comum para a execução de JavaScript, ele não se limita a isso. Com a evolução da linguagem, surgiram outras plataformas que permitem executar JavaScript fora do navegador, como:</p>
+
+        <ul>
+            <li>Node.js: Uma plataforma baseada no motor V8 do Chrome, usada para executar JavaScript no lado do servidor. Com o Node.js, é possível criar APIs, servidores web e até mesmo aplicativos de linha de comando.
+            </li>
+            <li>Motores embutidos em outras aplicações: Algumas ferramentas e softwares incluem motores JavaScript para permitir scripts customizados, como o Adobe Acrobat e o Photoshop.
+            </li>
+            <li>Desenvolvimento de jogos e aplicativos móveis: Frameworks como React Native e Electron permitem que JavaScript seja usado para criar aplicativos móveis e desktop.
+            </li>
+        </ul>
+
+        <h2>O que o JavaScript pode fazer?</h2>
+
+        <h3>1. Mudar o conteúdo HTML</h3>
+
+        <p>Um dos muitos métodos JavaScript é o <code>getElementById()</code>. O exemplo abaixo "encontra" um elemento HTML (com id="demo"), e altera o conteúdo do elemento (innerHTML) para "Olá JavaScript":</p>
+
+        <pre>
+            <code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;body&gt;
+
+        &lt;p id="demo"&gt;Mudar o conteúdo HTML.&lt;/p&gt;
+
+        &lt;button type="button" onclick='document.getElementById("demo").innerHTML = "Olá, JavaScript!"'&gt;Clique aqui&lt;/button&gt;
+
+        &lt;/body&gt;
+        &lt;/html&gt;
+            </code>
+        </pre>
+
+        <p>Observe no código anterior que, ao clicar no botão definido como "Clique aqui", o texto com id="demo" mudará para o texto definido dentro do método "onclick" (Olá, JavaScript!):</p>
+
+        <pre><code>        &lt;p id="demo"&gt;Olá, JavaScript!&lt;/p&gt;</code></pre>
+
+        <p>Nota: JavaScript aceita aspas duplas e simples.</p>
+        
+        <h3>2. Alterar valores de atributos no HTML</h3>
+
+        <p>Neste exemplo, o JavaScript altera o valor do atributo <code>src</code> (fonte) de uma tag <code>&lt;img&gt;</code>:</p>
+
+        <pre>
+            <code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;body&gt;
+
+        &lt;img src="imagens/pic_bulboff.webp" id="luz" style="display: flex; margin: auto;"&gt;
+
+        &lt;button onclick="document.getElementById('luz').src='pic_bulbon.webp'"&gt;Ligar a luz&lt;/button&gt;
+
+        &lt;button onclick="document.getElementById('luz').src='pic_bulboff.webp'"&gt;Apagar a luz&lt;/button&gt;
+
+        &lt;/body&gt;
+        &lt;/html&gt;
+            </code>
+        </pre>
+
+        <img src="imagens/pic_bulboff.webp" id="luz" style="display: flex; margin: auto;">
+
+        <div class="button-container">
+            <button onclick="document.getElementById('luz').src='imagens/pic_bulbon.webp'" >Ligar a luz</button>
+            <button onclick="document.getElementById('luz').src='imagens/pic_bulboff.webp'" >Apagar a luz</button>
+        </div>
+
+        <h3>3. Alterar estilos no CSS</h3>
+
+        <p>Alterar um estilo de um elemento HTML é semelhante a alterar um atributo no HTML:</p>
+
+        <pre>
+            <code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;body&gt;
+
+        &lt;p id="demo"&gt;Alterar estilos no CSS&lt;/p&gt;
+
+        &lt;button type="button" onclick="document.getElementById('demo').style.fontSize='35px'"&gt;Clique aqui&lt;/button&gt;
+
+        &lt;/body&gt;
+        &lt;/html&gt;
+            </code>
+        </pre>
+
+        <p>Note que ao clicar no botão "Clique aqui", o tamanho da fonte do parágrafo com id="demo" será alterado.</p>
+
+        <h2>Como adicionar e executar JavaScript em uma página HTML?
+        </h2>
+
+        <p>Você pode incluir JavaScript em uma página HTML de várias formas:</p>
+
+        <h3>1. Script embutido (inline)</h3>
+
+        <p>O código JavaScript é inserido diretamente dentro de uma tag &lt;script&gt; no body do arquivo HTML:</p>
+
+        <pre>
+            <code>
+        &lt;script&gt;
+            alert("Olá, mundo!");
+        &lt;/script&gt;
+            </code>
+        </pre>
+
+        <h3>2. Arquivo externo</h3>
+
+        <p>O código JavaScript é armazenado em um arquivo separado com extensão .js, e o arquivo é vinculado à página HTML. Para usar um script externo, coloque o nome do arquivo de script no <code>src</code> (fonte) dentro da tag <code>&lt;script&gt;</code>:</p>
+
+        <pre><code>        &lt;script src="script.js"&gt;&lt;/script&gt;
+        </code></pre>
+
+        <h3>3. Eventos</h3>
+
+        <p>Também é possível incluir JavaScript diretamente nos atributos de elementos HTML, como <code>onclick</code>, onmouseover etc.:</p>
+
+        <pre><code>        &lt;button onclick="alert('Você clicou no botão!')"&gt;Clique aqui&lt;/button&gt;
+        </code></pre>
+
+        <p>O botão aparecerá da seguinte forma:</p>
+
+        <pre><code><button onclick="alert('Você clicou no botão!')">Clique aqui</button>
+        </code></pre>
+
+        
+           
+
+
+
+
+
+        
+
+
+
+        <a href="index.html" class="button-home" target="_self">home</a>
+        <a href="#" class="button-next" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
+    </main>
+</body>
+</html>

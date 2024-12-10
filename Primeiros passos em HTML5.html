@@ -12,35 +12,65 @@
             align-items: center;
             gap: 10px;
         }
+
         .container p {
             line-height: 1.5;
         }
 
         .container img {
-            width: 170px;
+            width: 160px;
             height: auto;
             padding: 20px;
             transform: rotate(1deg);
         }
-        
+
+        ul {
+            background-color: rgba(206, 195, 178, 0.070);
+            margin: 40px 250px;
+            padding: 12px 0px;
+            border-radius: 10px;
+            text-align: center;
+            list-style-type: none;
+        }
+
+        li {
+            margin-left: 0px;
+        }
     </style>
-    
 </head>
 <body>
     <main>
         <h1>Primeiros passos em HTML5</h1>
+
+        <h3 style="text-align: center;">Bem-vindo(a)! Você acabou de encontrar a forma mais fácil de aprender HTML, CSS e JavaScript!</h3>
+
+        <ul>
+            <li>Neste tutorial, a velocidade de aprendizagem é sua escolha.
+            </li>
+            <li>Tudo depende de você!
+            </li>
+            <li>Se você está tendo dificuldades, faça uma pausa ou releia o material.
+            </li>
+            <li>Sempre certifique-se de que você entendeu todos os exemplos.
+            </li>
+            <li>A única maneira de se tornar um programador inteligente é: prática!
+            </li>
+        </ul>
+
         <h2>O que é HTML?</h2>
         
         <div class="container">
             <div>
-                <p>HTML, ou Hyper Text Markup Language, foi criado por Tim Berners-Lee, Robert Cailliau e outros, a partir de 1989. Essa linguagem é usada para estruturar páginas na web. O termo "hipertexto" refere-se à capacidade de incluir links no documento, permitindo ao leitor navegar para outras partes do mesmo documento ou para páginas completamente diferentes. A versão mais recente, conhecida como HTML5, trouxe diversas melhorias e novos recursos.</p>
-                <p>Uma linguagem de marcação é uma maneira na qual os computadores falam uns com os outros para controlar como o texto é processado e apresentado. Para fazer isso, o HTML usa duas coisas: tags e atributos.</p>
+                <p><a href="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/HTML_basics" target="_blank">HTML</a>, ou Hyper Text Markup Language, foi criado por Tim Berners-Lee, Robert Cailliau e outros, a partir de 1989. Essa linguagem é usada para estruturar páginas na web. O termo "hipertexto" refere-se à capacidade de incluir links no documento, permitindo ao leitor navegar para outras partes do mesmo documento ou para páginas completamente diferentes. A versão mais recente, conhecida como HTML5, trouxe diversas melhorias e novos recursos.</p>
+                <p>Uma <a href="https://pt.wikipedia.org/wiki/Linguagem_de_marca%C3%A7%C3%A3o" target="_blank">linguagem de marcação</a> é uma maneira na qual os computadores falam uns com os outros para controlar como o texto é processado e apresentado. Para fazer isso, o HTML usa duas coisas: tags e atributos.</p>
                 <p>Ou seja, HTML é a linguagem principal usada para criar a estrutura da maioria dos sites. Ele serve para construir páginas e torná-las funcionais. Já o visual das páginas, como cores, fontes e layout, é tratado com CSS — algo que exploraremos em um tutorial futuro. Por enquanto, vamos nos concentrar em aprender a como construir antes de projetar.</p>
             </div>
             <img src="imagens/abacate 1.png" alt="Abacate">
         </div>
+
         <h2>Escrevendo o primeiro código</h2>
-        <p>Para iniciar, utilizaremos o editor Visual Studio Code para escrever os códigos Para escrever um arquivo HTML5, o arquivo deve ter o formato ".html". Para criar o código base, vá até as linhas do arquivo criado e digite apenas um ponto de exclamação "!". O código será criado automaticamente e precisa apenas de algumas pequenas atualizações:</p>
+
+        <p>Para iniciar, utilizaremos o editor <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> para escrever os códigos Para escrever um arquivo HTML5, o arquivo deve ter o formato ".html". Para criar o código base, vá até as linhas do arquivo criado e digite apenas um ponto de exclamação "!". O código será criado automaticamente e precisa apenas de algumas pequenas atualizações:</p>
         <p>linha 2: <code>&lt;html lang="pt-br"&gt;</code></p>
         <p>linha 6: Alterar o nome do título. Este será o título que aparecerá na barra do navegador.</p>
         <h2>Entendendo parágrafos e títulos</h2>
