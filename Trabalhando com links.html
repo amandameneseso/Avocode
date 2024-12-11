@@ -11,42 +11,73 @@
     </style>
 </head>
 <body>
+
     <main>
+
         <h1>Trabalhando com links</h1>
         
         <h2>Usando links externos</h2>
-        <p>Toda vez que clicamos em um local para ir para outra página e acessamos um site, estamos interagindo com um <em>hyperlink</em>. Para criar um hyperlink, devemos criar âncoras através da tag <code>&lt;a&gt;</code>. Exemplo:</p>
-        <pre><code>&lt;a href="https://google.com.br/"&gt;Google&lt;/a&gt;</code></pre>
+
+        <p>Toda vez que clicamos em um local para ir para outra página e acessamos um site, estamos interagindo com um <em>hyperlink</em>. Para criar um hyperlink, devemos criar âncoras através da tag <span class="code">&lt;a&gt;</span>. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>&lt;a href="https://google.com.br/"&gt;Google&lt;/a&gt;</code>
+        </div>
+
         <p><a href="https://pt.wikipedia.org/wiki/Abacate" target="_blank" rel="external">Abacate</a> é o fruto comestível do <a href="https://pt.wikipedia.org/wiki/Abacateiro" target="_self" rel="external">abacateiro</a>, uma árvore da família da <a href="https://pt.wikipedia.org/wiki/Lauraceae" target="_blank" rel="external">Lauraceae</a>.</p>
         
-        <p> O atributo "<code>hreflang</code>" permite indicar o idioma principal do site para onde o link direciona.</p>
+        <p> O atributo <span class="code">hreflang</span> permite indicar o idioma principal do site para onde o link direciona.</p>
         
-        <p>O atributo "<code>target</code>" permite definir onde exibir o link. O valor "<code>_blank</code>" abre o link em uma nova aba ou janela. O valor "<code>_self</code>" abre o link na janela atual.</p>
+        <p>O atributo <span class="code">target</span> permite definir onde exibir o link. O valor <span class="code">_blank</span> abre o link em uma nova aba ou janela. O valor <span class="code">_self</span> abre o link na janela atual.</p>
         
-        <p>O atributo "<code>rel</code>" indica a natureza do destino. Aceita vários valores:
-        </p>
+        <p>O atributo <span class="code">rel</span> indica a natureza do destino. Aceita vários valores:</p>
+
         <ul>
-            <li><code>next</code>: indica que o link é para a próxima parte do documento atual</li>
-            <li><code>prev</code>: indica que o link é para a parte anterior do documento atual</li>
-            <li><code>author</code>: indica que é um link para o site do autor do artigo atual</li>
-            <li><code>external</code>: indica que o link é externo</li>
+            <li><span class="code">next</span>: indica que o link é para a próxima parte do documento atual</li>
+            <li><span class="code">prev</span>: indica que o link é para a parte anterior do documento atual</li>
+            <li><span class="code">author</span>: indica que é um link para o site do autor do artigo atual</li>
+            <li><span class="code">external</span>: indica que o link é externo</li>
         </ul>
         
         <h2>Usando links internos</h2>
+
         <p>É possível também acessar um link interno no site. O arquivo do link deve estar na mesma pasta que o link principal. Exemplo:</p>
-        <p>Esta é a <code>&lt;a href="pag002.html" rel="next"&gt;segunda página&lt;/a&gt;</code> deste site.</p>
-        <p>Esta é a <a href="pag002.html" rel="next">segunda página</a> deste site.</p>
+
+        <div class="exemplo"><code>Esta é a &lt;a href="index.html"&gt;página inicial&lt;/a&gt; deste site.</code></div>
+
+        <p>Esta é a <a href="index.html">página inicial</a> deste site.</p>
+
         <p>Para criar link interno de um arquivo em uma sub-pasta, basta informar o caminho. Para se referir à pasta atual do servidor, pode usar ./ antes do nome do arquivo. Se quiser se referir à pasta imediatamente superior na hierarquia, use ../ para voltar um nível para a pasta mais externa.</p>
+
         <h2>Usando links para download</h2>
-        <p>Para criar um link para download, basta fazer o link diretamente para o arquivo utilizando a tag <code>&lt;a&gt;</code>, o atributo "<code>download</code>", com o valor configurado para o nome do arquivo a ser baixado, e o atributo "<code>type</code>" para indicar ao navegador que tipo de arquivo está sendo baixado. Exemplo:</p>
-        <p><pre><code>&lt;li&gt;&lt;a href="PDF 10 - Ligações em toda parte.pdf" download="PDF 10 - Ligações em toda parte" type="application/pdf"&gt;Baixar a aula em PDF&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="meulivro.zip" download="meulivro.zip" type="application/zip"&gt;Baixar arquivo em ZIP&lt;/a&gt;&lt;/li&gt;</code></pre></p>
+
+        <p>Para criar um link para download, basta fazer o link diretamente para o arquivo utilizando a tag <span class="code">&lt;a&gt;</span>, o atributo <span class="code">download</span>, com o valor configurado para o nome do arquivo a ser baixado, e o atributo <span class="code">type</span> para indicar ao navegador que tipo de arquivo está sendo baixado. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                &lt;li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;a href="PDF 10 - Ligações em toda parte.pdf" download="PDF 10 - Ligações em toda parte" type="application/pdf"&gt;Baixar a aula em PDF&lt;/a&gt; <br>
+                &lt;/li&gt;<br>
+                &lt;li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;a href="meulivro.zip" download="meulivro.zip" type="application/zip"&gt;Baixar arquivo em ZIP&lt;/a&gt;<br>
+                &lt;/li&gt;</code>
+        </div>
+
+        <p>O código acima fará o seguinte:</p>
+
         <ul>
-            <li><a href="PDF 10 - Ligações em toda parte.pdf" download="PDF 10 - Ligações em toda parte" type="application/pdf">Baixar a aula em PDF</a></li>
-            <li><a href="meulivro.zip" download="meulivro.zip" type="application/zip">Baixar arquivo em ZIP</a></li>
+            <li>
+                <a href="PDF 10 - Ligações em toda parte.pdf" download="PDF 10 - Ligações em toda parte" type="application/pdf">Baixar a aula em PDF</a>
+            </li>
+            <li>
+                <a href="meulivro.zip" download="meulivro.zip" type="application/zip">Baixar arquivo em ZIP</a>
+            </li>
         </ul>
-        <p>Atributo <code>type</code>: Especifica o <em>media type</em> do documento. <a href="https://www.iana.org/assignments/media-types/media-types.xhtml" target="_blank" rel="external">Lista de <em>media types</em></a>.</p>
-        <p>Obs.: No Google Chrome, quando não é adicionado o atributo <code>download</code>, o link exibirá o arquivo em uma nova aba ou janela. Quando adicionado o atributo <code>download</code>, o arquivo será baixado. Também é possível utilizar o atributo <code>target="_blank"</code> para abrir o arquivo em uma nova janela.</p>
+
+        <p>Atributo <span class="code">type</span>: Especifica o <em>media type</em> do documento. <a href="https://www.iana.org/assignments/media-types/media-types.xhtml" target="_blank" rel="external">Lista de <em>media types</em></a>.</p>
+
+        <p>Obs.: No Google Chrome, quando não é adicionado o atributo <span class="code">download</span>, o link exibirá o arquivo em uma nova aba ou janela. Quando adicionado o atributo <span class="code">download</span>, o arquivo será baixado. Também é possível utilizar o atributo <span class="code">target="_blank"</span> para abrir o arquivo em uma nova janela.</p>
+
         <a href="Trabalhando com listas.html" class="button-previous" target="_self">
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
@@ -58,6 +89,8 @@
                 <div class="arrow"></div>
             </div>
         </a>
+
     </main>
+
 </body>
 </html>

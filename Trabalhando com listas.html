@@ -12,60 +12,82 @@
    
 </head>
 <body>
+
     <main>
+
         <h1>Trabalhando com listas</h1>
+
         <h2>Lista ordenada</h2>
-        <p>A tag <code>&lt;ol&gt;</code> (<strong><em>ordered list</em></strong>) cria uma lista ordenada e a tag <code>&lt;li&gt;</code> (<strong><em>list item) </em></strong> identifica cada item da lista.</p>
+
+        <p>A tag <span class="code">&lt;ol&gt;</span> (<strong><em>ordered list</em></strong>) cria uma lista ordenada e a tag <span class="code">&lt;li&gt;</span> (<strong><em>list item) </em></strong> identifica cada item da lista.</p>
+
         <ol>
             <li>acordar</li>
             <li>tomar café</li>
             <li>escovar os dentes</li>
         </ol>
-        <p>A tag <code>&lt;ol&gt;</code> possui um parâmetro <code>type</code>, onde configuramos o tipo de marcador da lista.</p>
+
+        <p>A tag <span class="code">&lt;ol&gt;</span> possui um parâmetro <span class="code">type</span>, onde configuramos o tipo de marcador da lista.</p>
+
         <ol type="I">
             <li>acordar</li>
             <li>tomar café</li>
             <li>escovar os dentes</li>
         </ol>
-        <p>Também é possível indicar o início da contagem usando o parâmetro <code>start</code>.</p>
+
+        <p>Também é possível indicar o início da contagem usando o parâmetro <span class="code">start</span>.</p>
+
         <ol type="i" start="3">
             <li>acordar</li>
             <li>tomar café</li>
             <li>escovar os dentes</li>
         </ol>
+
         <h2>Lista não ordenada</h2>
-        <p>Para criar uma <strong><em>unordered list</em></strong>, vamos usar a tag <code>&lt;ul&gt;</code> para delimitar a lista e a tag <code>&lt;li&gt;</code> para criar cada item da lista.</p>
+
+        <p>Para criar uma <strong><em>unordered list</em></strong>, vamos usar a tag <span class="code">&lt;ul&gt;</span> para delimitar a lista e a tag <span class="code">&lt;li&gt;</span> para criar cada item da lista.</p>
+
         <ul>
             <li>pão</li>
             <li>leite</li>
             <li>tomate</li>
         </ul>
-        <p>O marcador padrão é a bolinha preta totalmente preenchida (<code>disc)</code>, mas existe a opção de configurar a propriedade <code>type</code> para os seguintes valores: <code>circle</code> e <code>square</code>.</p>
+
+        <p>O marcador padrão é a bolinha preta totalmente preenchida (<span class="code">disc</span>), mas existe a opção de configurar a propriedade <span class="code">type</span> para os seguintes valores: <span class="code">circle</span> e <span class="code">square</span>.</p>
+
         <ul type="circle">
             <li>pão</li>
             <li>leite</li>
             <li>tomate</li>
         </ul>
-        <p>Dica: é possível criar vários itens ao mesmo tempo digitanto <code>ol</code> ou <code>ul</code> + <code>li</code>*(número de itens). Exemplo: ul > li*4.</p>
+
+        <p>Dica: é possível criar vários itens ao mesmo tempo digitanto <span class="code">ol</span> ou <span class="code">ul</span> + <span class="code">li</span>*(número de itens). Exemplo: <span class="code">ul > li*4</span>.</p>
+
         <h2>Misturando listas</h2>
-        <p>É possível aninhar listas, colocando a tag <code>&lt;ol&gt;</code> dentro de outra tag <code>&lt;ol&gt;</code>. Exemplo:</p>
+
+        <p>É possível aninhar listas, colocando a tag <span class="code">&lt;ol&gt;</span> dentro de outra tag <span class="code">&lt;ol&gt;</span>. Exemplo:</p>
+
         <p><strong>Minhas linguagens favoritas</strong></p>
+
         <ol>
             <li>Antigas:</li>
-            <ol type="a">
-                <li>Clipper</li>
-                <li>Visual Basic</li>
-                <li>Fortran</li>
-            </ol>
+                <ol type="a">
+                    <li>Clipper</li>
+                    <li>Visual Basic</li>
+                    <li>Fortran</li>
+                </ol>
             <li>Novas:</li>
-            <ol type="a">
-                <li>PHP</li>
-                <li>Python</li>
-                <li>JavaScript</li>
-            </ol>
+                <ol type="a">
+                    <li>PHP</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                </ol>
         </ol>
-        <p>Além de aninhar listas ordenadas, podemos juntar listas <code>&lt;ol&gt;</code> com <code>&lt;ul&gt;</code> e vice-versa. Exemplo:</p>
+
+        <p>Além de aninhar listas ordenadas, podemos juntar listas <span class="code">&lt;ol&gt;</span> com <span class="code">&lt;ul&gt;</span> e vice-versa. Exemplo:</p>
+
         <p><strong>Meus jogos favoritos</strong></p>
+
         <ol>
             <li>Nintendinho</li>
                 <ul type="square">
@@ -101,8 +123,11 @@
                         </ul>
                 </ul>
         </ol>
+
         <h2>Lista de Definições</h2>
-        <p>A tag <code>&lt;dl&gt;</code> (<strong><em>definition list</em></strong>) engloba uma lista de pares de termos e descrições. Um uso comum para este elemento é para implementar um glossário ou exibir metadados (uma lista de pares chave e valor). Cada termo é um <code>&lt;dt&gt;</code> (<strong><em>definition term</em></strong>) e cada descrição é um <code>&lt;dd&gt;</code> (<strong><em>definition description</em></strong>). Exemplo:</p>
+
+        <p>A tag <span class="code">&lt;dl&gt;</span> (<strong><em>definition list</em></strong>) engloba uma lista de pares de termos e descrições. Um uso comum para este elemento é para implementar um glossário ou exibir metadados (uma lista de pares chave e valor). Cada termo é um <span class="code">&lt;dt&gt;</span> (<strong><em>definition term</em></strong>) e cada descrição é um <span class="code">&lt;dd&gt;</span> (<strong><em>definition description</em></strong>). Exemplo:</p>
+
         <dl>
             <dt>HTML</dt>
                 <dd>Linguagem de marcação para a criação do conteúdo de um site.</dd>
@@ -111,6 +136,7 @@
             <dt>JavaScript</dt>
                 <dd>Linguagem de programação para a criação de interatividade de um site.</dd>
         </dl>
+
         <a href="Formatação de textos.html" class="button-previous" target="_self">
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
@@ -122,6 +148,8 @@
                 <div class="arrow"></div>
             </div>
         </a>
+
     </main>
+    
 </body>
 </html>

@@ -10,79 +10,119 @@
     
 </head>
 <body>
+
     <main>
-        <h1>Semântica e como tags morrem</h1>
-        <p>"Semântica é o significado dos vocábulos, por oposição à sua forma." Em HTML5, vemos de forma bastante evidente a presença do chamado <strong>HTML semântico</strong> ou <strong>tags semânticas</strong>, logo suas tags tentam levar um <strong>significado</strong> embutido muito forte. Você quer que um endereço apareça na forma de um texto sublinhado? Use CSS para configurar isso, a HTML serve para dar sentido ao conteúdo.</p>
-        <p>Existem tags que ainda funcionam hoje em dia, mas estão prestes a serem consideradas obsoletas. Isso acontece porque a linguagem evolui, e nesse processo algumas tags param de fazer sentido pois existem outras bem melhores e que fazem mais sentido. Clique <a href="https://www.w3.org/TR/2014/REC-html5-20141028/obsolete.html" target="_blank">aqui</a> para consultar os elementos obsoletos na HTML5.</p>
-        <h1>Principais formatações</h1>
-        <h2>1.1 Negrito/destaque</h2>
-            <p><strong>Termo em negrito</strong> usando a tag <code>&lt;strong&gt;</code></p>
-        <h2>1.2 Itálico/ênfase</h2>
-            <p><em>Termo em itálico</em> usando a tag <code>&lt;em&gt;</code></p>
-        <h2>1.3 Texto marcado</h2>
-            <p><mark>Texto marcado</mark> usando a tag <code>&lt;mark&gt;</code></p>
-        <h2>1.4 Texto marcado com cor diferente utilizando CSS</h2>
-            <p><mark style="background-color: lightblue;">Texto marcado com cor diferente</mark> usando "style" dentro da tag <code>&lt;mark&gt;</code>. Exemplo:</p>
         
-                <p><code>&lt;mark style="background-color: lightblue;"&gt;Texto marcado com cor diferente&lt;/mark&gt;</code></p>
+        <h1>Semântica e como tags morrem</h1>
+
+        <p>"Semântica é o significado dos vocábulos, por oposição à sua forma." Em HTML5, vemos de forma bastante evidente a presença do chamado <strong>HTML semântico</strong> ou <strong>tags semânticas</strong>, logo suas tags tentam levar um <strong>significado</strong> embutido muito forte. Você quer que um endereço apareça na forma de um texto sublinhado? Use CSS para configurar isso, a HTML serve para dar sentido ao conteúdo.</p>
+
+        <p>Existem tags que ainda funcionam hoje em dia, mas estão prestes a serem consideradas obsoletas. Isso acontece porque a linguagem evolui, e nesse processo algumas tags param de fazer sentido pois existem outras bem melhores e que fazem mais sentido. Clique <a href="https://www.w3.org/TR/2014/REC-html5-20141028/obsolete.html" target="_blank">aqui</a> para consultar os elementos obsoletos na HTML5.</p>
+
+        <h1>Principais formatações</h1>
+
+        <h2>1.1 Negrito/destaque</h2>
+
+            <p><strong>Termo em negrito</strong> usando a tag <span class="code">&lt;strong&gt;</span></p>
+
+        <h2>1.2 Itálico/ênfase</h2>
+
+            <p><em>Termo em itálico</em> usando a tag <span class="code">&lt;em&gt;</span></p>
+
+        <h2>1.3 Texto marcado</h2>
+
+            <p><mark>Texto marcado</mark> usando a tag <span class="code">&lt;mark&gt;</span></p>
+
+        <h2>1.4 Texto marcado com cor diferente utilizando CSS</h2>
+
+            <p><mark style="background-color: lightblue;">Texto marcado com cor diferente</mark> usando <span class="code">style</span> dentro da tag <span class="code">&lt;mark&gt;</span>. Exemplo:</p>
+        
+            <p><span class="code">&lt;mark style="background-color: lightblue;"&gt;Texto marcado com cor diferente&lt;/mark&gt;</span></p>
         
         <h2>1.5 Texto grande e pequeno</h2>
-            <p>A tag <code>&lt;big&gt;</code> (<big>grande</big>) está obsoleta mas ainda funciona. Texto <small>pequeno</small> usando a tag <code>&lt;small&gt;</code></p>
+
+            <p>A tag <span class="code">&lt;big&gt;</span> (<big>grande</big>) está obsoleta mas ainda funciona. Texto <small>pequeno</small> usando a tag <span class="code">&lt;small&gt;</span></p>
+
         <h2>1.6 Texto deletado</h2>
-            <p>Texto <del>deletado</del> usando a tag <code>&lt;del&gt;</code></p>
+
+            <p>Texto <del>deletado</del> usando a tag <span class="code">&lt;del&gt;</span></p>
+
         <h2>1.7 Texto inserido/sublinhado</h2>
-            <p>Texto <ins>sublinhado</ins> usando a tag <code>&lt;ins&gt;</code></p>
+
+            <p>Texto <ins>sublinhado</ins> usando a tag <span class="code">&lt;ins&gt;</span></p>
+
         <h2>1.8 Texto sobrescrito</h2>
-            <p>Para escrever coisas do tipo x<sup>2</sup> usando a tag <code>&lt;sup&gt;</code></p>
+
+            <p>Para escrever coisas do tipo x<sup>2</sup> usando a tag <span class="code">&lt;sup&gt;</span></p>
+
         <h2>1.9 Texto subscrito</h2>
-            <p>Para escrever coisas como H<sub>2</sub>O usando a tag <code>&lt;sub&gt;</code></p>
+
+            <p>Para escrever coisas como H<sub>2</sub>O usando a tag <span class="code">&lt;sub&gt;</span></p>
         
         <h2>1.10 Trecho de código</h2>
-            <p>A tag <code>&lt;code&gt;</code> delimita um código. A principal vantagem no uso dessa tag é o valor semântico que ela representa, indicando ao navegador que se trata de um código de computador. Porém, existe também um efeito visual, pois as letras ficam no modo mono-espaçadas. Exemplo:</p>
-            <p><code>&lt;code&gt;document.getElementById('teste')&lt;/code&gt;</code></p>
+
+            <p>A tag <span class="code">&lt;code&gt;</span> delimita um código. A principal vantagem no uso dessa tag é o valor semântico que ela representa, indicando ao navegador que se trata de um código de computador. Porém, existe também um efeito visual, pois as letras ficam no modo mono-espaçadas. Exemplo:</p>
+
+            <p><span class="code">&lt;code&gt;document.getElementById('teste')&lt;/code&gt;</span></p>
+
             <h3>1.10.1 Tag &lt;pre&gt;</h3>
+
             <p>Utilizada para representar texto pré-formatado. Um texto dentro desse elemento é tipicamente exibido em uma fonte não proporcional da mesma maneira em que o texto original foi disposto no arquivo. Espaços em branco são mantidos no texto da mesma forma em que este foi digitado. Exemplo:</p>
-            <p>
-            <pre>
-                <code>
-            &lt;pre&gt;
-                &lt;code&gt;
-                    num = int(input('Digite um número'))
-                    if num % 2 == 0:
-                        print(f'O número {num} é PAR')
-                    else:
-                        print(f'O número {num} é ÍMPAR')
-                    print('Fim do programa')
-                &lt;/code&gt;
-            &lt;/pre&gt;
-                </code>
-            </pre>
-            </p>
+
+            <div class="exemplo">
+                <pre>
+&lt;pre&gt;
+    num = int(input('Digite um número'))
+    if num % 2 == 0:
+        print(f'O número {num} é PAR')
+    else:
+        print(f'O número {num} é ÍMPAR')
+    print('Fim do programa')
+&lt;/pre&gt;
+                </pre>
+            </div>
+
             <h2>1.11 Citações simples</h2>
-            <p>A tag <code>&lt;q&gt;</code> adiciona aspas. Usada quando queremos uma citação no meio de um parágrafo. Exemplo:</p>
-            <p><code>Como diria o pai de um amigo: &lt;q&gt;<q>o computador é um burro muito rápido.</q>&lt;/q&gt;</code></p>
+
+            <p>A tag <span class="code">&lt;q&gt;</span> adiciona aspas. Usada quando queremos uma citação no meio de um parágrafo. Exemplo:</p>
+
+            <p><span class="code">Como diria o pai de um amigo: &lt;q&gt;<q>o computador é um burro muito rápido.</q>&lt;/q&gt;</span></p>
+
             <h3>1.11.1 Citações completas</h3>
-            <p>A tag <code>&lt;blockquote&gt;</code> é usada para citações mais longas com um parágrafo só para si. O texto ganha um recuo automaticamente. Podemos também colocar um link para o texto original, usando o parâmetro <code>cite</code> dentro da tag. Exemplo:
-            </p>
-            <p>
+
+            <p>A tag <span class="code">&lt;blockquote&gt;</span> é usada para citações mais longas com um parágrafo só para si. O texto ganha um recuo automaticamente. Podemos também colocar um link para o texto original, usando o parâmetro <span class="code">cite</span> dentro da tag. Exemplo:</p>
+
+            <div class="exemplo">
                 <code>
                     <blockquote>&lt;p&gt;Segundo Jeff Noble, no seu livro HTML para Leigos:&lt;/p&gt;<br>
                     &lt;blockquote cite="https://books.google.com.br/books?id=E8ZtDwAAQBAJ&pg=PA17&dq=HTML&hl=pt-BR&sa=X&ved=0ahUKEwjH5-PevNboAhVNIbkGHcoxCOgQ6AEIOjAC#v=onepage&q=HTML&f=false"&gt;<br>
                     A diferença entre elementos inline e um bloco de texto é importante. Os elementos HTML neste capítulo descrevem os blocos de texto.<br>
-                &lt;/blockquote&gt;</blockquote></code></p>
+                    &lt;/blockquote&gt;</blockquote>
+                </code>
+            </div>
+
+            <p>O texto aparecerá da seguinte forma:</p>
+
             <p>Segundo Jeff Noble, no seu livro HTML para Leigos:</p>
             <blockquote cite="https://books.google.com.br/books?id=E8ZtDwAAQBAJ&pg=PA17&dq=HTML&hl=pt-BR&sa=X&ved=0ahUKEwjH5-PevNboAhVNIbkGHcoxCOgQ6AEIOjAC#v=onepage&q=HTML&f=false">
                 <p>A diferença entre elementos inline e um bloco de texto é importante. Os elementos HTML neste capítulo descrevem os blocos de texto.</p>
             </blockquote>
+
             <h2>1.12 Abreviações</h2>
-            <p>A tag <code>&lt;abbr&gt;</code> define uma abreviação e opcionalmente fornece uma descrição completa para ela. Se presente, o atributo
-            <code>title</code> deve conter a descrição completa e apenas ela. Exemplo:</p>
-            <p><code><blockquote>
+
+            <p>A tag <span class="code">&lt;abbr&gt;</span> define uma abreviação e opcionalmente fornece uma descrição completa para ela. Se presente, o atributo
+            <span class="code">title</span> deve conter a descrição completa e apenas ela. Exemplo:</p>
+
+            <div class="exemplo">
+                <code>
                 &lt;abbr title="Cascading Style Sheets"&gt;CSS&lt;/abbr&gt; é a linguagem que descreve o estilo de um documento &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;.
-            </code></blockquote></p>
-            <p>
-                <abbr title="Cascading Style Sheets">CSS</abbr> é a linguagem que descreve o estilo de um documento <abbr title="HyperText Markup Language">HTML</abbr>.
-            </p>
+                </code>
+            </div>
+            
+            <p>O texto aparecerá da seguinte forma:</p>
+
+            <p><abbr title="Cascading Style Sheets">CSS</abbr> é a linguagem que descreve o estilo de um documento <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+
         <a href="Primeiros passos em HTML5.html" class="button-previous" target="_self">
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
@@ -94,6 +134,7 @@
                 <div class="arrow"></div>
             </div>
         </a>
+
     </main>
     
 </body>

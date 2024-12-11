@@ -39,7 +39,9 @@
     </style>
 </head>
 <body>
+
     <main>
+
         <h1>Primeiros passos em HTML5</h1>
 
         <h3 style="text-align: center;">Bem-vindo(a)! Você acabou de encontrar a forma mais fácil de aprender HTML, CSS e JavaScript!</h3>
@@ -62,40 +64,53 @@
         <div class="container">
             <div>
                 <p><a href="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/HTML_basics" target="_blank">HTML</a>, ou Hyper Text Markup Language, foi criado por Tim Berners-Lee, Robert Cailliau e outros, a partir de 1989. Essa linguagem é usada para estruturar páginas na web. O termo "hipertexto" refere-se à capacidade de incluir links no documento, permitindo ao leitor navegar para outras partes do mesmo documento ou para páginas completamente diferentes. A versão mais recente, conhecida como HTML5, trouxe diversas melhorias e novos recursos.</p>
+
                 <p>Uma <a href="https://pt.wikipedia.org/wiki/Linguagem_de_marca%C3%A7%C3%A3o" target="_blank">linguagem de marcação</a> é uma maneira na qual os computadores falam uns com os outros para controlar como o texto é processado e apresentado. Para fazer isso, o HTML usa duas coisas: tags e atributos.</p>
+                
                 <p>Ou seja, HTML é a linguagem principal usada para criar a estrutura da maioria dos sites. Ele serve para construir páginas e torná-las funcionais. Já o visual das páginas, como cores, fontes e layout, é tratado com CSS — algo que exploraremos em um tutorial futuro. Por enquanto, vamos nos concentrar em aprender a como construir antes de projetar.</p>
             </div>
+
             <img src="imagens/abacate 1.png" alt="Abacate">
+
         </div>
 
         <h2>Escrevendo o primeiro código</h2>
 
-        <p>Para iniciar, utilizaremos o editor <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> para escrever os códigos Para escrever um arquivo HTML5, o arquivo deve ter o formato ".html". Para criar o código base, vá até as linhas do arquivo criado e digite apenas um ponto de exclamação "!". O código será criado automaticamente e precisa apenas de algumas pequenas atualizações:</p>
-        <p>linha 2: <code>&lt;html lang="pt-br"&gt;</code></p>
+        <p>Para iniciar, utilizaremos o editor <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> para escrever os códigos do arquivo HTML5. O arquivo deve ter o formato ".html". Para criar o código base, vá até as linhas do arquivo criado e digite apenas um ponto de exclamação "!". O código será criado automaticamente e precisa apenas de algumas pequenas atualizações:</p>
+
+        <p>linha 2: <span class="code">&lt;html lang="pt-br"&gt;</span></p>
+
         <p>linha 6: Alterar o nome do título. Este será o título que aparecerá na barra do navegador.</p>
+
         <h2>Entendendo parágrafos e títulos</h2>
         
-        <p>Você pode escrever um parágrafo de qualquer jeito. Basta colocar tudo no meio do par de tags <code>&lt;p&gt; e &lt;/p&gt;</code>.</p>
-        <p>Títulos em HTML são conhecidos como <em>headings</em>. Os títulos possuem <strong>seis níveis</strong> de hierarquia. Para isso, usamos as tags <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code> e <code>&lt;h6&gt;</code>.</p>
-        <p> Se precisar quebrar o texto em algum lugar específico <br> como esse, você pode usar a tag <code>&lt;br&gt;</code>.</p>
-        <p>Já a tag <code>&lt;hr&gt;</code> faz aparecer uma linha horizontal. Abaixo vemos um exemplo de código utilizando essas tags:</p>
-        <pre><code>
-            &lt;!DOCTYPE html&gt;
-            &lt;html lang="pt-br"&gt;
-            &lt;head&gt;
-                &lt;meta charset="UTF-8"&gt;
-                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-                &lt;title&gt;Minha primeira página&lt;/title&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
-                &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
-                &lt;hr&gt;
-                &lt;p&gt;Esse é o meu primeiro documento HTML! Estou muito feliz!&lt;/p&gt;
-                &lt;p&gt;Este é um momento único! &lt;br&gt;
-                Estou criando um site!&lt;/p&gt;
-            &lt;/body&gt;
-            &lt;/html&gt;
-        </code></pre>
+        <p>Você pode escrever um parágrafo de qualquer jeito. Basta colocar tudo no meio do par de tags <span class="code">&lt;p&gt;</span> e <span class="code">&lt;/p&gt;</span>.</p>
+
+        <p>Títulos em HTML são conhecidos como <em>headings</em>. Os títulos possuem <strong>seis níveis</strong> de hierarquia. Para isso, usamos as tags <span class="code">&lt;h1&gt;</span>, <span class="code">&lt;h2&gt;</span>, <span class="code">&lt;h3&gt;</span>, <span class="code">&lt;h4&gt;</span>, <span class="code">&lt;h5&gt;</span> e <span class="code">&lt;h6&gt;</span>.</p>
+
+        <p> Se precisar quebrar o texto em algum lugar específico <br> como esse, você pode usar a tag <span class="code">&lt;br&gt;</span>.</p>
+
+        <p>Já a tag <span class="code">&lt;hr&gt;</span> faz aparecer uma linha horizontal. Abaixo vemos um exemplo de código utilizando essas tags:</p>
+
+        <div class="exemplo">
+            <code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html lang="pt-br"&gt;<br>
+                &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;title&gt;Minha primeira página&lt;/title&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;h1&gt;Olá, Mundo!&lt;/h1&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;hr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;p&gt;Esse é o meu primeiro documento HTML! Estou muito feliz!&lt;/p&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;p&gt;Este é um momento único! &lt;br&gt;<br>
+                &nbsp;&nbsp;&nbsp;Estou criando um site!&lt;/p&gt;<br>
+                &lt;/body&gt;<br>
+                &lt;/html&gt;
+            </code>
+        </div>
 
         <a href="index.html" class="button-home" target="_self">home</a>
         <a href="Formatação de textos.html" class="button-next" target="_self">
@@ -103,6 +118,8 @@
                 <div class="arrow"></div>
             </div>
         </a>
+
     </main>
+    
 </body>
 </html>

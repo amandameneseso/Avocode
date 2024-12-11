@@ -109,20 +109,25 @@
 
         <p>Um dos muitos métodos JavaScript é o <code>getElementById()</code>. O exemplo abaixo "encontra" um elemento HTML (com id="demo"), e altera o conteúdo do elemento (innerHTML) para "Olá JavaScript":</p>
 
-        <pre>
+        
+        <div class="exemplo">
             <code>
-        &lt;!DOCTYPE html&gt;
-        &lt;html&gt;
-        &lt;body&gt;
-
-        &lt;p id="demo"&gt;Mudar o conteúdo HTML.&lt;/p&gt;
-
-        &lt;button type="button" onclick='document.getElementById("demo").innerHTML = "Olá, JavaScript!"'&gt;Clique aqui&lt;/button&gt;
-
-        &lt;/body&gt;
-        &lt;/html&gt;
+                <br/>
+                &lt;!DOCTYPE html&gt;<br/>
+                &lt;html&gt;<br/>
+                &lt;body&gt;<br/>
+                <br/>
+                &lt;p id="demo"&gt;Mudar o conteúdo HTML.&lt;/p&gt;<br/>
+                <br/>
+                &lt;button <br/>
+                &nbsp;&nbsp;&nbsp;type="button" onclick='document.getElementById("demo").innerHTML = "Olá, JavaScript!"'&gt;Clique aqui <br/>
+                &lt;/button&gt;<br/>
+                <br/>
+                &lt;/body&gt;<br/>
+                &lt;/html&gt;
             </code>
-        </pre>
+        </div>
+        
 
         <p>Observe no código anterior que, ao clicar no botão definido como "Clique aqui", o texto com id="demo" mudará para o texto definido dentro do método "onclick" (Olá, JavaScript!):</p>
 
@@ -203,6 +208,16 @@
         <pre><code>        &lt;script src="script.js"&gt;&lt;/script&gt;
         </code></pre>
 
+        <p>Dica: Coloque o <code>&lt;script&gt;</code> no final do <code>&lt;body&gt;</code>. Isso garante que todos os elementos da página já estejam carregados.</p>
+
+        <p>Colocar scripts em arquivos externos tem algumas vantagens:</p>
+        <ul>
+            <li>Um arquivo .js externo pode ser reutilizado em várias páginas do site, reduzindo a duplicação de código.</li>
+            <li>Mantém o HTML mais limpo e separado do JavaScript, facilitando a leitura e manutenção do código.</li>
+            <li>Atualizar o script em um único arquivo externo aplica as mudanças automaticamente em todas as páginas que o utilizam. Isso economiza tempo e esforço.</li>
+            <li>Arquivos JavaScript externos podem ser armazenados no cache do navegador, o que reduz o tempo de carregamento em visitas subsequentes.</li>
+        </ul>
+
         <h3>3. Eventos</h3>
 
         <p>Também é possível incluir JavaScript diretamente nos atributos de elementos HTML, como <code>onclick</code>, onmouseover etc.:</p>
@@ -212,8 +227,81 @@
 
         <p>O botão aparecerá da seguinte forma:</p>
 
-        <pre><code><button onclick="alert('Você clicou no botão!')">Clique aqui</button>
-        </code></pre>
+        <pre><button onclick="alert('Você clicou no botão!')">Clique aqui</button></pre>
+
+        <h2>Possibilidades de Exibição do JavaScript</h2>
+
+        <p>O JavaScript pode exibir dados de várias formas para o usuário ou desenvolvedor. Abaixo estão as principais possibilidades, com explicações e exemplos:</p>
+
+        <h3>1. innerHTML</h3>
+
+        <p>Permite inserir ou alterar o conteúdo de elementos HTML diretamente. Primeiramente, para acessar um elemento HTML, o JavaScript pode usar o método <code>document.getElementById</code>. O conteúdo dentro do id pode ser alterado utilizando <code>innerHTML</code>. Exemplo:</p>
+
+        <pre>
+            <code>
+        &lt;p id="mensagem"&gt;Texto inicial.&lt;/p&gt;
+
+        &lt;script&gt;
+            document.getElementById("mensagem").innerHTML = "Texto alterado com JavaScript!";
+        &lt;/script&gt;
+            </code>
+        </pre>
+        <p>Alterando o texto com id="mensagem" através do innerHTML, o novo texto será "Texto alterado com JavaScript!"</p>
+
+        <h3>2. document.write()
+        </h3>
+
+        <p>Insere texto ou HTML diretamente na página durante o carregamento. Usar document.write() depois que um documento HTML é carregado, irá excluir todo o HTML existente. O document.write() é útil em testes e aprendizado inicial porque é simples e direto. No entanto, para projetos reais ou avançados, métodos modernos como innerHTML são mais adequados. Exemplo:</p>
+
+        <pre>
+            <code>
+        &lt;script&gt;
+            document.write(5 + 6);
+        &lt;/script&gt;
+            </code>
+        </pre>
+
+        <h3>3. window.alert()</h3>
+
+        <p>Exibe uma mensagem em uma caixa de alerta. Bom para mensagens de notificação ou testes simples. Pode ser intrusivo para os usuários. Exemplo:</p>
+
+        <pre>
+            <code>
+        &lt;script&gt;
+            window.alert("Olá! Esta é uma mensagem de alerta.");
+        &lt;/script&gt;
+            </code>
+        </pre>
+
+        <p>Nota: Você pode pular a palavra-chave <code>window</code>. Em JavaScript, o objeto <code>window</code> é um objeto de escopo global. Isso significa que variáveis, propriedades e métodos por padrão pertencem ao objeto <code>window</code>. Isso também significa que especificar a palavra-chave <code>window</code> é opcional.</p>
+
+        <h3>4. console.log()</h3>
+
+        <p>Exibe mensagens no console do navegador, geralmente usado para depuração e testes. Não interfere na interface do usuário e é útil para desenvolvedores. Para acessar o console, use a ferramenta "Inspecionar" no navegador (geralmente com F12) e acesse a aba "Console".</p>
+
+        <pre>
+            <code>
+        &lt;script&gt;
+            console.log("Olá, JavaScript!");
+        &lt;/script&gt;
+            </code>
+        </pre>
+
+        <p>Resumindo:</p>
+        <ul>
+            <li>Use innerHTML para manipular o conteúdo da página dinamicamente.</li>
+            <li>Evite document.write() em projetos reais, pois pode causar problemas de usabilidade.</li>
+            <li>Evite abusar de alert(), especialmente em sites que interagem com o usuário final.</li>
+            <li>Prefira console.log() durante o desenvolvimento para rastrear erros ou depurar scripts.</li>
+
+        </ul>
+
+
+        
+        
+
+
+            
 
         
            

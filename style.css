@@ -55,17 +55,28 @@ p {
 }
 
 a {
-    color: rgb(214, 193, 172);
+    color: rgb(206, 167, 150);
     text-decoration: none;
     transition: all 200ms ease-in-out;
+    font-weight: 600;
 }
 
-body a:hover {color: rgb(208, 219, 192);
+body a:hover {color: rgb(189, 149, 132);
 }
 
-pre {
-    color: rgb(167, 184, 143);
-    padding: 0px 100px;
+.exemplo {
+    color: rgb(193, 211, 168);
+    padding: 0px 130px;
+    text-align: left;
+}
+
+.code {
+    background-color: rgba(193, 211, 168, 0.10);
+    font-family: monospace;
+    border-radius: 3px;
+    display: inline-block;
+    text-align: left;
+    text-indent: 0px;
 }
 
 blockquote {
@@ -74,12 +85,12 @@ blockquote {
 }
 
 ul {
-    color: rgb(167, 184, 143);
+    color: rgb(193, 211, 168);
     padding: 0px 80px;
 }
 
 ol {
-    color: rgb(167, 184, 143);
+    color: rgb(193, 211, 168);
     padding: 0px 80px;
 }
 
