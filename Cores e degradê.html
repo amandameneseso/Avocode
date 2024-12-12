@@ -6,40 +6,71 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Cores e degradê</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        code {color: rgb(219, 179, 162);}
-    </style>
 </head>
 <body>
+
     <main>
+
         <h1>Cores e degradê</h1>
+
         <h2>Aplicando cores ao nosso site</h2>
+
         <p>Em CSS, as cores podem ser representadas pelo nome, código RGB (red, green, blue), código hexadecimal (0 a 9 e "a" a "f"), ou pelo código HSL (hue, saturation, light).</p>
+
         <h3>Representação por nomes</h3>
-        <pre><code>style="background-color: beige; color: brown;"</code></pre>
+
+        <div class="exemplo"><code>style="background-color: beige; color: brown;"</code></div>
+
+        <p>Resultado:</p>
+
         <p style="background-color: beige; color: brown;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laboriosam nobis eaque at nihil, deleniti, est eligendi dolor obcaecati et, aspernatur maiores ab qui vel aperiam possimus odio beatae esse!</p>
+
         <h3>Representação por código RGB</h3>
-        <pre><code>style="background-color: rgb(245, 245, 220); color: rgb(165, 42, 42);"</code></pre>
+
+        <div class="exemplo"><code>style="background-color: rgb(245, 245, 220); color: rgb(165, 42, 42);"</code></div>
+
+        <p>Resultado:</p>
+
         <p style="background-color: rgb(245, 245, 220); color: rgb(165, 42, 42);">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure totam itaque repellendus quod asperiores, dolorum provident, nam fuga nihil tenetur distinctio ab pariatur deserunt quaerat deleniti est sequi quo explicabo.</p>
+
         <h3>Representação por código hexadecimal</h3>
-        <pre><code>style="background-color: #00008b; color: #ffffff;"</code></pre>
+
+        <div class="exemplo"><code>style="background-color: #00008b; color: #ffffff;"</code></div>
+
+        <p>Resultado:</p>
+
         <p style="background-color: #00008b; color: #ffffff">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aspernatur consequuntur ratione atque at error voluptates quisquam quae totam id, tempora rem iusto modi architecto eum earum magni quidem! Natus.</p>
         <h3>Representação por código HSL</h3>
-        <pre><code>style="background-color: hsl(240, 100%, 27%); color: hsl(0, 0%, 100%);"</code></pre>
+
+        <div class="exemplo"><code>style="background-color: hsl(240, 100%, 27%); color: hsl(0, 0%, 100%);"</code></div>
+
+        <p>Resultado:</p>
+
         <p style="background-color: hsl(240, 100%, 27%); color: hsl(0, 0%, 100%);">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quidem expedita recusandae minus consequuntur consectetur dolores deserunt placeat commodi, rerum libero et odit explicabo quasi, maxime enim aliquam officia veniam!</p>
+
         <h3>Mais informações:</h3>
+
         <p><a href="https://rockcontent.com/br/blog/psicologia-das-cores/" target="_blank">Psicologia das Cores: descubra o significado (e o poder) de cada cor no marketing</a></p>
+
         <p><a href="https://color.adobe.com/pt/" target="_blank">Adobe Color</a></p>
+
         <p><a href="https://coolors.co/" target="_blank">Gerador de paletas</a></p>
+
         <h2>Adicionando gradiente</h2>
-        <p>Podemos gerar gradientes e aplicarmos a componentes visuais usando folhas de estilo. Um gradiente é considerado pelo navegador como se fosse uma imagem, por isso usamos a propriedade <code>background-image</code> na declaração CSS. Para criar um gradiente usamos a função <code>linear gradient</code>. Também é possível gerar gradientes radiais, utilizando a função <code>radial-gradient</code>. Também é importante utilizar o parâmetro <code>background-attachment: fixed</code> se desejar que o degradê fixe na janela inteira.</p>
-        <p>O primeiro parâmetro da função indica o ângulo de inclinação (para indicar 90 graus, utilizamos "<code>90deg</code>" ou "<code>to right</code>") e as seguintes indicam as cores do degradê a ser criado. Você pode indicar quantas cores quiser.</p>
-        <pre><code>
-            &lt;style&gt;
-                body {background-image: linear-gradient(rgb(255, 255, 255), rgb(160, 202, 147), rgb(208, 148, 166));
-                background-attachment: fixed;}
-            &lt;/style&gt;
-        </code></pre>
+
+        <p>Podemos gerar gradientes e aplicarmos a componentes visuais usando folhas de estilo. Um gradiente é considerado pelo navegador como se fosse uma imagem, por isso usamos a propriedade <span class="code">background-image</span> na declaração CSS. Para criar um gradiente usamos a função <span class="code">linear gradient</span>. Também é possível gerar gradientes radiais, utilizando a função <span class="code">radial-gradient</span>. Também é importante utilizar o parâmetro <span class="code">background-attachment: fixed</span> se desejar que o degradê fixe na janela inteira.</p>
+
+        <p>O primeiro parâmetro da função indica o ângulo de inclinação (para indicar 90 graus, utilizamos <span class="code">90deg</span> ou <span class="code">to right</span>) e as seguintes indicam as cores do degradê a ser criado. Você pode indicar quantas cores quiser.</p>
+
+        <div class="exemplo">
+            <code>
+                &lt;style&gt;<br>
+                &nbsp;&nbsp;&nbsp;body { <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-image: linear-gradient(rgb(255, 255, 255), rgb(160, 202, 147), rgb(208, 148, 166));<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-attachment: fixed; <br> &nbsp;&nbsp;&nbsp;} <br>
+                &lt;/style&gt;
+            </code>
+        </div>
+
         <a href="Iniciando CSS3.html" class="button-previous" target="_self">
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
@@ -51,6 +82,8 @@
                 <div class="arrow"></div>
             </div>
         </a>
+
     </main>
+    
 </body>
 </html>

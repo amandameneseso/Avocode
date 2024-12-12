@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <main>
+
         <h1>Trabalhando com fontes</h1>
+
         <h2>Categorias de fontes</h2>
+
         <ul>
             <li style="font-family: serif;">Fonte serifada: possuem hastes e prolongamentos no final das letras. Mais utilizada em títulos e textos para chamar a atenção.</li>
             <li style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;"> Fonte não serifada: Mais utilizada para textos. Transmite modernidade e minimalismo.</li>
@@ -18,8 +22,11 @@
             <li style="font-family: cursive; font-size: 13px;">Fonte handwriting/script: imitam a escrita humana. Podem causar cansaço visual.</li>
             <li style="font-family: fantasy; font-size: 14px;">Fonte display: fontes com efeitos visuais.</li>
         </ul>
+
         <h2>Como aplicar</h2>
-        <p>Para configurar a família tipográfica que será aplicada, usamo a propriedade "<code>font-family</code>". As seguintes fontes são as melhores fontes seguras para HTML e CSS:</p>
+
+        <p>Para configurar a família tipográfica que será aplicada, usamo a propriedade <span class="code">font-family</span>. As seguintes fontes são as melhores fontes seguras para HTML e CSS:</p>
+
         <ul>
             <li style="font-family: Arial, Helvetica, sans-serif;">Arial (sem serifa)
             </li>
@@ -40,15 +47,20 @@
             <li style="font-family: Brush Script MT;">Brush Script MT (cursiva)
             </li>
         </ul>
-        <p>Não há fontes 100% seguras para a web. Há sempre uma chance de uma fonte não ser encontrada ou não ser instalada corretamente. Portanto, é muito importante sempre usar fontes de fallback (em sequência). Isso significa que você deve adicionar uma lista de "fontes de backup" semelhantes na propriedade font-family. Se a primeira fonte não funcionar, o navegador tentará a próxima, e a próxima, e assim por diante. Sempre termine a lista com um nome de uma categoria de fontes genérico. Ao aplicar a propriedade "<code>font-family</code>" no VS Code, o programa recomenda uma lista de fontes em sequência em crtl+espaço. Exemplo:</p>
-        <p>
-            <pre><code>
-            h1 {
-                font-family: Arial, Helvetica, sans-serif;
-            }</code></pre>
-        </p>
+
+        <p>Não há fontes 100% seguras para a web. Há sempre uma chance de uma fonte não ser encontrada ou não ser instalada corretamente. Portanto, é muito importante sempre usar fontes de fallback (em sequência). Isso significa que você deve adicionar uma lista de "fontes de backup" semelhantes na propriedade <span class="code">font-family</span>. Se a primeira fonte não funcionar, o navegador tentará a próxima, e a próxima, e assim por diante. Sempre termine a lista com um nome de uma categoria de fontes genérico. Ao aplicar a propriedade <span class="code">font-family</span> no VS Code, o programa recomenda uma lista de fontes em sequência em crtl + espaço. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+            h1 { <br>
+                &nbsp;&nbsp;&nbsp;font-family: Arial, Helvetica, sans-serif;<br>
+            }</code>
+        </div>
+        
         <h2>Tamanho das letras</h2>
-        <p>Existem vários tipos de medidas para tamanho de fontes na propriedade "<code>font-size</code>". Os tipos de medidas podem ser divididos em:</p>
+
+        <p>Existem vários tipos de medidas para tamanho de fontes na propriedade <span class="code">font-size</span>. Os tipos de medidas podem ser divididos em:</p>
+
         <ul>
             <li><strong>Medidas absolutas</strong></li>
                 <ul>
@@ -73,38 +85,56 @@
         <p>De todas essas medidas, basicamente vamos trabalhar somente com "em", "px" e talvez o "rem", essa é a recomendação do W3C para sites. O mais recomendado é o "em" porque ele trabalha com porcentagem do tamanho da fonte padrão, isso é bom para o site ser compatível com vários tamanhos de tela.</p>
         
         <p>Para sites, 16px é o tamanho padrão que os navegadores utilizam. Já sobre a medida "em", 1em é igual a 16px. Sendo assim, ao utilizar o "em", use 1em como tamanho normal de fonte.</p>
+
         <p>É possível termos alguns problemas ao utilizar e representar algo com as Medidas Absolutas, pois às vezes o navegador não consegue chegar exatamente na especificação que determinamos. Isso porque existem telas de tamanhos diferentes, como TV's e celulares. Dessa forma, a medida "px" pode sofrer distorções, pois existem telas com diferentes grandezas de pixels.</p>
+
         <h2>Peso, estilo e shorthand font</h2>
-        <p>É possível alterar o peso (grossura do caractere) de fontes (que sejam compatíveis). Para alterarmos o peso de uma fonte, usamos a propriedade de estilo "<code>font-weight</code>".Essa propriedade aceita valores/pesos literais e numéricos, como:</p>
-        <p><strong>Literais:</strong> lighter (o mais fino), normal, bold e bolder (o mais grosso).</p>
-        <p><strong>Numéricos:</strong> 100, 200, 300, 400 (normal), 500, 600, 700 (bold), 800 e 900.</p>
-        <p>Todos esses valores de peso para a propriedade "<code>font-weight</code>" são aceitos para algumas fontes, contanto que a fonte tenha suporte. Fontes como Verdana, Arial e Times não possuem muitas variações de peso.</p>
-        <p>Outra variação no estilo das fontes é deixar em <em>itálico</em>. Para isso, usamos a propriedade de estilo "<code>font-style</code>" com o valor "<code>italic</code>".</p>
-        <p>Já para deixar uma fonte <ins>sublinhada</ins>, usamos a propriedade "<code>text-decoration</code>" com o valor "<code>underline</code>".</p>
+
+        <p>É possível alterar o peso (grossura do caractere) de fontes (que sejam compatíveis). Para alterarmos o peso de uma fonte, usamos a propriedade de estilo <span class="code">font-weight</span>. Essa propriedade aceita valores/pesos literais e numéricos, como:</p>
+
+        <p><strong>Literais:</strong> <span class="code">lighter</span> (o mais fino), <span class="code">normal</span>, <span class="code">bold</span> e <span class="code">bolder</span> (o mais grosso).</p>
+
+        <p><strong>Numéricos:</strong> <span class="code">100</span>, <span class="code">200</span>, <span class="code">300</span>, <span class="code">400</span> (normal), <span class="code">500</span>, <span class="code">600</span>, <span class="code">700</span> (bold), <span class="code"></span>800</span> e <span class="code">900</span>.</p>
+
+        <p>Todos esses valores de peso para a propriedade <span class="code">font-weight</span> são aceitos para algumas fontes, contanto que a fonte tenha suporte. Fontes como Verdana, Arial e Times não possuem muitas variações de peso.</p>
+
+        <p>Outra variação no estilo das fontes é deixar em <em>itálico</em>. Para isso, usamos a propriedade de estilo <span class="code">font-style</span> com o valor <span class="code">italic</span>.</p>
+
+        <p>Já para deixar uma fonte <ins>sublinhada</ins>, usamos a propriedade <span class="code">text-decoration</span> com o valor <span class="code">underline</span>.</p>
+
         <p>Código de exemplo com essas configurações:</p>
-        <p>
-            <pre><code>
-            body {
-                font-family: sans-serif;
-                font-weight: bolder;
-                font-size: 1em;
-                font-style: italic;}
-            </code></pre>
-        </p>
-        <p>As formatações de fontes são tão importantes e tão usadas em CSS, que existem atalhos para usá-las. São as chamadas Shorthands (mãozinha). Existe uma shorthand para fontes que é a propriedade "<code>font</code>". No lugar de fazer várias configurações em múltiplas linhas, podemos simplificar tudo de maneira muito simples. Uma shorthand para fontes deve obrigatoriamente seguir essa ordem:</p>
+        
+            <div class="exemplo">
+                <code>
+                body {<br>
+                    &nbsp;&nbsp;&nbsp;font-family: sans-serif;<br>
+                    &nbsp;&nbsp;&nbsp;font-weight: bolder;<br>
+                    &nbsp;&nbsp;&nbsp;font-size: 1em;<br>
+                    &nbsp;&nbsp;&nbsp;font-style: italic; <br> }
+                </code>
+            </div>
+        
+        <p>As formatações de fontes são tão importantes e tão usadas em CSS, que existem atalhos para usá-las. São as chamadas Shorthands (mãozinha). Existe uma shorthand para fontes que é a propriedade <span class="code">font</span>. No lugar de fazer várias configurações em múltiplas linhas, podemos simplificar tudo de maneira muito simples. Uma shorthand para fontes deve obrigatoriamente seguir essa ordem:</p>
+
         <p>font-style > font-variant > font-weight > font-size > font-family</p>
+
         <p>Devemos inserir os valores dessas propriedades, nessa ordem, ao criar a shorthand. É possível criar shorthands para fontes sem necessariamente usar todas essas propriedades, contanto que a ordem seja respeitada. Exemplo de shorthand para fonte:</p>
-        <p>
-            <pre><code>
-            p {
-                font: italic bolder 1em sans-serif;}
-            </code></pre>
-        </p>
+
+        <div class="exemplo">
+            <code>
+            p {<br>
+                &nbsp;&nbsp;&nbsp;font: italic bolder 1em sans-serif; <br> }
+            </code>
+        </div>
+
         <h3>Utilizando fontes externas com Google fonts</h3>
-        <p>Podemos usar fontes externas em nosso projeto sem a necessidade de baixar e instalar nenhuma fonte. Para isso, usaremos o <a href="https://fonts.google.com/">Google Fonts</a>. Uma vez escolhida a fonte, após clicar em "select this style", clique em "embed" e em seguida em "@import". para ter acesso aos códigos que serão colocados no seu arquivo CSS. O código "@import" será colocado na primeira linha das suas declarações de estilo. Já o código especificado em CSS rules será colocado na propriedade "<code>font-family</code>". Outro site para buscar fontes é o <a href="https://www.dafont.com/pt/">Dafont</a>.</p>
+
+        <p>Podemos usar fontes externas em nosso projeto sem a necessidade de baixar e instalar nenhuma fonte. Para isso, podemos usar o <a href="https://fonts.google.com/">Google Fonts</a>. Uma vez escolhida a fonte, após clicar em "select this style", clique em "embed" e em seguida em "@import". para ter acesso aos códigos que serão colocados no seu arquivo CSS. O código "@import" será colocado na primeira linha das suas declarações de estilo. Já o código especificado em CSS rules será colocado na propriedade <span class="code">font-family</span>. Outro site para buscar fontes é o <a href="https://www.dafont.com/pt/">Dafont</a>.</p>
+
         <h2>Alinhamento e recuo da primeira linha</h2>
         
-        <p>Existem quatro tipos de alinhamentos de texto: left, right, center e justify. A tag utilizada para configurar o alinhamento do texto é "<code>text-align</code>". Já a tag para adicionar um recuo à primeira linha do parágrafo é "<code>text-indent</code>".</p>
+        <p>Existem quatro tipos de alinhamentos de texto: <span class="code">left</span>, <span class="code">right</span>, <span class="code">center</span> e <span class="code">justify</span>. A tag utilizada para configurar o alinhamento do texto é <span class="code">text-align</span>. Já a tag para adicionar um recuo à primeira linha do parágrafo é <span class="code">text-indent</span>.</p>
+        
         <a href="Cores e degradê.html" class="button-previous" target="_self">
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
@@ -116,6 +146,8 @@
                 <div class="arrow"></div>
             </div>
         </a>
+
     </main>
+
 </body>
 </html>
