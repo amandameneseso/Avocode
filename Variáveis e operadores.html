@@ -123,13 +123,170 @@
             <p>4. Apenas use <span class="code">let</span> se você não pode usar <span class="code">const</span>;</p>
 
             <p>5. Apenas use <span class="code">var</span> se você estiver trabalhando com navegadores antigos.</p>
-
-
         </div>
 
+        <h3>Declarando uma variável</h3>
 
+        <p>Criar uma variável em JavaScript é chamado de "declarar" uma variável. Após a declaração, a variável não tem valor (tecnicamente é <span class="code">undefined</span>). Exemplo:</p>
 
+        <div class="exemplo">
+            <code>
+                let cor; <br>
+                console.log(cor);  // Exibe: undefined
+            </code>
+        </div>
 
+        <p>Para <strong>atribuir</strong> um valor para a variável, use o sinal de igual:</p>
+
+        <div class="exemplo">
+            <code>
+                cor = 'azul'; <br>
+                console.log(cor);  // Exibe: azul
+            </code>
+        </div>
+
+        <p>Você também pode atribuir um valor à variável ao declará-la:</p>
+
+        <div class="exemplo">
+            <code>
+                let cor = 'azul'; <br>
+                console.log(cor);  // Exibe: azul
+            </code>
+        </div>
+
+        <p>No exemplo abaixo, criamos uma variável chamada cor e atribuimos o valor "amarelo" para ele. Então nós colocamos o valor dentro de um parágrafo HTML com id="texto":</p>
+
+        <div class="exemplo">
+            <code>
+                &lt;p id="texto"&gt;&lt;/p&gt; <br>
+                <br>
+                &lt;script&gt; <br>
+                &nbsp;&nbsp;&nbsp;let cor = "amarelo"; <br>
+                &nbsp;&nbsp;&nbsp;document.getElementById("texto").innerHTML = cor; <br>
+                &lt;/script&gt;
+            </code>
+        </div>
+
+        <p>Nota: É uma boa prática de programação declarar todas as variáveis no início de um script.</p>
+
+        <h3>Tipos de dados</h3>
+
+        <p>Variáveis podem conter números como 100 e valores de texto como "Maria". Na programação, os valores de texto são chamados de strings.</p>
+
+        <p>O JavaScript pode lidar com muitos tipos de dados. Strings são escritas dentro de aspas duplas ou simples. Os números são escritos sem aspas. Se você colocar um número entre aspas, ele será tratado como uma string. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let texto = "Olá, mundo!"; <br>
+                let numero1 = 123; <br>
+                let numero2 = 45.67;
+            </code>
+        </div>
+
+        <p><strong>O que acontece se um número estiver entre aspas?</strong></p>
+
+        <p>Se você colocar um número entre aspas, ele será tratado como uma string e não poderá ser usado em cálculos matemáticos diretamente. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let numero = "5"; <br>
+                let soma = numero + 10;  // (concatenação de strings, não soma) <br>
+                console.log(soma);  // Exibe: 510
+            </code>
+        </div>
+
+        <p>Nesse caso, o operador + foi usado para concatenar (juntar) o texto "5" com o número 10, resultando em "510".</p>
+
+        <p>Outros tipos de dados:</p>
+
+        <p><strong>BigInt</strong>: Representa números inteiros muito grandes, além do limite de precisão do tipo Number (que é 
+        2<sup>53</sup> - 1). Adicione um <span class="code">n</span> ao final do número para criar um BigInt. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let numeroGrande = 12345678901234567890n; <br>
+                console.log(numeroGrande);  // Exibe: 12345678901234567890
+            </code>
+        </div>
+
+        <p><strong>Boolean (Booleano)</strong>: Representa um valor lógico: <span class="code">true</span> (verdadeiro) ou <span class="code">false</span> (falso). Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let verdadeiro = true; <br>
+                let falso = false;
+            </code>
+        </div>
+
+        <p><strong>Undefined (Indefinido)</strong></p>
+    
+        <p><strong>Null</strong></p>
+
+        <p><strong>Symbol (Símbolo)</strong></p>
+
+        <p><strong>Object (Objeto)</strong></p>
+
+        <h3>Operador de atribuição</h3>
+
+        <p>Em JavaScript, o sinal de igual (=) é um operador de atribuição, usado para atribuir ou atualizar valores em variáveis. Isso é bem diferente da álgebra, onde o sinal = representa uma igualdade entre dois lados.</p>
+
+        <p>Na álgebra:</p>
+
+        <p>Uma expressão como:</p>
+
+        <div class="exemplo">
+            <code>
+                x = x + 5
+            </code>
+        </div>
+
+        <p>é impossível ou sem sentido, porque ela implica que x é igual a x + 5, o que é uma contradição.</p>
+
+        <p>Em JavaScript:</p>
+
+        <p>A expressão:</p>
+
+        <div class="exemplo">
+            <code>
+                x = x + 5
+            </code>
+        </div>
+
+        <p>tem um significado claro: o valor atual de x é incrementado em 5, e o novo valor é armazenado de volta na variável x (em outras palavras, x recebe x + 5). Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = 7; // x começa com o valor 7 <br>
+                x = x + 4; // Soma o valor atual de x (7) com 4, e atribui o resultado (11) de volta a x <br>
+                console.log(x);  // Exibe: 11
+            </code>
+        </div>
+
+        <h3>E se quisermos comparar valores em JavaScript?</h3>
+
+        <p>Para comparar se dois valores são iguais, usamos <span class="code">==</span> ou <span class="code">===</span>, que são os operadores de igualdade. A diferença entre esses dois operadores está na forma como esses operadores tratam os tipos de dados durante a comparação.</p>
+
+        <p>Diferença entre <span class="code">==</span> e <span class="code">===</span>:</p>
+
+        <p>1. <span class="code">==</span>: compara apenas o valor das variáveis. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = 7; <br>
+                let y = "7"; <br>
+                console.log(x == y);  // Exibe: true
+            </code>
+        </div>       
+
+        <p>2. <span class="code">===</span>: compara o valor e o tipo das variáveis. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = 7; <br>
+                let y = "7"; <br>
+                console.log(x === y);  // Exibe: false (número e string são de tipos diferentes)
+            </code>
+        </div>
 
 
 
