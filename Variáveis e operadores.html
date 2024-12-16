@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis e operadores</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .destaque {
+            background-color: rgba(206, 195, 178, 0.070);
+            padding: 15px 0px; /* Espaçamento interno */
+            margin: 30px 150px; /* Espaçamento externo */
+            border-radius: 10px;
+        }
+
+        .destaque p {
+            padding: 0px 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <main>
+
+        <h1>Variáveis e operadores</h1>
+
+        <h2>Variáveis</h2>
+
+        <p>Variáveis são contêineres para armazenar dados. Podem ser declaradas de 3 maneiras:</p>
+
+        <h3>1. Usando <span class="code">var</span></h3>
+
+        <p>A palavra-chave <span class="code">var</span> foi a forma original de declarar variáveis em JavaScript. Com o tempo, seu uso foi desencorajado em favor de <span class="code">let</span> e <span class="code">const</span>.</p>
+
+        <p>Quando você usa <span class="code">var</span> para declarar uma variável dentro de uma função, essa variável só pode ser acessada dentro dessa função (escopo de função). Mas se você usar <span class="code">var</span> fora de qualquer função, a variável se torna global (escopo global), ou seja, ela fica disponível em qualquer lugar do código.</p>
+
+        <p>Exemplo dentro de uma função:</p>
+
+        <div class="exemplo">
+            <code>
+                function exemplo() { <br>
+                    &nbsp;&nbsp;&nbsp;var x = 10;  // x só existe dentro dessa função <br>
+                    &nbsp;&nbsp;&nbsp;console.log(x);  // Exibe 10 <br>
+                  } <br>
+                  console.log(x);  // Isso dá erro, pois 'x' só existe dentro da função
+                  
+            </code>
+        </div>
+
+        <p>Exemplo fora de uma função:</p>
+
+        <div class="exemplo">
+            <code>
+                var idade = 20; <br>
+                var idade = 30;  // Pode redeclarar a mesma variável <br>
+                idade = 40;      // Pode reatribuir (alterar) o valor da variável <br>
+                console.log(idade);  // Exibe 40
+            </code>
+        </div>
+
+        <p>Utilizando <span class="code">var</span>, as variáveis podem ser globais. Você pode redeclarar a mesma variável várias vezes (o que pode causar confusão e erros). Também pode reatribuí-la (dar um novo valor à variável).</p>
+
+        <div class="destaque">
+            <p><strong>O que é escopo?</strong></p>
+
+            <p>Escopo refere-se à área do código onde algo é acessível. Ou seja, escopo de uma variável é o "alcance" que a variável tem dentro de um programa. Existem dois tipos principais de escopo em JavaScript: escopo de função e escopo global.</p>
+
+            <p><strong>1. Escopo de Função:</strong> quando você declara uma variável dentro de uma função, essa variável só pode ser acessada dentro dessa função. A variável fica "escondida" fora da função e não pode ser acessada em nenhum outro lugar.</p>
+
+            <p><strong>2. Escopo Global:</strong> se você declara uma variável fora de qualquer função, ela se torna global e pode ser acessada de qualquer lugar do código.</p>
+        </div>
+
+        <p>Com o tempo, foi percebido que o <span class="code">var</span> pode causar problemas e confusões no código, principalmente por causa de seu comportamento inesperado. O escopo global torna a variável acessível de qualquer parte do código, o que pode fazer com que qualquer função ou parte do código modifique seu valor acidentalmente. Isso dificulta a manutenção e depuração do código, porque é difícil prever como e onde a variável pode ser alterada. Usar <span class="code">let</span> ou <span class="code">const</span> ajuda a evitar esses problemas, pois elas têm escopo de bloco e são mais restritas ao seu uso.</p>
+
+        <h3>2. Usando <span class="code">let</span></h3>
+
+        <p><span class="code">let</span> foi introduzido no ECMAScript 2015, como uma alternativa mais segura e moderna a <span class="code">var</span>. Ele tem um <strong>escopo de bloco</strong>, o que significa que ele só está disponível dentro do bloco em que foi declarado. Além disso, variáveis declaradas com <span class="code">let</span> não podem ser redeclaradas no mesmo escopo.</p>
+
+        <div class="exemplo">
+            <code>
+                let idade = 25; <br>
+                console.log(idade);  // Exibe: 25 <br>
+                <br>
+                let idade = 30;  // Isso geraria um erro, não pode ser redeclarada <br>
+
+                idade = 30;  // Pode ser reatribuída, mas não redeclarada <br>
+                console.log(idade);  // Exibe: 30
+            </code>
+        </div>
+
+        <h3>3. Usando <span class="code">const</span></h3>
+
+        <p><span class="code">const</span> também foi introduzido no ECMAScript 2015. Ele é usado para declarar variáveis constantes. Ou seja, uma vez que uma variável é atribuída com <span class="code">const</span>, seu valor não pode ser reatribuído. Além disso, assim como o <span class="code">let</span>, ele tem escopo de bloco.</p>
+
+        <div class="exemplo">
+            <code>
+                const idade = 25; <br>
+                console.log(idade);  // Exibe: 25 <br>
+                <br>
+                idade = 30;  // Isso geraria um erro, pois 'const' não permite reatribuição
+            </code>
+        </div>
+
+        <p>Nota: Embora você não possa reatribuir o valor de uma variável declarada com <span class="code">const</span>, se essa variável for um objeto ou array, o conteúdo do objeto ou array pode ser modificado internamente.</p>
+
+        <p>Resumindo:</p>
+
+        <ul>
+            <li><span class="code">var</span> podem ser redeclaradas e reatribuídas, o que pode causar problemas de escopo e confusão no código.</li>
+            <li><span class="code">let</span> tem escopo de bloco e pode ser reatribuída com um novo valor, mas não pode ser redeclarada.</li>
+            <li><span class="code">const</span> tem escopo de bloco e não pode ser reatribuído nem redeclarado.</li>
+        </ul>
+
+        <div class="destaque">
+            <p><strong>Quando usar <span class="code">var</span>, <span class="code">let</span> ou <span class="code">const</span>?</strong></p>
+
+            <p>1. Sempre declare variáveis com <span class="code">var</span>, <span class="code">let</span> ou <span class="code">const</span>;</p>
+
+            <p>2. Sempre use <span class="code">const</span> se o valor não deve ser alterado;</p>
+
+            <p>3. Sempre use <span class="code">const</span> se o tipo não deve ser alterado (Arrays e Objetos)</p>
+
+            <p>4. Apenas use <span class="code">let</span> se você não pode usar <span class="code">const</span>;</p>
+
+            <p>5. Apenas use <span class="code">var</span> se você estiver trabalhando com navegadores antigos.</p>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <a href="Noções básicas de JavaScript.html" class="button-previous" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
+        <a href="index.html" class="button-home" target="_self">home</a>
+        <a href="#" class="button-next" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
+
+    </main>
+    
+</body>
+</html>

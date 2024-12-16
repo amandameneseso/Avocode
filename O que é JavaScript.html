@@ -195,13 +195,19 @@
 
         <h3>2. Arquivo externo</h3>
 
-        <p>O código JavaScript é armazenado em um arquivo separado com extensão .js, e o arquivo é vinculado à página HTML. Para usar um script externo, coloque o nome do arquivo de script no <span class="code">src</span> (fonte) dentro da tag <span class="code">&lt;script&gt;</span>:</p>
+        <p>O código JavaScript é armazenado em um arquivo separado com extensão .js, e o arquivo é vinculado à página HTML. Para começar, vamos examinar como adicionar JavaScript à sua página:</p>
+
+        <p>1. Vá para o seu site de teste e crie uma nova pasta chamada scripts. Dentro da pasta "scripts", crie um novo documento de texto chamado main.js e salve-o.</p>
+
+        <p>2. Em seu arquivo "index.html", insira este código em uma nova linha, logo antes da tag de fechamento <span class="code">&lt;/body&gt;</span>:</p>
 
         <div class="exemplo">
             <code>
-                &lt;script src="script.js"&gt;&lt;/script&gt;
+                &lt;script src="scripts/main.js"&gt;&lt;/script&gt;
             </code>
         </div>
+
+        <p>3. Isso faz o mesmo trabalho que o elemento <span class="code">&lt;link&gt;</span> para CSS. Ele aplica o JavaScript à página, para que possa afetar o HTML.</p>
 
         <p>Dica: Coloque o <span class="code">&lt;script&gt;</span> no final do <span class="code">&lt;body&gt;</span>. Isso garante que todos os elementos da página já estejam carregados.</p>
 
@@ -288,10 +294,10 @@
         <p>Resumindo:</p>
 
         <ul>
-            <li>Use <span class="code">innerHTML</span> para manipular o conteúdo da página dinamicamente.</li>
-            <li>Evite <span class="code">document.write</span> em projetos reais, pois pode causar problemas de usabilidade.</li>
-            <li>Evite abusar de <span class="code">alert()</span>, especialmente em sites que interagem com o usuário final.</li>
-            <li>Prefira <span class="code">console.log()</span> durante o desenvolvimento para rastrear erros ou depurar scripts.</li>
+            <li><span class="code">innerHTML</span> manipula o conteúdo da página dinamicamente.</li>
+            <li><span class="code">document.write</span> insere texto ou HTML diretamente na página durante o carregamento, excluindo o HTML preeexistente.</li>
+            <li><span class="code">alert()</span> exibe mensagem em uma caixa de alerta.</li>
+            <li><span class="code">console.log()</span> exibe mensagem no console do navegador. Preferível durante o desenvolvimento para rastrear erros ou depurar scripts.</li>
         </ul>
 
         <h2>Características do JavaScript</h2>
@@ -316,13 +322,29 @@
 
         <h3>Case-sensitive</h3>
 
-        <p>Uma linguagem ser case-sensitive significa que ela diferencia letras maiúsculas de minúsculas ao interpretar identificadores como nomes de variáveis, funções, classes ou outros elementos do código. Ou seja, <span class="code">variavel</span>, <span class="code">Variavel</span> e <span class="code">VARIAVEL</span> são considerados identificadores diferentes.</p>
+        <p>Uma linguagem ser case-sensitive significa que ela diferencia letras maiúsculas de minúsculas ao interpretar identificadores como nomes de variáveis, funções, classes ou outros elementos do código. Ou seja, <span class="code">variavel</span>, <span class="code">Variavel</span> e <span class="code">VARIAVEL</span> são considerados identificadores diferentes. Por exemplo:</p>
 
-        <h3>Multiparadigma</h3>
+        <div class="exemplo">
+            <code>
+                let nome = "João"; <br>
+                let Nome = "Maria"; <br>
+                <br>
+                console.log(nome); // Saída: "João" <br>
+                console.log(Nome); // Saída: "Maria"
+            </code>
+        </div>
+
+        <p>No exemplo acima, nome e Nome são duas variáveis diferentes devido à diferenciação de maiúsculas e minúsculas.</p>
 
         <h3>Alto nível</h3>
 
-        <h3>Linguagem FullStack</h3>
+        <p>Linguagem de alto nível define uma linguagem projetada para ser mais próxima da linguagem humana e mais abstrata em relação ao funcionamento interno do computador. Em outras palavras, JavaScript abstrai muitos detalhes técnicos, como a manipulação direta da memória ou o controle do hardware, permitindo que o programador se concentre mais na lógica do programa e menos nos aspectos de baixo nível do sistema.</p>
+
+        <h3>Linguagem Full Stack</h3>
+
+        <p>Uma linguagem Full Stack pode ser usada tanto no front-end (lado cliente) quanto no back-end (lado servidor) de uma aplicação. Essa versatilidade permite aos desenvolvedores criar sistemas completos usando uma única linguagem, o que reduz a complexidade do desenvolvimento e melhora a consistência entre as partes do projeto.</p>
+        
+        <p>JavaScript foi originalmente criado para o front-end, sendo executado nos navegadores para criar interfaces interativas. Com o tempo, sua capacidade foi ampliada para o back-end, especialmente com o advento do Node.js, que trouxe a execução do JavaScript para o lado servidor.</p>
 
         <a href="index.html" class="button-home" target="_self">home</a>
         <a href="Noções básicas de JavaScript.html" class="button-next" target="_self">

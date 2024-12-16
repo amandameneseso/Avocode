@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noções básicas de JavaScript</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .tabela {
+            margin-top: 20px;
+            width:80%;
+            display: table;
+            margin: auto;
+            color: rgb(208, 219, 192);
+        }
+    </style>
 
 </head>
 <body>
@@ -68,7 +77,193 @@
 
         <h3>Espaço em branco</h3>
 
+        <p>No JavaScript, os espaços em branco são ignorados pelo interpretador, exceto quando estão dentro de aspas (simples, duplas ou crases) ou quando fazem parte de uma string literal. Vamos entender isso em mais detalhes:</p>
 
+        <div class="exemplo">
+            <code>
+                let nome = "Maria";  // Saída: Maria<br>
+                let nome="Maria"; // Saída: Maria
+            </code>
+        </div>
+
+        <p>As linhas acima são equivalente. O JavaScript não se importa com o número de espaços ou quebras de linha entre elementos do código. Isso significa que você pode formatar seu código com quantos espaços quiser para torná-lo mais legível.</p>
+
+        <p>Porém, dentro de aspas simples ('), aspas duplas (") ou crases (``), os espaços em branco são considerados parte da string e não são ignorados. Eles aparecem exatamente como foram escritos:</p>
+
+        <div class="exemplo">
+            <code>
+                let texto = "Olá, mundo!"; <br>
+                console.log(texto); // Saída: Olá, mundo! (o espaço é mantido)
+            </code>
+        </div>
+
+        <h3>Bloco de código</h3>
+
+        <p>As declarações podem ser agrupadas em blocos de código, dentro de chaves {...}. O objetivo dos blocos de código é definir declarações a serem executadas em conjunto. Um lugar onde você encontrará declarações agrupadas em blocos é em funções:</p>
+
+        <div class="exemplo">
+            <code>
+                &lt;button type="button" onclick="clicar()"&gt;Clique aqui&lt;/button&gt; <br>
+                <br>
+                &lt;p id="texto1"&gt;&lt;/p&gt; <br>
+                &lt;p id="texto2"&gt;&lt;/p&gt; <br>
+                <br>
+                &lt;script&gt; <br>
+                function clicar() { <br>
+                &nbsp;&nbsp;&nbsp;document.getElementById("texto1").innerHTML = "Olá, Maria!"; <br>
+                &nbsp;&nbsp;&nbsp;document.getElementById("texto2").innerHTML = "Seja bem-vindo(a)!"; <br>
+                } <br>
+                &lt;/script&gt;
+            </code>
+        </div>
+
+        <p>O código acima cria um botão que, ao ser clicado, chama a função "clicar", que exibe textos dentro dos parágrafos. A primeira linha da função altera o conteúdo do elemento com id="texto1" para "Olá, Maria!". A segunda linha da função altera o conteúdo do elemento com id="texto2" para "Seja bem-vindo(a)!".</p>
+
+        <h3>Palavras-chave</h3>
+
+        <p>As declarações geralmente começam com uma palavra-chave para identificar a ação a ser executada. Palavras-chave são palavras reservadas. Palavras reservadas não podem ser usadas como nomes para variáveis. Aqui está uma lista de algumas das palavras-chave que você aprenderá neste tutorial:</p>
+
+        <div class="tabela">
+            <table style="width:100%">
+                <tr>
+                    <th style="height: 30px;">Palavra-chave</th>
+                    <th style="height: 30px;">Descrição</th>
+                </tr>
+                <tr>
+                    <td>var</td>
+                    <td>Declara uma variável</td>
+                </tr>
+                <tr>
+                    <td>let</td>
+                    <td>Declara uma variável de bloco</td>
+                </tr>
+                <tr>
+                    <td>const</td>
+                    <td>Declara uma constante de bloco</td>
+                </tr>
+                <tr>
+                    <td>if</td>
+                    <td>Marca um bloco de instruções a serem executadas com uma condição</td>
+                </tr>
+                <tr>
+                    <td>switch</td>
+                    <td>Marca um bloco de instruções a serem executadas em diferentes casos</td>
+                </tr>
+                <tr>
+                    <td>for</td>
+                    <td>Marca um bloco de instruções a serem executadas em um loop</td>
+                </tr>
+                <tr>
+                    <td>function</td>
+                    <td>Declara uma função</td>
+                </tr>
+                <tr>
+                    <td>return</td>
+                    <td>Retorna um valor de uma função</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2>Sintaxe</h2>
+
+        <p>A sintaxe JavaScript é o conjunto de regras que define como escrever instruções corretamente para que o JavaScript seja compreendido pelo navegador. Essas regras especificam a estrutura que o código JavaScript deve seguir para que ele seja executado sem erros.</p>
+
+        <div class="exemplo">
+            <code>
+                // Como criar variáveis: <br>
+                var x; <br>
+                let y; <br>
+                <br>
+                // Como usar variáveis: <br>
+                x = 5; <br>
+                y = 6; <br>
+                let z = x + y;
+            </code>
+        </div>
+
+        <h3>Principais elementos</h3>
+
+        <p><strong>1. Declarações:</strong> são comandos que o programa executa. Cada instrução termina com um ponto e vírgula (;). Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = 5;  // Declaração que define a variável 'x' <br>
+                console.log(x);  // Exibe o valor de 'x' no console
+            </code>
+        </div>
+
+        <p><strong>2. Variáveis:</strong> usadas para armazenar valores e podem ser declaradas usando as palavras-chave <span class="code">let</span>, <span class="code">const</span> ou <span class="code">var</span>. Um sinal de igual (=) é usado para atribuir um valor a uma variável. Neste exemplo, 'idade' é definido como uma variável. Então, à 'idade' é atribuído (recebe) o valor 31:</p>
+
+        <div class="exemplo">
+            <code>
+                let idade = 31;
+            </code>
+        </div>
+
+        <p><strong>3. Operadores:</strong> representam as operações matemáticas, relacionais e lógicas. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let soma = 5 + 3;  // Operador de adição <br>
+                let resultado = soma * 2;  // Operador de multiplicação
+            </code>
+        </div>
+
+        <p><strong>4. Estruturas de controle:</strong> as estruturas de controle, como <span class="code">if</span>, <span class="code">else</span>, <span class="code">while</span>, <span class="code">for</span>, <span class="code">switch</span>, são usadas para controlar o fluxo de execução do programa com base em condições ou repetições. Exemplo de "if":</p>
+
+        <div class="exemplo">
+            <code>
+                let idade = 25; <br>
+                if (idade >= 18) { <br>
+                    &nbsp;&nbsp;&nbsp;console.log("Maior de idade"); <br>
+                } else { <br>
+                    &nbsp;&nbsp;&nbsp;console.log("Menor de idade"); <br>
+                }
+            </code>
+        </div>
+
+        <p> O código acima utiliza o <span class="code">if</span> e <span class="code">else</span> para verificar se uma pessoa é maior ou menor de idade com base no valor da variável idade. A variável idade é declarada e definida como 25. A estrutura <span class="code">if</span> verifica se o valor de idade é maior ou igual a 18. Se for, a mensagem "Maior de idade" é exibida no console. Caso contrário, a mensagem "Menor de idade" é exibida.</p>
+
+        <p><strong>5. Funções:</strong> as funções definem blocos de código que podem ser executados diversas vezes. O código abaixo é uma função que recebe um nome como argumento e retorna uma saudação personalizada:</p>
+
+        <div class="exemplo">
+            <code>
+                function saudacao(nome) { <br>
+                    &nbsp;&nbsp;&nbsp;return "Olá, " + nome + "!"; <br>
+                  } <br>
+                  console.log(saudacao("Maria"));  // Saída: Olá, Maria!            
+            </code>
+        </div>
+
+        <p><strong>6. Arrays e objetos:</strong> arrays são listas ordenadas de valores e objetos são estruturas de dados que permitem armazenar valores de diferentes tipos.</p>
+
+        <p>Exemplo de array:</p>
+
+        <div class="exemplo">
+            <code>
+                let frutas = ["maçã", "banana", "laranja"];
+            </code>
+        </div>
+
+        <p>Exemplo de objeto:</p>
+
+        <div class="exemplo">
+            <code>
+                let pessoa = { <br>
+                    &nbsp;&nbsp;&nbsp;nome: "Maria", <br>
+                    &nbsp;&nbsp;&nbsp;idade: 25, <br>
+                    &nbsp;&nbsp;&nbsp;país: "Brasil" <br>
+                  };
+            </code>
+        </div>
+
+        <p><strong>7. Comentários:</strong> usados para adicionar notas ou instruções ao código. Eles são ignorados pelo interpretador do JavaScript. Código após barras duplas <span class="code">//</span> ou entre <span class="code">/*</span> e <span class="code">*/</span> é tratado como um comentário. Também pode ser usado para impedir a execução do código, um uso adequado para testes. Exemplo:</p>
+        
+        <div class="exemplo">
+            <code>
+                // Este é um comentário
+            </code>
+        </div>
 
 
 
@@ -81,7 +276,7 @@
             </div>
         </a>
         <a href="index.html" class="button-home" target="_self">home</a>
-        <a href="#" class="button-next" target="_self">
+        <a href="Variáveis e operadores.html" class="button-next" target="_self">
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
             </div>
