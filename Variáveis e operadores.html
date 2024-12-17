@@ -63,11 +63,15 @@
         <div class="destaque">
             <p><strong>O que é escopo?</strong></p>
 
-            <p>Escopo refere-se à área do código onde algo é acessível. Ou seja, escopo de uma variável é o "alcance" que a variável tem dentro de um programa. Existem dois tipos principais de escopo em JavaScript: escopo de função e escopo global.</p>
+            <p>Escopo refere-se à área do código onde algo é acessível. Ou seja, escopo de uma variável é o "alcance" que a variável tem dentro de um programa.</p>
 
             <p><strong>1. Escopo de Função:</strong> quando você declara uma variável dentro de uma função, essa variável só pode ser acessada dentro dessa função. A variável fica "escondida" fora da função e não pode ser acessada em nenhum outro lugar.</p>
 
-            <p><strong>2. Escopo Global:</strong> se você declara uma variável fora de qualquer função, ela se torna global e pode ser acessada de qualquer lugar do código.</p>
+            <p><strong>2. Escopo Global:</strong> se você declara uma variável fora de qualquer bloco (como funções ou loops), ela se torna global e pode ser acessada de qualquer lugar do código.</p>
+
+            <p><strong>3. Escopo de bloco:</strong> variáveis declaradas com <span class="code">let</span> ou <span class="code">const</span> dentro de blocos (como { }, if, for) têm escopo de bloco. Elas não podem ser acessadas fora do bloco em que foram declaradas.</p>
+
+            <p><strong>4. Escopo léxico:</strong> escopo léxico significa que o escopo de uma variável é determinado no momento em que o código é escrito (não em tempo de execução). Funções aninhadas (funções dentro de outras funções) têm acesso às variáveis dos escopos externos onde foram declaradas.</p>
         </div>
 
         <p>Com o tempo, foi percebido que o <span class="code">var</span> pode causar problemas e confusões no código, principalmente por causa de seu comportamento inesperado. O escopo global torna a variável acessível de qualquer parte do código, o que pode fazer com que qualquer função ou parte do código modifique seu valor acidentalmente. Isso dificulta a manutenção e depuração do código, porque é difícil prever como e onde a variável pode ser alterada. Usar <span class="code">let</span> ou <span class="code">const</span> ajuda a evitar esses problemas, pois elas têm escopo de bloco e são mais restritas ao seu uso.</p>
@@ -154,7 +158,7 @@
             </code>
         </div>
 
-        <p>No exemplo abaixo, criamos uma variável chamada cor e atribuimos o valor "amarelo" para ele. Então nós colocamos o valor dentro de um parágrafo HTML com id="texto":</p>
+        <p>No exemplo abaixo, criamos uma variável chamada cor e atribuimos o valor "amarelo" para ele. Então, colocamos o valor dentro de um parágrafo HTML com id="texto":</p>
 
         <div class="exemplo">
             <code>
@@ -168,63 +172,6 @@
         </div>
 
         <p>Nota: É uma boa prática de programação declarar todas as variáveis no início de um script.</p>
-
-        <h3>Tipos de dados</h3>
-
-        <p>Variáveis podem conter números como 100 e valores de texto como "Maria". Na programação, os valores de texto são chamados de strings.</p>
-
-        <p>O JavaScript pode lidar com muitos tipos de dados. Strings são escritas dentro de aspas duplas ou simples. Os números são escritos sem aspas. Se você colocar um número entre aspas, ele será tratado como uma string. Exemplo:</p>
-
-        <div class="exemplo">
-            <code>
-                let texto = "Olá, mundo!"; <br>
-                let numero1 = 123; <br>
-                let numero2 = 45.67;
-            </code>
-        </div>
-
-        <p><strong>O que acontece se um número estiver entre aspas?</strong></p>
-
-        <p>Se você colocar um número entre aspas, ele será tratado como uma string e não poderá ser usado em cálculos matemáticos diretamente. Exemplo:</p>
-
-        <div class="exemplo">
-            <code>
-                let numero = "5"; <br>
-                let soma = numero + 10;  // (concatenação de strings, não soma) <br>
-                console.log(soma);  // Exibe: 510
-            </code>
-        </div>
-
-        <p>Nesse caso, o operador + foi usado para concatenar (juntar) o texto "5" com o número 10, resultando em "510".</p>
-
-        <p>Outros tipos de dados:</p>
-
-        <p><strong>BigInt</strong>: Representa números inteiros muito grandes, além do limite de precisão do tipo Number (que é 
-        2<sup>53</sup> - 1). Adicione um <span class="code">n</span> ao final do número para criar um BigInt. Exemplo:</p>
-
-        <div class="exemplo">
-            <code>
-                let numeroGrande = 12345678901234567890n; <br>
-                console.log(numeroGrande);  // Exibe: 12345678901234567890
-            </code>
-        </div>
-
-        <p><strong>Boolean (Booleano)</strong>: Representa um valor lógico: <span class="code">true</span> (verdadeiro) ou <span class="code">false</span> (falso). Exemplo:</p>
-
-        <div class="exemplo">
-            <code>
-                let verdadeiro = true; <br>
-                let falso = false;
-            </code>
-        </div>
-
-        <p><strong>Undefined (Indefinido)</strong></p>
-    
-        <p><strong>Null</strong></p>
-
-        <p><strong>Symbol (Símbolo)</strong></p>
-
-        <p><strong>Object (Objeto)</strong></p>
 
         <h3>Operador de atribuição</h3>
 
@@ -258,7 +205,7 @@
             <code>
                 let x = 7; // x começa com o valor 7 <br>
                 x = x + 4; // Soma o valor atual de x (7) com 4, e atribui o resultado (11) de volta a x <br>
-                console.log(x);  // Exibe: 11
+                console.log(x);  // Saída: 11
             </code>
         </div>
 
@@ -274,7 +221,7 @@
             <code>
                 let x = 7; <br>
                 let y = "7"; <br>
-                console.log(x == y);  // Exibe: true
+                console.log(x == y);  // Saída: true
             </code>
         </div>       
 
@@ -284,9 +231,266 @@
             <code>
                 let x = 7; <br>
                 let y = "7"; <br>
-                console.log(x === y);  // Exibe: false (número e string são de tipos diferentes)
+                console.log(x === y);  // Saída: false (número e string são de tipos diferentes)
             </code>
         </div>
+
+        <h3>Tipos de dados</h3>
+
+        <p>Variáveis podem conter números como 100 e valores de texto como "Maria". Na programação, os valores de texto são chamados de strings.</p>
+
+        <p>O JavaScript pode lidar com muitos tipos de dados. Strings são escritas dentro de aspas duplas ou simples. Os números são escritos sem aspas. Se você colocar um número entre aspas, ele será tratado como uma string. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let texto = "Olá, mundo!"; <br>
+                let numero1 = 123; <br>
+                let numero2 = 45.67;
+            </code>
+        </div>
+
+        <p><strong>O que acontece se um número estiver entre aspas?</strong></p>
+
+        <p>Se você colocar um número entre aspas, ele será tratado como uma string e não poderá ser usado em cálculos matemáticos diretamente. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let numero = "5"; <br>
+                let soma = numero + 10;  // (concatenação de strings, não soma) <br>
+                console.log(soma);  // Saída: 510
+            </code>
+        </div>
+
+        <p>Nesse caso, o operador + foi usado para concatenar (juntar) o texto "5" com o número 10, resultando em "510".</p>
+
+        <div class="destaque">
+
+            <p><strong>Como saber o tipo de dado?</strong></p>
+
+            <p>Para saber o tipo de dado, use o operador <span class="code">typeof</span>. Ele retorna o tipo de uma variável ou uma expressão. Exemplo:</p>
+
+            <div class="exemplo">
+                <code>
+                    let x = 5; <br>
+                    console.log(typeof x);  // Saída: number <br>
+                    <br>
+                    let y = "Maria"; <br>
+                    console.log(typeof y);  // Saída: string
+                </code>
+            </div>
+
+        </div>
+        
+        <p>Outros tipos de dados:</p>
+
+        <p><strong>BigInt</strong>: Representa números inteiros muito grandes, além do limite de precisão do tipo Number (que é 
+        2<sup>53</sup> - 1). Adicione um <span class="code">n</span> ao final do número para criar um BigInt. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let numeroGrande = 12345678901234567890n; <br>
+                console.log(numeroGrande);  // Saída: 12345678901234567890
+            </code>
+        </div>
+
+        <p><strong>Boolean (Booleano)</strong>: Representa um valor lógico que pode ter apenas dois valores: <span class="code">true</span> (verdadeiro) ou <span class="code">false</span> (falso). Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = 5; <br>
+                let y = 5; <br>
+                let z = 6; <br>
+                (x == y) // Saída: true <br>
+                (x == z) // Saída: false
+            </code>
+        </div>
+
+        <p><strong>Undefined (Indefinido):</strong> Uma variável sem um valor tem o valor <span class="code">undefined</span>. O tipo também é <span class="code">undefined</span>. Exemplo:</p>
+
+        <div class="exemplo">    
+            <code>
+                let x; <br>
+                console.log(x);  // Saída: undefined, tipo: undefined
+            </code>    
+        </div>
+
+        <p>Nota: valores vazios não são indefinidos. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>    
+                let x = ""; <br>    
+                console.log(x);  // Saída: (vazio), tipo: string
+            </code>    
+        </div>
+    
+        <p><strong>Null</strong>: Representa a ausência de valor ou um "valor vazio". Difere de <span class="code">undefined</span>, pois <span class="code">null</span> é intencionalmente definido como vazio. Em JavaScript, o tipo de dados de <span class="code">null</span> é um objeto. Isso é um erro histórico no JavaScript, mas foi mantido por questões de compatibilidade com versões antigas. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = null; <br>
+                console.log(x);  // Saída: null <br>
+            </code>
+        </div>
+
+        <p>Nota: <span class="code">undefined</span> e <span class="code">null</span> são iguais em valor, mas diferentes em tipo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = undefined; <br>
+                console.log(typeof x);  // Saída: undefined <br>
+                <br>
+                let y = null; <br>
+                console.log(typeof y);  // Saída: object <br>
+                <br>
+                null == undefined     // true <br>
+                null === undefined    // false <br>
+            </code>
+        </div>
+
+        <p><strong>Symbol (Símbolo):</strong> O Symbol é um tipo de dado usado para criar identificadores únicos e imutáveis. Cada Symbol é único, mesmo que tenha a mesma descrição. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = Symbol("meu simbolo"); <br>
+                console.log(x);  // Saída: Symbol(meu simbolo) <br>
+                console.log(typeof x);  // Saída: symbol
+            </code>
+        </div>
+
+        <p><strong>Object (Objeto):</strong> Representa um conjunto de dados estruturados. Objetos podem conter vários tipos de dados, incluindo outros objetos, funções, arrays, etc. São escritos com chaves ({ }), as propriedades são escritas como pares (nome: valor) e separadas por vírgulas. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                const pessoa = { <br>
+                    &nbsp;&nbsp;&nbsp;&lt;nome: "Maria", <br>
+                    &nbsp;&nbsp;&nbsp;&lt;idade: 30, <br>
+                    &nbsp;&nbsp;&nbsp;&lt;país: "Brasil" <br>
+                }; <br>
+                console.log(typeof pessoa);  // Saída: object
+            </code>
+        </div>
+
+        <p>O objeto (pessoa) no exemplo acima tem 3 propriedades: nome, idade e país.</p>
+
+        <p>Nota: Array é um tipo de objeto. É uma estrutura de dados usada para armazenar uma coleção de valores. Ele também pode conter qualquer tipo de dado, como números, strings, objetos, funções e até outros arrays. Um array organiza seus valores em uma ordem indexada, onde cada elemento é associado a um índice numérico que começa do número zero. Exemplo:</p>
+
+        <div class="exemplo">    
+            <code>    
+                let cores = ["Vermelho", "Verde", "Azul"]; <br>
+                <br>
+                console.log(typeof cores); // Saída: "object" <br>
+                <br>
+                console.log(cores[0]); // Saída: "Vermelho" <br>
+                console.log(cores[1]); // Saída: "Verde" <br>
+                console.log(cores[2]); // Saída: "Azul"
+            </code>    
+        </div>
+
+        <div class="destaque">
+            <p>Os tipos em JavaScript são dinâmicos. Isso significa que a mesma variável pode ser usada para segurar tipos de dados diferentes:</p>
+
+            <div class="exemplo">
+                <code>
+                    let x;       // Agora x é indefinido <br>
+                    x = 7;       // Agora x é um número <br>
+                    x = "Maria";  // Agora x é uma string
+                </code>
+            </div>
+
+            <p>Também é possível converter o tipo de uma variável manualmente usando funções ou métodos específicos.</p>
+
+            <p>Converter número para string: String()</p>
+
+            <div class="exemplo">
+                <code>
+                    let a = 123; // Number <br>
+                    let texto = String(a); // Converte para string <br>
+                    console.log(texto); // "123" <br>
+                    console.log(typeof texto); // "string"
+                </code>
+            </div>
+
+            <p>Converter string para número: Number()</p>
+
+            <div class="exemplo">
+                <code>
+                    let texto = "123"; // String <br>
+                    let b = Number(texto); // Converte para number <br>
+                    console.log(b); // 123 <br>
+                    console.log(typeof b); // "number"
+                </code>
+            </div>
+        </div>
+
+        <h3>Comandos para formatar strings</h3>
+
+        <p><strong>length:</strong> Para strings: retorna o número de caracteres na string. Para arrays: retorna o número de elementos no array. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let a = "JavaScript"; <br>
+                console.log(a.length); // 10 <br>
+                <br>
+                let cores = ["Vermelho", "Verde", "Azul"]; <br>
+                console.log(cores.length); // 3
+            </code>
+        </div>
+
+        <p><strong>toUpperCase:</strong> retorna uma nova string em maiúsculas. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let a = "JavaScript"; <br>
+                console.log(a.toUpperCase()); // JAVASCRIPT <br>
+            </code>
+        </div>
+
+        <p><strong>toLowerCase:</strong> retorna uma nova string em minúsculas. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let a = "JavaScript"; <br>
+                console.log(a.toLowerCase()); // javascript
+            </code>
+        </div>
+
+        <h3>Comandos para formatar números</h3>
+
+        <p><strong>toFixed:</strong> limita a quantidade de casas decimais e retorna o valor como uma string. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let a = 3.1415926535; <br>
+                console.log(a.toFixed(2)); // "3.14" <br>
+            </code>
+        </div>
+
+        <p><strong>replace('.', ','):</strong> substitui o ponto por uma virgula. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let a = 3.14; <br>
+                console.log(a.toFixed(2).replace('.', ',')); // "3,14"
+            </code>
+        </div>
+
+        <p>Nota: o método replace() não está disponível diretamente para números. O método replace() é um método de strings, então você precisa primeiro converter o número para uma string antes de usá-lo.</p>
+
+        <h2>Operadores</h2>
+
+        <p>Assim como na álgebra, em JavaScript, as variáveis também armazenam valores que podem ser usados em cálculos ou operações:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = 7; <br>
+                let y = 3; <br>     
+                let z = x + y;
+            </code>
+        </div>
+
+        <p>A partir do exemplo acima, você pode adivinhar que o total calculado é 10.</p>
+
+       
 
 
 
