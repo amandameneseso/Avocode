@@ -16,6 +16,14 @@
         .destaque p {
             padding: 0px 30px;
         }
+
+        .tabela {
+            margin-top: 20px;
+            width:80%;
+            display: table;
+            margin: auto;
+            color: rgb(208, 219, 192);
+        }
     </style>
 </head>
 <body>
@@ -158,6 +166,8 @@
             </code>
         </div>
 
+        <p>Em essência, <span class="code">let cor = 'azul'</span> é equivalente a <span class="code">let cor; cor = 'azul'</span>. </p>
+
         <p>No exemplo abaixo, criamos uma variável chamada cor e atribuimos o valor "amarelo" para ele. Então, colocamos o valor dentro de um parágrafo HTML com id="texto":</p>
 
         <div class="exemplo">
@@ -172,68 +182,6 @@
         </div>
 
         <p>Nota: É uma boa prática de programação declarar todas as variáveis no início de um script.</p>
-
-        <h3>Operador de atribuição</h3>
-
-        <p>Em JavaScript, o sinal de igual (=) é um operador de atribuição, usado para atribuir ou atualizar valores em variáveis. Isso é bem diferente da álgebra, onde o sinal = representa uma igualdade entre dois lados.</p>
-
-        <p>Na álgebra:</p>
-
-        <p>Uma expressão como:</p>
-
-        <div class="exemplo">
-            <code>
-                x = x + 5
-            </code>
-        </div>
-
-        <p>é impossível ou sem sentido, porque ela implica que x é igual a x + 5, o que é uma contradição.</p>
-
-        <p>Em JavaScript:</p>
-
-        <p>A expressão:</p>
-
-        <div class="exemplo">
-            <code>
-                x = x + 5
-            </code>
-        </div>
-
-        <p>tem um significado claro: o valor atual de x é incrementado em 5, e o novo valor é armazenado de volta na variável x (em outras palavras, x recebe x + 5). Exemplo:</p>
-
-        <div class="exemplo">
-            <code>
-                let x = 7; // x começa com o valor 7 <br>
-                x = x + 4; // Soma o valor atual de x (7) com 4, e atribui o resultado (11) de volta a x <br>
-                console.log(x);  // Saída: 11
-            </code>
-        </div>
-
-        <h3>E se quisermos comparar valores em JavaScript?</h3>
-
-        <p>Para comparar se dois valores são iguais, usamos <span class="code">==</span> ou <span class="code">===</span>, que são os operadores de igualdade. A diferença entre esses dois operadores está na forma como esses operadores tratam os tipos de dados durante a comparação.</p>
-
-        <p>Diferença entre <span class="code">==</span> e <span class="code">===</span>:</p>
-
-        <p>1. <span class="code">==</span>: compara apenas o valor das variáveis. Exemplo:</p>
-
-        <div class="exemplo">
-            <code>
-                let x = 7; <br>
-                let y = "7"; <br>
-                console.log(x == y);  // Saída: true
-            </code>
-        </div>       
-
-        <p>2. <span class="code">===</span>: compara o valor e o tipo das variáveis. Exemplo:</p>
-
-        <div class="exemplo">
-            <code>
-                let x = 7; <br>
-                let y = "7"; <br>
-                console.log(x === y);  // Saída: false (número e string são de tipos diferentes)
-            </code>
-        </div>
 
         <h3>Tipos de dados</h3>
 
@@ -256,12 +204,14 @@
         <div class="exemplo">
             <code>
                 let numero = "5"; <br>
-                let soma = numero + 10;  // (concatenação de strings, não soma) <br>
+                let soma = numero + 10; <br>
                 console.log(soma);  // Saída: 510
             </code>
         </div>
 
-        <p>Nesse caso, o operador + foi usado para concatenar (juntar) o texto "5" com o número 10, resultando em "510".</p>
+        <p>Nota: Quando usado em strings, o operador + é chamado de operador de concatenação.</p>
+
+        <p>Nesse caso, o operador + foi usado para concatenar (juntar) a string "5" com o número 10, resultando em "510".</p>
 
         <div class="destaque">
 
@@ -489,6 +439,377 @@
         </div>
 
         <p>A partir do exemplo acima, você pode adivinhar que o total calculado é 10.</p>
+
+        <h3>Atribuindo valores</h3>
+
+        <p>Em JavaScript, o sinal de igual (=) é um operador de atribuição, usado para atribuir ou atualizar valores em variáveis. Isso é bem diferente da álgebra, onde o sinal = representa uma igualdade entre dois lados.</p>
+
+        <p>Na álgebra:</p>
+
+        <p>Uma expressão como:</p>
+
+        <div class="exemplo">
+            <code>
+                x = x + 5
+            </code>
+        </div>
+
+        <p>é impossível ou sem sentido, porque ela implica que x é igual a x + 5, o que é uma contradição.</p>
+
+        <p>Em JavaScript:</p>
+
+        <p>A expressão:</p>
+
+        <div class="exemplo">
+            <code>
+                x = x + 5
+            </code>
+        </div>
+
+        <p>tem um significado claro: o valor atual de x é incrementado em 5, e o novo valor é armazenado de volta na variável x (em outras palavras, x recebe x + 5). Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = 7; // x começa com o valor 7 <br>
+                x = x + 4; // Soma o valor atual de x (7) com 4, e atribui o resultado (11) de volta a x <br>
+                console.log(x);  // Saída: 11
+            </code>
+        </div>
+
+        <h3>E se quisermos comparar valores em JavaScript?</h3>
+
+        <p>Para comparar se dois valores são iguais, usamos <span class="code">==</span> ou <span class="code">===</span>, que são os operadores de igualdade. A diferença entre esses dois operadores está na forma como esses operadores tratam os tipos de dados durante a comparação.</p>
+
+        <p>Diferença entre <span class="code">==</span> e <span class="code">===</span>:</p>
+
+        <p>1. <span class="code">==</span>: compara apenas o valor das variáveis. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = 7; <br>
+                let y = "7"; <br>
+                console.log(x == y);  // Saída: true
+            </code>
+        </div>       
+
+        <p>2. <span class="code">===</span>: compara o valor e o tipo das variáveis. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = 7; <br>
+                let y = "7"; <br>
+                console.log(x === y);  // Saída: false (número e string são de tipos diferentes)
+            </code>
+        </div>
+
+        <h2>Tipos de operadores</h2>
+
+        <p>Existem diferentes tipos de operadores em JavaScript:</p>
+        
+        <h3>Operadores aritméticos</h3>
+
+        <p>Usados para cálculos matemáticos.</p>
+
+        <div class="tabela">
+            <table style="width:100%">
+                <tr>
+                    <th style="height: 30px;">Operador</th>
+                    <th style="height: 30px;">Descrição</th>
+                    <th style="height: 30px;">Exemplo</th>
+                    <th style="height: 30px;">Resultado</th>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td>Adição</td>
+                    <td>5 + 3</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>Subtração</td>
+                    <td>5 - 3</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Multiplicação</td>
+                    <td>5*3</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>Divisão</td>
+                    <td>5 / 2</td>
+                    <td>2,5</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>Módulo (resto)</td>
+                    <td>5 % 2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>**</td>
+                    <td>Exponenciação</td>
+                    <td>5 ** 2</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>++</td>
+                    <td>Incremento</td>
+                    <td>let x = 5; x++</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>--</td>
+                    <td>Decremento</td>
+                    <td>let x = 5; x--</td>
+                    <td>4</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>O <span class="code">+</span> também pode ser usado para adicionar (concatenar) strings:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = "Olá,"; <br>
+                let y = "Mundo"; <br>
+                let z = x + " " + y; <br>
+                console.log(z);  // Saída: "Olá, Mundo"
+            </code>
+        </div>
+
+        <p>Nota: Se você adicionar um número e uma string, o resultado será uma string!</p>
+
+        <p>O operador <span class="code">+=</span> também pode ser usado para adicionar (concatenar) strings:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = "Tenha um"; <br>
+                let y = "ótimo dia!"; <br>
+                x += " " + y; <br>
+                console.log(x);  // Saída: "Tenha um ótimo dia!"
+            </code>
+        </div>
+
+        <p>Nota:</p>
+
+        <p>O operador <span class="code">++</span> incrementa (adiciona 1) ao valor da variável e retorna o valor antes (pré-incremento) ou depois (pós-incremento) do incremento, dependendo de onde o operador é colocado.</p>
+
+        <p>Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = 5; <br>
+                let y = x++; <br>
+                console.log(y);  // Saída: 5 (primeiro, o valor atual de x [5] é atribuído à variável y) <br>
+                console.log(x);  // Saída: 6 (depois, x é incrementado para 6)
+            </code>
+        </div>
+        <br>
+        <div class="exemplo">
+            <code>
+                let x = 5; <br>
+                let y = ++x; <br>
+                console.log(y);  // Saída: 6 (primeiro, o valor de x é incrementado para 6) <br>
+                console.log(x);  // Saída: 6 (depois, o valor incrementado de x [6] é atribuído à variável y).
+            </code>
+        </div>
+
+        <p>O operador <span class="code">--</span> decrementa (subtrai 1) do valor da variável e retorna o valor antes (pré-incremento) ou depois (pós-incremento) do incremento, dependendo de onde o operador é colocado.</p>
+
+        <p>Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = 5; <br>
+                let y = x--; <br>
+                console.log(y);  // Saída: 5 (primeiro, o valor atual de x [5] é atribuído à variável y) <br>
+                console.log(x);  // Saída: 4 (depois, x é decrementado para 4)
+            </code>
+        </div>
+        <br>
+        <div class="exemplo">
+            <code>
+                let x = 5; <br>
+                let y = --x; <br>
+                console.log(y);  // Saída: 4 (primeiro, o valor de x é decrementado para 4) <br>
+                console.log(x);  // Saída: 4 (depois, o valor decrementado de x [4] é atribuído à variável y).
+            </code>
+        </div>
+
+        <h3>Operadores de atribuição</h3>
+
+        <p>Usados para atribuir valores a variáveis. Também podem alterar o seu valor.</p>
+
+        <div class="tabela">
+            <table style="width:100%">
+                <tr>
+                    <th style="height: 30px;">Operador</th>
+                    <th style="height: 30px;">Exemplo</th>
+                    <th style="height: 30px;">Equivalente a:</th>
+                </tr>
+                <tr>
+                    <td>=</td>
+                    <td>x = 10</td>
+                    <td>x = 10</td>
+                </tr>
+                <tr>
+                    <td>+=</td>
+                    <td>x += 2</td>
+                    <td>x = x + 2</td>
+                </tr>
+                <tr>
+                    <td>-=</td>
+                    <td>x -= 2</td>
+                    <td>x = x - 2</td>
+                </tr>
+                <tr>
+                    <td>*=</td>
+                    <td>x *= 2</td>
+                    <td>x = x * 2</td>
+                </tr>
+                <tr>
+                    <td>/=</td>
+                    <td>x /= 2</td>
+                    <td>x = x / 2</td>
+                </tr>
+                <tr>
+                    <td>%=</td>
+                    <td>x %= 2</td>
+                    <td>x = x % 2</td>
+                </tr>
+                <tr>
+                    <td>**=</td>
+                    <td>x **= 2</td>
+                    <td>x = x ** 2</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = 20; <br>
+                x += 5; (x = 20 + 5)<br>
+                console.log(x);  // Saída: 25
+            </code>
+        </div>
+
+        <h3>Operadores de comparação</h3>
+
+        <p>Comparam valores e retornam <span class="code">true</span> (verdadeiro) ou <span class="code">false</span> (falso).</p>
+
+        <div class="tabela">
+            <table style="width:100%">
+                <tr>
+                    <th style="height: 30px;">Operador</th>
+                    <th style="height: 30px;">Descrição</th>
+                    <th style="height: 30px;">Exemplo</th>
+                    <th style="height: 30px;">Resultado</th>
+                </tr>
+                <tr>
+                    <td>==</td>
+                    <td>igual a</td>
+                    <td>5 == '5'</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>===</td>
+                    <td>estritamente igual</td>
+                    <td>5 === '5'</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>!=</td>
+                    <td>diferente</td>
+                    <td>5 != '5'</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>!==</td>
+                    <td>estritamente diferente</td>
+                    <td>5 !== '5'</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>></td>
+                    <td>maior que</td>
+                    <td>5 > 3</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td><</td>
+                    <td>menor que</td>
+                    <td>5 < 10</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>>=</td>
+                    <td>maior ou igual a</td>
+                    <td>5 >= 5</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td><=</td>
+                    <td>menor ou igual a</td>
+                    <td>5 <= 10</td>
+                    <td>true</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>Como isso pode ser usado?</p>
+
+        <p>Os operadores de comparação podem ser usados em declarações condicionais para comparar valores e agir dependendo do resultado:</p>
+
+        <div class="exemplo">
+            <code>
+                if (idade < 18) text = "Menor de idade";
+            </code>
+        </div>
+
+        <p>Você aprenderá mais sobre o uso de condicionais no próximo capítulo deste tutorial.</p>
+
+        <h3>Operadores lógicos</h3>
+
+        <p>Os operadores lógicos são usados para combinar expressões ou verificar condições em JavaScript. Eles retornam um valor booleano (true ou false) com base nas condições avaliadas.</p>
+
+        <div class="tabela">
+            <table style="width:100%">
+                <tr>
+                    <th style="height: 30px;">Operador</th>
+                    <th style="height: 30px;">Nome</th>
+                    <th style="height: 30px;">Descrição</th>
+                    <th style="height: 30px;">Exemplo</th>
+                    <th style="height: 30px;">Resultado</th>
+                </tr>
+                <tr>
+                    <td>&&</td>
+                    <td>E lógico (and)</td>
+                    <td>Retorna true se todas as condições forem verdadeiras</td>
+                    <td>(x > 5 && y < 10)</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>||</td>
+                    <td>OU lógico (or)</td>
+                    <td>Retorna true se pelo menos uma condição for verdadeira</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>!</td>
+                    <td>NÃO lógico (not)</td></td>
+                    <td>Inverte o valor lógico</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
 
        
 
