@@ -372,6 +372,38 @@
             </div>
         </div>
 
+        <h3>Template String</h3>
+
+        <p>Template string (ou template literals) é uma maneira avançada e prática de trabalhar com strings. Elas são strings que permitem interpolação (substituição de variáveis por valores) de variáveis e expressões e formatação mais flexível em comparação com strings comuns. Elas são delimitadas por crases (<span class="code">`</span>). Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let texto = `Essa é uma template string.`;
+            </code>
+        </div>
+        
+        <p>Template strings podem incluir variáveis utilizando a sintaxe <span class="code">${}</span>:</p>
+
+        <div class="exemplo">
+            <code>
+                let nome = "Maria"; <br>
+                let idade = 30; <br>
+                let mensagem = `Seja bem-vindo(a), ${nome}! Você tem ${idade} anos.`; <br>
+                console.log(mensagem); // Seja bem-vindo(a), Maria! Você tem 30 anos.
+            </code>
+        </div>
+
+        <p>Template strings também permitem incluir expressões:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = 10; <br>
+                let y = 5; <br>
+                let resultado = `A soma de ${x} e ${y} é ${x + y}.`; <br>
+                console.log(resultado); // A soma de 10 e 5 é 15.
+            </code>
+        </div>
+
         <h3>Comandos para formatar strings</h3>
 
         <p><strong>length:</strong> Para strings: retorna o número de caracteres na string. Para arrays: retorna o número de elementos no array. Exemplo:</p>
@@ -775,7 +807,7 @@
 
         <h3>Operadores lógicos</h3>
 
-        <p>Os operadores lógicos são usados para combinar expressões ou verificar condições em JavaScript. Eles retornam um valor booleano (true ou false) com base nas condições avaliadas.</p>
+        <p>Os operadores lógicos são usados para combinar expressões ou verificar condições em JavaScript. Eles retornam um valor booleano (true ou false) com base nas condições avaliadas. Dado que <span class="code">x = 6</span> e <span class="code">y = 3</span>, a tabela abaixo explica os operadores lógicos:</p>
 
         <div class="tabela">
             <table style="width:100%">
@@ -790,33 +822,52 @@
                     <td>&&</td>
                     <td>E lógico (and)</td>
                     <td>Retorna true se todas as condições forem verdadeiras</td>
-                    <td>(x > 5 && y < 10)</td>
+                    <td>(x < 10 && y > 1)</td>
                     <td>true</td>
                 </tr>
                 <tr>
                     <td>||</td>
                     <td>OU lógico (or)</td>
                     <td>Retorna true se pelo menos uma condição for verdadeira</td>
-                    <td></td>
-                    <td></td>
+                    <td>(x == 5 || y == 5)</td>
+                    <td>false</td>
                 </tr>
                 <tr>
                     <td>!</td>
                     <td>NÃO lógico (not)</td></td>
                     <td>Inverte o valor lógico</td>
-                    <td></td>
-                    <td></td>
+                    <td>!(x == y)</td>
+                    <td>true</td>
                 </tr>
             </table>
         </div>
 
+        <p>Resumindo:</p>
 
-       
-
-
-
-
-
+        <div class="exemplo">
+            <code>
+                let x = 10, y = 3; <br>
+                <br>
+                // Aritméticos <br>
+                console.log(x + y); // 13 <br>
+                console.log(x ** y); // 1000 <br>
+                <br>
+                // Atribuição <br>
+                x += y; <br>
+                console.log(x); // 13 <br>
+                <br>
+                // Comparação <br>
+                console.log(x > y); // true <br>
+                <br>
+                // Lógicos <br>
+                console.log(x > y && y > 0); // true <br>
+                <br>
+                // String <br>
+                let saudacao = "Olá"; <br>
+                saudacao += " mundo!"; <br>
+                console.log(saudacao); // "Olá mundo!"
+            </code>
+        </div>
 
         <a href="Noções básicas de JavaScript.html" class="button-previous" target="_self">
             <div class="arrow-wrapper">
@@ -824,7 +875,7 @@
             </div>
         </a>
         <a href="index.html" class="button-home" target="_self">home</a>
-        <a href="#" class="button-next" target="_self">
+        <a href="Arrays e Objetos.html" class="button-next" target="_self">
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
             </div>
