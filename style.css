@@ -106,6 +106,17 @@ div img {
     padding: 20px;
 }
 
+.destaque {
+    background-color: rgba(206, 195, 178, 0.070);
+    padding: 15px 0px; /* Espaçamento interno */
+    margin: 30px 150px; /* Espaçamento externo */
+    border-radius: 10px;
+}
+
+.destaque p {
+    padding: 0px 30px;
+}
+
 /* botões */ 
 .button-next {
     position: absolute;

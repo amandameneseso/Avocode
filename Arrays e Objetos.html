@@ -12,13 +12,200 @@
         
         <h1>Arrays e Objetos</h1>
 
+        <p>Arrays e objetos são dois dos tipos mais comuns de estrutura de dados. Vimos que array é um tipo de objeto e que eles são usados para armazenar e organizar dados, mas funcionam de maneiras diferentes e têm características distintas. Vamos ver as diferenças e como usá-los.</p>
+
+        <h2>Array</h2>
+
+        <p>Um array é uma estrutura de dados usada para armazenar múltiplos valores em uma única variável. Podem conter qualquer tipo de dado (números, strings, objetos, etc.). Com arrays, podemos armazenar dados ordenados e acessar os elementos pelo índice. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let frutas = ["banana", "macã", "laranja"];
+            </code>
+        </div>
+
+        <p>Nota: Arrays são um tipo especial de objetos. O operador <span class="code">typeof</span> retorna <span class="code">"objeto"</span> para arrays:</p>
+
+        <div class="exemplo">
+            <code>
+                console.log(typeof frutas); // object
+            </code>
+        </div>
+
+        <h3>Por que usar arrays?</h3>
+
+        <p>Se você tiver uma lista de itens (uma lista de nomes de frutas, por exemplo), armazenar as frutas em variáveis individuais pode se parecer com isso:</p>
+
+        <div class="exemplo">
+            <code>
+                let fruta1 = "maçã"; <br>
+                let fruta2 = "banana"; <br>
+                let fruta3 = "laranja";
+            </code>
+        </div>
+
+        <p>No entanto, e se você quiser percorrer os carros e encontrar um específico? E se você não tivesse 3 carros, mas 300? Nesses casos, usar arrays pode ser muito mais eficiente.</p>
+
+        <p>Um array pode conter muitos valores sob um único nome, e você pode acessar os valores referindo-se a um número de índice.</p>
+
+        <h3>Declarando um array</h3>
+
+        <p>Para declarar um array, você pode usar colchetes [ ] (array literal) ou o construtor <span class="code">new Array()</span>:</p>
+
+        <div class="exemplo">
+            <code>
+                const frutas = ["maçã", "banana", "laranja"]; <br>
+                const frutas = new Array("maçã", "banana", "laranja");
+            </code>
+        </div>
+
+        <p>Os dois exemplos acima fazem exatamente o mesmo. Para simplicidade, legibilidade e velocidade de execução, use o método literal de array.</p>
+
+        <h3>Acessando elementos do array</h3>
+
+        <p>Os elementos de um array são indexados começando do zero. Para acessar um elemento, usa-se o nome do array seguido do número do índice. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                const frutas = ["maçã", "banana", "laranja"]; <br>
+                console.log(frutas[0]); // maçã <br>
+                console.log(frutas[1]); // banana <br>
+                console.log(frutas[2]); // laranja
+            </code>
+        </div>
+
+        <h3>Alterando um elemento do array</h3>
+
+        <p>Esta declaração altera o valor do primeiro elemento em <span class="code">frutas</span>:</p>
+
+        <div class="exemplo">
+            <code>
+                frutas[0] = "abacaxi"; <br>
+                console.log(frutas[0]); // abacaxi
+            </code>
+        </div>
+
+        <p>Nesse exemplo, como o primeiro elemento do array foi alterado, <span class="code">frutas[0]</span> retorna <span class="code">abacaxi</span>.</p>
+
+        <h3>Métodos comuns para manipular arrays</h3>
+
+        <p><span class="code">push()</span> adiciona um elemento ao final do array:</p>
+
+        <div class="exemplo">
+            <code>
+                frutas.push("uva"); <br>
+                console.log(frutas); // ["maçã", "banana", "laranja", "uva"]
+            </code>
+        </div>
+
+        <p><span class="code">pop()</span> remove o ultimo elemento do array:</p>
+
+        <div class="exemplo">
+            <code>
+                frutas.pop(); <br>
+                console.log(frutas); // ["maçã", "banana", "laranja"]
+            </code>
+        </div>
+
+        <p><span class="code">shift()</span> remove o primeiro elemento do array:</p>
+
+        <div class="exemplo">
+            <code>
+                frutas.shift(); <br>
+                console.log(frutas); // ["banana", "laranja"]
+            </code>
+        </div>
+
+        <p><span class="code">unshift()</span> adiciona um elemento ao inicio do array:</p>
+
+        <div class="exemplo">
+            <code>
+                frutas.unshift("manga"); <br>
+                console.log(frutas); // ["manga", "banana", "laranja"]
+            </code>
+        </div>
+
+        <p><span class="code">length</span> retorna o número de elementos no array:</p>
+
+        <div class="exemplo">
+            <code>
+                console.log(frutas.length); // 3
+            </code>
+        </div>
+
+        <p><span class="code">join()</span> retorna uma string com todos os elementos do array concatenados, separando-os com um delimitador especificado entre as aspas (opcional):</p>
+
+        <div class="exemplo">
+            <code>
+                console.log(frutas.join(", ")); // manga, banana, laranja
+            </code>
+        </div>
+
+        <p><span class="code">sort()</span> ordena os elementos em ordem alfabetica:</p>
+
+        <div class="exemplo">
+            <code>
+                frutas.sort(); <br>
+                console.log(frutas); // ["banana", "laranja", "manga"]
+            </code>
+        </div>
+
+        <p><span class="code">reverse()</span> inverte a ordem dos elementos do array:</p>
+
+        <div class="exemplo">
+            <code>
+                frutas.reverse(); <br>
+                console.log(frutas); // ["manga", "laranja", "banana"]
+            </code>
+        </div>
+
+        <div class="destaque">
+
+            <p><strong>Como ordenar arrays de números?</strong></p>
+
+            <p>Temos a seguinte string:</p>
+
+            <div class="exemplo">
+                <code>
+                    let num = [25, 100, 5, 60, 40];
+                </code>
+            </div>
+
+            <p>Ao ordenar esse array utilizando <span class="code">num.sort()</span>, o resultado será:</p>
+
+            <div class="exemplo">
+                <code>
+                    num.sort(); <br>
+                    console.log(num); // [100, 25, 40, 5, 60]
+                </code>
+            </div>
+
+            <p>Isso ocorre porque, por padrão, o método <span class="code">sort()</span> classifica os valores como strings. Se os números forem classificados como strings, "25" é maior que "100", porque "2" é maior que "1". Por isso, o método <span class="code">sort()</span> produzirá resultados indesejáveis ao classificar números. Você pode corrigir isso fornecendo uma função de comparação:</p>
+
+            <div class="exemplo">
+                <code>
+                    let num = [25, 100, 5, 60, 40]; <br>
+                    num.sort((a, b) => a - b); <br>
+                    console.log(num); // [5, 25, 40, 60, 100]
+                </code>
+            </div>
+
+            <p>Para ordenar um array de números de forma decrescente, basta usar o método <span class="code">sort()</span> com uma função de comparação que retorne b - a.</p>
+
+        </div>
 
 
 
 
+        <h2>Objeto</h2>
 
 
+<script>
+    let num = [25, 100, 5, 60, 40];
+    num.sort((a, b) => a - b);
+    console.log(num);
 
+</script>
 
 
         <a href="Variáveis e operadores.html" class="button-previous" target="_self">
