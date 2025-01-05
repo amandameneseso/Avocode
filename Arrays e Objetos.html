@@ -24,7 +24,7 @@
             </code>
         </div>
 
-        <p>Nota: Arrays são um tipo especial de objetos. O operador <span class="code">typeof</span> retorna <span class="code">"objeto"</span> para arrays:</p>
+        <p>Nota: Arrays são um tipo especial de objeto. O operador <span class="code">typeof</span> retorna <span class="code">"objeto"</span> para arrays:</p>
 
         <div class="exemplo">
             <code>
@@ -44,7 +44,7 @@
             </code>
         </div>
 
-        <p>No entanto, e se você quiser percorrer os carros e encontrar um específico? E se você não tivesse 3 carros, mas 300? Nesses casos, usar arrays pode ser muito mais eficiente.</p>
+        <p>No entanto, e se você quiser percorrer as frutas e encontrar uma específica? E se você não tivesse 3 frutas, mas 300? Nesses casos, usar arrays pode ser muito mais eficiente.</p>
 
         <p>Um array pode conter muitos valores sob um único nome, e você pode acessar os valores referindo-se a um número de índice.</p>
 
@@ -98,7 +98,7 @@
             </code>
         </div>
 
-        <p><span class="code">pop()</span> remove o ultimo elemento do array:</p>
+        <p><span class="code">pop()</span> remove o último elemento do array:</p>
 
         <div class="exemplo">
             <code>
@@ -133,6 +133,8 @@
             </code>
         </div>
 
+        <p>Nota: Como o índice de um array começa em 0, <span class="code">length</span> sempre retorna um valor uma unidade maior que o índice do último elemento. Dessa forma, o índice do último elemento de um array é sempre <span class="code">length - 1</span>.</p>
+
         <p><span class="code">join()</span> retorna uma string com todos os elementos do array concatenados, separando-os com um delimitador especificado entre as aspas (opcional):</p>
 
         <div class="exemplo">
@@ -141,7 +143,7 @@
             </code>
         </div>
 
-        <p><span class="code">sort()</span> ordena os elementos em ordem alfabetica:</p>
+        <p><span class="code">sort()</span> ordena os elementos em ordem alfabética:</p>
 
         <div class="exemplo">
             <code>
@@ -163,7 +165,7 @@
 
             <p><strong>Como ordenar arrays de números?</strong></p>
 
-            <p>Temos a seguinte string:</p>
+            <p>Temos o seguinte array:</p>
 
             <div class="exemplo">
                 <code>
@@ -184,9 +186,7 @@
 
             <div class="exemplo">
                 <code>
-                    let num = [25, 100, 5, 60, 40]; <br>
-                    num.sort((a, b) => a - b); <br>
-                    console.log(num); // [5, 25, 40, 60, 100]
+                    
                 </code>
             </div>
 
@@ -194,18 +194,66 @@
 
         </div>
 
-
-
-
         <h2>Objeto</h2>
 
+        <h3>Objetos na vida real</h3>
 
-<script>
-    let num = [25, 100, 5, 60, 40];
-    num.sort((a, b) => a - b);
-    console.log(num);
+        <p>Na vida real, objetos são coisas como: casas, carros, pessoas, animais ou quaisquer outros objetos. Objetos possuem:</p>
 
-</script>
+            <ul>
+                <li>Propriedades: características que descrevem o objeto.</li>
+                <li>Valores: os dados associados a essas características.</li>
+            </ul>
+
+        <p>Por exemplo, um objeto que representa uma casa pode ter:</p>
+
+            <ul>
+                <li>cor: amarelo</li>
+                <li>tamanho: 100m<sup>2</sup></li>
+                <li>preço: 200.000</li>
+            </ul>
+        
+        <p>Objetos de casa têm as mesmas propriedades, mas os valores diferem de casa para casa.</p>
+
+        <h3>Objetos em JavaScript</h3>
+
+        <p>Um objeto é uma variável especial que pode conter vários valores organizados como pares chave-valor. As chaves são como os nomes das propriedades, e os valores são os dados correspondentes.</p>
+
+        <p><strong>Sintaxe básica:</strong></p>
+
+        <p>Um objeto é definido usando <span class="code">{}</span> (chaves) e os pares chave-valor separados por <span class="code">:</span> (dois pontos). Os pares são separados por vírgulas.</p>  
+
+        <div class="exemplo">
+            <code>
+                const casa = { <br>
+                    &nbsp;&nbsp;&nbsp; cor: "amarelo", <br>
+                    &nbsp;&nbsp;&nbsp; tamanho: 100, <br>
+                    &nbsp;&nbsp;&nbsp; preco: 200000 <br>
+                };            
+            </code>
+        </div>
+
+        <h3>Acessando propriedades</h3>
+
+        <p>Você pode acessar propriedades de objetos de duas maneiras:</p>
+
+        <p>1. Notação de ponto (<span class="code">.</span>):</p>
+
+        <div class="exemplo">
+            <code>
+                console.log(casa.cor); // amarelo <br>
+                console.log(casa.tamanho); // 100
+            </code>
+        </div>
+
+        <p>1. Notação de colchetes (<span class="code">[]</span>):</p>
+
+        <div class="exemplo">
+            <code>
+                console.log(casa["cor"]); // amarelo <br>
+                console.log(casa["tamanho"]); // 100
+            </code>
+        </div>
 
 
         <a href="Variáveis e operadores.html" class="button-previous" target="_self">
