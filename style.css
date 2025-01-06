@@ -255,6 +255,7 @@ div img {
 
 .button-home:hover {
     background-color: var(--button-hover-color);
+    color: var(--button-secondary-color); /* Mantém o texto branco */
 }
 
 

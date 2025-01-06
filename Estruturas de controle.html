@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas de controle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+
+        <h1>Estruturas de controle</h1>
+
+        <p>As estruturas de controle permitem gerenciar o fluxo de execução de um programa, seja para tomar decisões, repetir ações ou gerenciar o fluxo de execução do programa com base em condições ou padrões específicos. Elas são essenciais para criar lógicas dinâmicas e flexíveis.  e gerenciar o fluxo de execução do programa com base em condições ou padrões específicos. Vamos explorar as principais categorias e exemplos de cada uma:</p>
+
+        <h2>Estruturas condicionais</h2>
+
+        <h3>If, else e else if</h3>
+
+        <p>Muitas vezes, quando você escreve um código, você quer executar ações diferentes para decisões diferentes. Você pode usar estruturas condicionais para fazer isso. Em JavaScript, temos as seguintes estruturas condicionais:</p>
+
+        <ul>
+            <li><span class="code">if</span>: Executa uma ação se uma condição for verdadeira.</li>
+            <li><span class="code">else</span>: Executa uma ação se a mesma condição for falsa.</li>
+            <li><span class="code">else if</span>: Especificar uma nova condição a ser testada, se a primeira condição for falsa. Permite a construção de múltiplas condições em sequência.</li>
+            <li><span class="code">switch</span>: Executa uma ação de acordo com o valor de uma expressão.</li>
+        </ul>
+
+        <p>As estruturas condicionais estão ligadas à tomada de decisão de um algoritmo. Ao utilizar expressões que retornam verdadeiro ou falso, o algoritmo executa o bloco de comandos relativos a este resultado.</p>
+
+        <p>Primeiramente, precisamos entender a sintaxe:</p>
+
+        <div class="exemplo">
+            <code>
+                if (condição) { <br>
+                    &nbsp;&nbsp;&nbsp;// Código a ser executado se a condição for verdadeira <br>
+                } else if (outraCondição) { <br>
+                    &nbsp;&nbsp;&nbsp;// Código a ser executado se a primeira condição for falsa. <br>
+                } else { <br>
+                    &nbsp;&nbsp;&nbsp;// Código a ser executado se nenhuma condição for verdadeira <br>
+                }
+            </code>
+        </div>
+
+        <p>Agora, podemos aplicar em um exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                if (hora &lt; 18) { <br>
+                    &nbsp;&nbsp;&nbsp;saudação = "Bom dia!"; <br>
+                } else { <br>
+                    &nbsp;&nbsp;&nbsp;saudação = "Boa noite!"; <br>
+                }
+            </code>
+        </div>
+
+        <p>Usando o <span class="code">else if</span> para especificar uma nova condição se a primeira condição for falsa:</p>
+
+        <div class="exemplo">
+            <code>
+                if (hora &lt; 12) { <br>
+                    &nbsp;&nbsp;&nbsp;saudação = "Bom dia!"; <br>
+                } else if (hora &lt; 18) { <br>
+                    &nbsp;&nbsp;&nbsp;saudação = "Boa tarde!"; <br>
+                } else { <br>
+                    &nbsp;&nbsp;&nbsp;saudação = "Boa noite!"; <br>
+                }
+            </code>
+        </div>
+
+        <p>No exemplo acima, <span class="code">if</span>, <span class="code">else if</span> e <span class="code">else</span> Verificam:</p>
+
+        <ul>
+            <li>Se a hora é menor que 12, a saudação será "Bom dia!"</li>
+            <li>Se a hora é menor que 18, a saudação será "Boa tarde!"</li>
+            <li>Caso contrário, será "Boa noite!"</li>
+        </ul>
+
+        <p>Vejamos outro exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                if (idade > 18) { <br>
+                    &nbsp;&nbsp;&nbsp;console.log("Você é obrigado a votar."); <br>
+                }
+            </code>
+        </div>
+
+        <p>Nesse exemplo, o <span class="code">if</span> verifica se o valor da variável idade é maior que 18. Se a condição for verdadeira, o código dentro do bloco será executado. Caso contrário, o bloco será ignorado (nenhuma saída será exibida).</p>
+
+        <p>Porém este exemplo não está completo, afinal, há quem não possa votar e também a possibilidade de voto opcional. Podemos utilizar os operadores lógicos na condição para deixar o exemplo mais robusto. Para isso, usamos os operadores lógicos && (e) e || (ou):</p>
+
+        <div class="exemplo">
+            <code>
+                if (idade &gt;= 18 &amp;&amp; idade &lt; 70) { <br>
+                    &nbsp;&nbsp;&nbsp;console.log("Você é obrigado a votar."); <br>
+                } else if (idade &gt;= 16 || idade &gt;= 70) { <br>
+                    &nbsp;&nbsp;&nbsp;console.log("Seu voto é opcional."); <br>
+                } else { <br>
+                    &nbsp;&nbsp;&nbsp;console.log("Você não pode votar."); <br>
+                }
+            </code>
+        </div>
+
+        <p> Nesse exemplo, o <span class="code">if</span> verifica se a idade está entre 18 e 69 anos, o que significa que a pessoa é obrigada a votar. O <span class="code">else if</span>, que iniciará caso a primeira condição seja falsa, verifica duas condições: se a idade é maior ou igual a 16 ou se a idade é maior ou igual a 70 anos. Para essas faixas etárias, o voto é opcional. Caso a idade seja menor que 16 anos, a pessoa não pode votar.</p>
+
+        <div class="destaque">
+            <p><strong>Operador ternário</strong></p>
+
+            <p>É uma maneira curta de escrever uma estrutura condicional if-else. Ele possui a seguinte sintaxe:</p>
+
+            <div class="exemplo">
+                <code>
+                    condição ? valor_se_verdadeiro : valor_se_falso;
+                </code>
+            </div>
+
+            <p>Explicação:</p>
+
+            <ul>
+                <li>condição: A expressão que será avaliada (verdadeira ou falsa).</li>
+                <li>valor_se_verdadeiro: O valor ou expressão a ser retornada se a condição for verdadeira.</li>
+                <li>valor_se_falso: O valor ou expressão a ser retornada se a condição for falsa.</li>
+            </ul>
+
+            <p>Exemplo:</p>
+
+            <div class="exemplo">
+                <code>
+                    let numero = 7; <br>
+
+                    let resultado = numero % 2 === 0 ? "O número é par." : "O número é ímpar."; <br>
+
+                    console.log(resultado); // "O número é ímpar."
+                </code>
+            </div>
+
+            <p>Nesse exemplo, <span class="code">numero % 2 === 0</span> verifica se o número é divisível por 2 (se o resto da divisão for 0, significa que é par). Se a condição for verdadeira, o valor "O número é par." é retornado. Se a condição for falsa, o valor "O número é ímpar." é retornado.</p>
+
+        </div>
+
+        <p>Este exemplo escreverá um link para a página inicial deste site ou para o World Wildlife Fund (WWF). Usando uma estrutura condicional e um número aleatório, há uma chance de 50% para cada um dos links.</p>
+
+        <div class="exemplo">
+            <code>
+                &lt;p id="demo"&gt;&lt;/p&gt;<br>
+                <br>
+                let text;<br>
+                if (Math.random() &lt; 0.5) {<br>
+                &nbsp;&nbsp;&nbsp;text = "&lt;a href='index.html'&gt;Link aleatório&lt;/a&gt;";<br>
+                } else {<br>
+                &nbsp;&nbsp;&nbsp;text = "&lt;a href='https://wwf.org'&gt;Link aleatório&lt;/a&gt;";<br>
+                }<br>
+                document.getElementById("demo").innerHTML = text;
+            </code>
+        </div>
+
+        <p id="demo"></p>
+
+        <script>
+        let text;
+        if (Math.random() < 0.5) {
+        text = "<a href='index.html'>Link aleatório</a>";
+        } else {
+        text = "<a href='https://wwf.org'>Link aleatório</a>";
+        }
+        document.getElementById("demo").innerHTML = text;
+        </script>
+
+        <h3>Switch</h3>
+
+        <p>Outra estrutura condicional do JavaScript que podemos utilizar é o Switch Case. O Swith Case é uma instrução que se comporta de forma semelhante ao if / else, porém possui uma estrutura mais organizada e de fácil compreensão. Lembrando que só é aceito valores pré-definidos e não expressões condicionais.</p>
+
+        <p>O Switch Case escolhe entre várias opções com base no valor de uma variável ou expressão.</p>
+
+        <p>Sintaxe:</p>
+
+        <div class="exemplo">
+            <code>
+                switch (expressão) {<br>
+                &nbsp;&nbsp;&nbsp;case valor1:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Código a ser executado se expressão === valor1<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                &nbsp;&nbsp;&nbsp;case valor2:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Código a ser executado se expressão === valor2<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                &nbsp;&nbsp;&nbsp;case valor3:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Código a ser executado se expressão === valor3<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                &nbsp;&nbsp;&nbsp;default:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Código a ser executado se nenhum caso corresponder <br>
+                }
+            </code>
+        </div>
+
+        <p>Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let dia = "segunda"; <br>
+                switch (dia) { <br>
+                    &nbsp;&nbsp;&nbsp;case "segunda": <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Hoje é segunda-feira."); <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                    &nbsp;&nbsp;&nbsp;case "sexta": <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Hoje é sexta-feira."); <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                    &nbsp;&nbsp;&nbsp;default: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Não é segunda nem sexta."); <br>
+                }
+            </code>
+        </div>
+
+        <p>No exemplo acima, o switch escolhe entre duas opções, de acordo com o valor de uma variável ou expressão. Ele verifica o valor da variável <span class="code">dia</span> e imprime uma mensagem dependendo do dia da semana:</p>
+
+        <ul>
+            <li>Se dia for igual a "segunda", a mensagem "Hoje é segunda-feira." será impressa.</li>
+            <li>Se dia for igual a "sexta", a mensagem "Hoje é sexta-feira." será impressa.</li>
+            <li>O default é usado para capturar qualquer valor que não seja "segunda" nem "sexta". Nesse caso, será impressa a mensagem "Não é segunda nem sexta.".</li>
+        </ul>
+
+        <p>Como dia está definido como "segunda", o bloco de código associado ao case "segunda" será executado e a seguinte mensagem será exibida: "Hoje é segunda-feira."</p>
+
+        <p>Nota: Quando o JavaScript chega em um "break", ele sai do bloco de switch. Isso interromperá a execução dentro do respectivo bloco e continuará para o bloco seguinte. Não é necessário colocar "break" no último bloco. O bloco quebra (termina) lá de qualquer maneira.</p>
+
+        <h2>Estruturas de repetição</h2>
+
+        <p>Estruturas de repetição são úteis quando precisamos repetir várias vezes a execução de um bloco de comandos até que uma condição seja atendida. Elas eliminam a necessidade de escrever o mesmo código várias vezes, automatizando tarefas repetitivas.</p>
+
+        <p>Por exemplo, para imprimir os números de 1 a 10, em vez de escrever:</p>
+
+        <div class="exemplo">
+            <code>
+                console.log(1);<br>
+                console.log(2);<br>
+                console.log(3);<br>
+                console.log(4);<br>
+                console.log(5);<br>
+                console.log(6);<br>
+                console.log(7);<br>
+                console.log(8);<br>
+                console.log(9);<br>
+                console.log(10);<br>
+            </code>
+        </div>
+
+        <p>Podemos escrever:</p>
+
+        <div class="exemplo">
+            <code>
+                for (let i = 1; i <= 10; i++) {<br>
+                &nbsp;&nbsp;&nbsp;console.log(i);<br>
+                }
+            </code>
+        </div>
+
+        <p>JavaScript suporta diferentes tipos de loops:</p>
+
+        <ul>
+            <li><span class="code">for</span>: Contar ou iterar um número específico de vezes.</li>
+            <li><span class="code">for/in</span>: Iterar sobre as chaves de um objeto ou índices de um array.</li>
+            <li><span class="code">for/of</span>: Iterar sobre os valores de objetos iteráveis</li>
+            <li><span class="code">while</span>: Repetir enquanto uma condição for verdadeira</li>
+            <li><span class="code">do/while</span>: Garantir pelo menos uma execução antes de verificar a condição.</li>
+            <li><span class="code">forEach</span>: Executar uma função para cada elemento de um array.</li>
+        </ul>
+
+        <p>Iterar significa repetir ou percorrer (passar por) um conjunto de elementos, geralmente de uma estrutura de dados (como um array, objeto ou outro tipo de coleção), de maneira sequencial para executar uma ação. Existem várias formas de fazer isso em JavaScript, e cada método possui características específicas que podem ser úteis em diferentes situações.</p>
+
+        <h3>For</h3>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <a href="Arrays e Objetos.html" class="button-previous" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
+        <a href="index.html" class="button-home" target="_self">home</a>
+        <a href="#" class="button-next" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
+
+    </main>
+    
+</body>
+</html>

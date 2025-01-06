@@ -217,7 +217,7 @@
 
         <h3>Objetos em JavaScript</h3>
 
-        <p>Um objeto é uma variável especial que pode conter vários valores organizados como pares chave-valor. As chaves são como os nomes das propriedades, e os valores são os dados correspondentes.</p>
+        <p>Um objeto é uma variável especial que pode conter vários valores organizados como pares chave-valor. As chaves são como os nomes das propriedades, e os valores são os dados correspondentes. Um objeto pode conter tanto dados (como strings e números) quanto funcionalidades (funções, que nesse contexto chamamos de métodos).</p>
 
         <p><strong>Sintaxe básica:</strong></p>
 
@@ -230,6 +230,61 @@
                     &nbsp;&nbsp;&nbsp; tamanho: 100, <br>
                     &nbsp;&nbsp;&nbsp; preco: 200000 <br>
                 };            
+            </code>
+        </div>
+
+        <p>No exemplo abaixo, podemos perceber que um objeto pode conter outro objeto e arrays dentro dele mesmo. Um array também pode conter um objeto.</p>
+
+        <div class="exemplo">
+            <code>
+                const personagem = { <br>
+                    &nbsp;&nbsp;&nbsp; nome: "Aloy", <br>
+                    &nbsp;&nbsp;&nbsp; idade: 20, <br>
+                    &nbsp;&nbsp;&nbsp; tribo: "Nora", <br>
+                    &nbsp;&nbsp;&nbsp; habilidades: ['acrobata', 'científica'], <br>
+                    &nbsp;&nbsp;&nbsp; caracteristicas: { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; força: 100, <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inteligência: 100, <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; agilidade: 100 <br>
+                    &nbsp;&nbsp;&nbsp; }, <br>
+                    &nbsp;&nbsp;&nbsp; saudacao: function() { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return `Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+                    &nbsp;&nbsp;&nbsp; }; <br>
+                    <br>
+                console.log(personagem.nome); // Aloy <br>
+                console.log(personagem.saudacao()); // Olá, meu nome é Aloy e tenho 20 anos.
+            </code>
+        </div>
+
+        <p>Nota: O <span class="code">this</span> é uma referência especial usada dentro de funções para acessar o contexto atual em que a função está sendo executada. O valor de <span class="code">this</span> pode variar dependendo de onde e como a função é chamada.</p>
+
+        <h3>Objetos em JavaScript: A Base da Linguagem</h3>
+
+        <p>Quase tudo em JavaScript é considerado um objeto, exceto valores primitivos (string, number, boolean, null e undefined, bigint, symbol).</p>
+
+        <p>Todos os outros são objetos (arrays, funções, date, math, etc.) e herdam propriedades e métodos úteis.</p>
+
+        <p>Essa abordagem permite uma estrutura flexível e poderosa para organizar e manipular dados e comportamentos.</p>
+
+        <p>No último exemplo dado, <span class="code">nome</span> e <span class="code">idade</span> são propriedades que armazenam valores primitivos (string e number).</p>
+
+        <p><span class="code">saudacao</span> é um método, que é uma função armazenada como propriedade.</p>
+
+        <p>Nota: Métodos são funções associadas a um objeto que definem comportamentos. Eles são usados para manipular ou operar os dados armazenados nas propriedades do objeto. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                const carro = { <br>
+                &nbsp;&nbsp;&nbsp;marca: "Toyota", <br>
+                &nbsp;&nbsp;&nbsp;modelo: "Corolla", <br>
+                &nbsp;&nbsp;&nbsp;ligar: function() { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`O ${this.marca} está ligado.`); <br>
+                &nbsp;&nbsp;&nbsp;} <br>
+                }; <br>
+                <br>
+                console.log(carro.marca); // Toyota (Propriedade) <br>
+                carro.ligar();            // "O Toyota está ligado." (Método)                
             </code>
         </div>
 
@@ -255,14 +310,13 @@
             </code>
         </div>
 
-
         <a href="Variáveis e operadores.html" class="button-previous" target="_self">
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
             </div>
         </a>
         <a href="index.html" class="button-home" target="_self">home</a>
-        <a href="#" class="button-next" target="_self">
+        <a href="Estruturas de controle.html" class="button-next" target="_self">
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
             </div>
