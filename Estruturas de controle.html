@@ -161,9 +161,9 @@
         <script>
         let text;
         if (Math.random() < 0.5) {
-        text = "<a href='index.html'>Link aleatório</a>";
+        text = "<a href='index.html'>Link aleatório!</a>";
         } else {
-        text = "<a href='https://wwf.org'>Link aleatório</a>";
+        text = "<a href='https://wwf.org'>Link aleatório!</a>";
         }
         document.getElementById("demo").innerHTML = text;
         </script>
@@ -228,7 +228,7 @@
 
         <p>Estruturas de repetição são úteis quando precisamos repetir várias vezes a execução de um bloco de comandos até que uma condição seja atendida. Elas eliminam a necessidade de escrever o mesmo código várias vezes, automatizando tarefas repetitivas.</p>
 
-        <p>Por exemplo, para imprimir os números de 1 a 10, em vez de escrever:</p>
+        <p>Por exemplo, para imprimir os números de 1 a 5, em vez de escrever:</p>
 
         <div class="exemplo">
             <code>
@@ -237,11 +237,6 @@
                 console.log(3);<br>
                 console.log(4);<br>
                 console.log(5);<br>
-                console.log(6);<br>
-                console.log(7);<br>
-                console.log(8);<br>
-                console.log(9);<br>
-                console.log(10);<br>
             </code>
         </div>
 
@@ -249,7 +244,7 @@
 
         <div class="exemplo">
             <code>
-                for (let i = 1; i <= 10; i++) {<br>
+                for (let i = 1; i <= 5; i++) {<br>
                 &nbsp;&nbsp;&nbsp;console.log(i);<br>
                 }
             </code>
@@ -266,10 +261,239 @@
             <li><span class="code">forEach</span>: Executar uma função para cada elemento de um array.</li>
         </ul>
 
-        <p>Iterar significa repetir ou percorrer (passar por) um conjunto de elementos, geralmente de uma estrutura de dados (como um array, objeto ou outro tipo de coleção), de maneira sequencial para executar uma ação. Existem várias formas de fazer isso em JavaScript, e cada método possui características específicas que podem ser úteis em diferentes situações.</p>
+        <p>Iterar significa repetir ou percorrer (passar por) um conjunto de elementos, geralmente de uma estrutura de dados (como um array, objeto ou outro tipo de coleção), de maneira sequencial para executar uma ação. Existem várias formas de fazer isso em JavaScript, e cada método possui características específicas que podem ser úteis em diferentes situações. Veremos a seguir cada tipo de loop:</p>
 
         <h3>For</h3>
 
+        <p>O loop <span class="code">for</span> executa um bloco de código repetidamente, com base em uma condição especificada. Com ele, você controla exatamente o índice e o número de iterações.</p>
+
+        <p> Sua estrutura é: <span class="code">for (inicio; condição; incremento)</span></p>
+
+        <p>Componentes do for:</p>
+
+        <ul>
+            <li><span class="code">inicio</span>: Define o valor inicial da variável de controle.</li>
+            <li><span class="code">condição</span>: Define a condição para que o loop seja executado</li>
+            <li><span class="code">incremento</span>: Aumenta um valor (i++) cada vez que o bloco de código no loop for executado (atualiza a variável de controle). Essa expressão pode fazer coisas como incremento negativo (i--), incremento positivo (i = i + 15), ou qualquer outra coisa.</li>
+        </ul>
+
+        <p>Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let frutas = ["maçã", "banana", "laranja"]; <br>
+                <br>
+                for (let i = 0; i < frutas.length; i++) { <br>
+                    &nbsp;&nbsp;&nbsp;console.log(frutas[i]); <br>
+                } // Saída: maçã <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;banana <br> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;laranja
+                    
+            </code>
+        </div>
+
+        <p>Explicação:</p>
+
+        <ul>
+            <li>A variável <span class="code">i</span> começa em <span class="code">0</span> (primeiro índice do array).</li>
+            <li>A condição <span class="code">i < frutas.length</span> garante que o loop será executado enquanto <span class="code">n</span> for menor que o comprimento do array.
+            </li>
+            <li>A cada iteração, <span class="code">i</span> aumenta em 1 (usando <span class="code">i++</span>), e acessamos <span class="code">frutas[i]</span>, que retorna o elemento na posição <span class="code">i</span>.
+            </li>
+        </ul>
+
+        <p>Exemplo 2:</p>
+
+        <div class="exemplo">
+            <code>
+                for(let i = 0; i < 11; i++){ <br>
+                    &nbsp;&nbsp;&nbsp;console.log("5 x " + i + " = " + 5*i); <br>
+                }                
+            </code>
+        </div>
+
+        <p>Ao executar o código, teremos o resultado:</p>
+
+        <div class="exemplo">
+            <code>
+                5 x 0 = 0 <br>
+                5 x 1 = 5 <br>
+                5 x 2 = 10 <br>
+                5 x 3 = 15 <br>
+                5 x 4 = 20 <br>
+                5 x 5 = 25 <br>
+                5 x 6 = 30 <br>
+                5 x 7 = 35 <br>
+                5 x 8 = 40 <br>
+                5 x 9 = 45 <br>
+                5 x 10 = 50 <br>
+            </code>
+        </div>
+
+        <h3>For/in</h3>
+
+        <p>Usado para percorrer todas as propriedades de um objeto. Ele é útil quando queremos acessar os nomes (ou chaves) das propriedades de um objeto e seus valores.</p>
+
+        <p>Sintaxe:</p>
+
+        <div class="exemplo">
+            <code>
+                for (let chave in objeto) { <br>
+                    &nbsp;&nbsp;&nbsp;// código a ser executado <br>
+                }
+            </code>
+        </div>
+
+        <ul>
+            <li>chave: Representa o nome de cada propriedade (ou índice, no caso de arrays) do objeto sendo iterado.</li>
+            <li>objeto: O objeto cujas propriedades você deseja iterar.
+            </li>
+        </ul>
+
+        <p>Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let personagem = { <br>
+                    &nbsp;&nbsp;&nbsp;nome: "Aloy", <br>
+                    &nbsp;&nbsp;&nbsp;idade: 20, <br>
+                    &nbsp;&nbsp;&nbsp;tribo: "Nora" <br>
+                }; <br>
+                <br>
+                for (let x in personagem) { <br>
+                    &nbsp;&nbsp;&nbsp;console.log(x + ": " + personagem[x]); <br>
+                } // Saída: nome: Aloy <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;idade: 20 <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tribo: Nora
+            </code>
+        </div>
+
+        <p>Explicação:</p>
+
+        <ul>
+            <li>O <span class="code">for...in</span> percorre um objeto chamado <span class="code">personagem</span>.</li>
+            <li>Cada iteração retorna uma chave (representada pela variável <span class="code">x</span>).</li>
+            <li>Essa chave (<span class="code">x</span>) é usada para acessar o valor da chave.
+            </li>
+            <li>O valor associado à chave é <span class="code">personagem[x]</span>.</li>
+        </ul>
+
+        <p>Nota: Ele também funciona com arrays, mas percorre os índices dos elementos (não os valores dos elementos diretamente). Embora o <span class="code">for...in</span> funcione com arrays, ele não é ideal porque pode percorrer coisas que não são só os índices do array. Ele pode incluir propriedades extras que o array herdou e não garante que eles serão acessados em ordem. Para arrays, prefira usar <span class="code">for</span>, <span class="code">for/of</span> ou <span class="code">forEach</span>.</p>
+
+        <h3>For/of</h3>
+
+        <p>Itera diretamente sobre os valores de objetos iteráveis. Esse loop é mais intuitivo e simples de usar quando você só precisa dos valores dos elementos, sem se preocupar com os índices.</p>
+
+        <p>Sintaxe:</p>
+
+        <div class="exemplo">
+            <code>
+                for (let variável of objetoIterável) { <br>
+                    &nbsp;&nbsp;&nbsp;// código a ser executado <br>
+                }
+            </code>
+        </div>
+
+        <p>Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let frutas = ["maçã", "banana", "laranja"]; <br>
+                <br>
+                for (let fruta of frutas) { <br>
+                    &nbsp;&nbsp;&nbsp;console.log(fruta); <br>
+                } // saída: maçã <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;banana <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;laranja
+            </code>
+        </div>
+
+        <p>Explicação:</p>
+
+        <ul>
+            <li><span class="code">fruta</span> é uma variável que, a cada iteração, recebe o valor do próximo elemento do array <span class="code">frutas</span>.</li>
+            <li>O <span class="code">for/of</span> percorre automaticamente cada elemento no array, começando pelo primeiro e indo até o último.</li>
+            <li>A variável <span class="code">fruta</span> recebe diretamente o valor de cada elemento em cada iteração.</li>
+        </ul>
+
+        <h3>While</h3>
+
+        <p>O loop <span class="code">while</span> executa um bloco de código enquanto uma condição especificada for verdadeira. Podemos utilizar a estrutura de repetição while caso seja necessário repetir um bloco de comandos por N vezes.</p>
+
+        <p>Diferente do <span class="code">for</span>, o <span class="code">while</span> executa o bloco de código enquanto uma condição é verdadeira. Ele é útil quando não sabemos exatamente o número de iterações necessárias ou quando a condição depende de outros fatores que podem mudar durante o loop.</p>
+
+        <p>Sintaxe:</p>
+
+        <div class="exemplo">
+            <code>
+                while (condição) { <br>
+                    &nbsp;&nbsp;&nbsp;// código a ser executado <br>
+                }
+            </code>
+        </div>
+
+        <p>A sintaxe do <span class="code">while</span>, como vemos acima, é bem simples. Utilizamos a palavra reservada <span class="code">while</span>, logo em seguida precisamos passar uma condição que será atendida enquanto ela retornar <span  class="code">true</span>.</p>
+
+        <p>Vamos usar o <span class="code">while</span> para percorrer o array <span class="code">frutas</span> como no exemplo anterior:</p>
+
+        <div class="exemplo">
+            <code>
+                let frutas = ["maçã", "banana", "laranja"]; <br>
+                let i = 0; // Inicializamos a variável de contagem fora do loop <br>
+                <br>
+                while (i &lt; frutas.length) { <br>
+                    &nbsp;&nbsp;&nbsp;console.log(frutas[i]); <br>
+                    &nbsp;&nbsp;&nbsp;i++; <br>
+                } // saída: maçã <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;banana <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;laranja
+            </code>
+        </div>
+
+        <p>Explicação:</p>
+
+        <ul>
+            <li><span class="code">let i = 0;</span>: Iniciamos <span class="code">i</span> em <span class="code">0</span> para que ele comece no primeiro índice do array.</li>
+            <li><span class="code">while (i < frutas.length)</span>: O loop continuará enquanto <span class="code">i</span> for menor que o comprimento do array <span class="code">(frutas.length)</span>.</li>
+            <li><span class="code">console.log(frutas[i]);</span>: Imprime o elemento atual no índice <span class="code">n</span>.</li>
+            <li><span class="code">i++;</span>: Incrementa <span class="code">i</span> em 1 a cada iteração, para que possamos acessar o próximo elemento do array.</li>
+        </ul>
+
+        <p>Nota: Se você esquecer de aumentar a variável usada na condição usando <span class="code">i++</span>, o loop nunca terminará. Isso irá travar o seu navegador.</p>
+
+        <p>Exemplo 2:</p>
+
+        <div class="exemplo">
+            <code>
+                let i = 0; <br>
+                while(i < 11) { <br>
+                    &nbsp;&nbsp;&nbsp;console.log("5 x " + i + " = " + 5*i); <br>
+                    i++; <br>
+                }
+            </code>
+        </div>
+
+        <p>Neste caso, o código no loop será executado, repetidas vezes, desde que a variável <span class="code">i</span> seja menor que 11. Ao atingir tal valor, o laço é quebrado. Executando o código acima teremos o seguinte resultado:</p>
+
+        <div class="exemplo">
+            <code>
+                5 x 0 = 0 <br>
+                5 x 1 = 5 <br>
+                5 x 2 = 10 <br>
+                5 x 3 = 15 <br>
+                5 x 4 = 20 <br>
+                5 x 5 = 25 <br>
+                5 x 6 = 30 <br>
+                5 x 7 = 35 <br>
+                5 x 8 = 40 <br>
+                5 x 9 = 45 <br>
+                5 x 10 = 50
+            </code>
+        </div>
+
+        <h3>Do/while</h3>
+
+        <h3>forEach</h3>
         
 
 
@@ -290,7 +514,7 @@
             </div>
         </a>
         <a href="index.html" class="button-home" target="_self">home</a>
-        <a href="#" class="button-next" target="_self">
+        <a href="Funções.html" class="button-next" target="_self">
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
             </div>
