@@ -11,6 +11,149 @@
     <main>
 
         <h1>Funções</h1>
+
+        <p>Funções são blocos de código que executam uma tarefa específica. Funcionam como motores que recebem um parâmetro de entrada e produzem um parâmetro de saída. Elas ajudam a organizar o código e podem ser reutilizadas em diferentes partes do programa.</p>
+
+        <p>Por exemplo, a função abaixo calcula a soma de dois números:</p>
+
+        <div class="exemplo">
+            <code>
+                function soma(p1, p2) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return a + b <br>
+                }
+            </code>
+        </div>
+
+        <p><strong>Sintaxe de uma função</strong>:</p>
+
+        <ul>
+            <li>Definição da função: Começa com a palavra-chave <span class="code">function</span> seguida pelo nome da função, e entre parênteses são definidos os parâmetros;</li>
+            <li>Parâmetros: Valores que uma função pode receber para trabalhar, definidos em <span class="code">( )</span>. Os parênteses podem incluir nomes de parâmetros separados por vírgulas. Argumentos são os valores recebido pela função quando ela é chamada;</li>
+            <li>Corpo da função: O código a ser executado pela função é colocado dentro de colchetes: <span class="code">{ }</span>;</li>
+            <li>Retorno: Uma função pode (ou não) retornar um valor usando a palavra-chave <span class="code">return</span>.</li>
+        </ul>
+
+        <p>O código dentro de uma função será executado quando a função for invocada (chamada). Para chamar uma função, usamos o nome da função seguido de parênteses:</p>
+
+        <div class="exemplo">
+            <code>
+                let resultado = soma(5, 3); <br>
+                console.log(resultado); // Saída: 8<br>
+            </code>
+        </div>
+
+        <p>Quando o JavaScript encontra a palavra-chave <span class="code">return</span> em uma função, ele para a execução dessa função e retorna o valor especificado. O valor retornado pode ser utilizado pelo código que chamou a função.</p>
+
+        <p>Exemplo: Calcular o produto de dois números e retornar o resultado</p>
+
+        <div class="exemplo">
+            <code>
+                function produto(a, b) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return a * b <br>
+                } <br>
+                <br>
+                let resultado = produto(5, 3); <br>
+                console.log(resultado); // Saída: 15
+            </code>
+        </div>
+
+        <p>Explicação:</p>
+
+        <p>1. A função <span class="code">produto(a, b)</span> recebe dois parâmetros, <span class="code">a</span> e <span class="code">b</span>, e retorna o produto desses dois números.</p>
+
+        <p>2. A linha <span class="code">let resultado = produto(5, 3);</span> chama a função <span class="code">produto</span> com os argumentos <span class="code">5</span> e <span class="code">3</span>, armazenando o resultado na variável <span class="code">resultado</span>. Quando você chama <span class="code">produto(5, 3)</span>, o valor de <span class="code">a</span> se torna <span class="code">5</span> e o valor de <span class="code">b</span> se torna <span class="code">3</span>.</p>
+
+        <p>3. <span class="code">console.log(resultado)</span> imprime o valor de <span class="code">resultado</span>, que é <span class="code">15</span>.</p>
+
+        <div class="destaque">
+
+            <p><strong>Por que usar funções?</strong></p>
+
+            <p>Com funções, você pode escrever um bloco de código uma vez e reutilizá-lo sempre que necessário.</p>
+
+            <p>Você pode usar o mesmo código com argumentos diferentes, para produzir resultados diferentes.</p>
+
+            <p>Alterar a lógica de um comportamento em uma função facilita a manutenção sem afetar o restante do código.</p>
+
+        </div>
+
+        <p><strong>Utilizando funções como valores variáveis</strong></p>
+
+        <p>As funções podem ser usadas da mesma maneira que você usa variáveis, em todos os tipos de fórmulas, atribuições e cálculos. Por exemplo, em vez de usar uma variável para armazenar o valor de retorno de uma função:</p>
+
+        <div class="exemplo">
+            <code>
+                let x = produto(4,10); <br>
+                let text = "O valor total é " + x + " unidades"; <br>
+                console.log(text); // Saída: O valor total é 40 unidades
+            </code>
+        </div>
+
+        <p>Você pode usar a função diretamente, como um valor variável:</p>
+
+        <div class="exemplo">
+            <code>
+                let text = "O valor total é " + produto(4,10) + " unidades"; <br>
+                console.log(text); // Saída: O valor total é 40 unidades
+            </code>
+        </div>
+
+        <h3>Variáveis locais e globais</h3>
+
+        <p>Variáveis declaradas dentro da função só existem dentro da função (escopo local);</p>
+
+        <p>Variáveis declaradas fora da função são acessíveis globalmente (escopo global).</p>
+
+        <p>Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                function adicionar() { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let contador = 0; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;contador++; <br>
+                } <br>
+                adicionar(); <br>
+                adicionar(); <br>
+                console.log(contador); // Saída: Uncaught ReferenceError: contador is not defined
+            </code>
+        </div>
+
+        <p>Este código deveria adicionar um (1) ao <span class="code">contador</span>, mas ele vai gerar um erro, porque a variável <span class="code">contador</span> está declarada dentro da função <span  class="code">adicionar</span>, portanto, ela tem escopo local. Isso significa que <span class="code">contador</span> só existe dentro da função <span  class="code">adicionar</span> e não está acessível fora dela. Quando você tenta fazer <span  class="code">console.log(contador);</span> fora da função, o JavaScript não encontra a variável <span class="code">contador</span> e exibe um erro de referência <span class="code">(ReferenceError: contador is not defined)</span>. Para corrigir isso, você pode declarar <span class="code">contador</span> fora da função <span  class="code">adicionar</span> se quiser que ele seja acessível globalmente. Aqui está uma versão corrigida:</p>
+
+        <div class="exemplo">
+            <code>
+                let contador = 0; <br>
+                function adicionar() { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;contador++; <br>
+                } <br>
+                adicionar(); <br>
+                adicionar(); <br>
+                console.log(contador); // Saída: 2
+            </code>
+        </div>
+
+        <h2>Arrow function</h2>
+
+
+
+
+
+
+
+
+
+
+        <a href="Estruturas de controle.html" class="button-previous" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
+        <a href="index.html" class="button-home" target="_self">home</a>
+        <a href="Manipulação do DOM.html" class="button-next" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
         
     </main>
     

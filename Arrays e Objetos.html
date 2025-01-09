@@ -89,7 +89,7 @@
 
         <h3>Métodos comuns para manipular arrays</h3>
 
-        <p><span class="code">push()</span> adiciona um elemento ao final do array:</p>
+        <p>1. <span class="code">push()</span> adiciona um elemento ao final do array:</p>
 
         <div class="exemplo">
             <code>
@@ -98,7 +98,7 @@
             </code>
         </div>
 
-        <p><span class="code">pop()</span> remove o último elemento do array:</p>
+        <p>2. <span class="code">pop()</span> remove o último elemento do array:</p>
 
         <div class="exemplo">
             <code>
@@ -107,7 +107,7 @@
             </code>
         </div>
 
-        <p><span class="code">shift()</span> remove o primeiro elemento do array:</p>
+        <p>3. <span class="code">shift()</span> remove o primeiro elemento do array:</p>
 
         <div class="exemplo">
             <code>
@@ -116,7 +116,7 @@
             </code>
         </div>
 
-        <p><span class="code">unshift()</span> adiciona um elemento ao inicio do array:</p>
+        <p>4. <span class="code">unshift()</span> adiciona um elemento ao inicio do array:</p>
 
         <div class="exemplo">
             <code>
@@ -125,7 +125,7 @@
             </code>
         </div>
 
-        <p><span class="code">length</span> retorna o número de elementos no array:</p>
+        <p>5. <span class="code">length</span> retorna o número de elementos no array:</p>
 
         <div class="exemplo">
             <code>
@@ -135,7 +135,7 @@
 
         <p>Nota: Como o índice de um array começa em 0, <span class="code">length</span> sempre retorna um valor uma unidade maior que o índice do último elemento. Dessa forma, o índice do último elemento de um array é sempre <span class="code">length - 1</span>.</p>
 
-        <p><span class="code">join()</span> retorna uma string com todos os elementos do array concatenados, separando-os com um delimitador especificado entre as aspas (opcional):</p>
+        <p>6. <span class="code">join()</span> retorna uma string com todos os elementos do array concatenados, separando-os com um delimitador especificado entre as aspas (opcional):</p>
 
         <div class="exemplo">
             <code>
@@ -143,7 +143,7 @@
             </code>
         </div>
 
-        <p><span class="code">sort()</span> ordena os elementos em ordem alfabética:</p>
+        <p>7. <span class="code">sort()</span> ordena os elementos em ordem alfabética:</p>
 
         <div class="exemplo">
             <code>
@@ -152,7 +152,7 @@
             </code>
         </div>
 
-        <p><span class="code">reverse()</span> inverte a ordem dos elementos do array:</p>
+        <p>8. <span class="code">reverse()</span> inverte a ordem dos elementos do array:</p>
 
         <div class="exemplo">
             <code>
@@ -192,6 +192,98 @@
 
             <p>Para ordenar um array de números de forma decrescente, basta usar o método <span class="code">sort()</span> com uma função de comparação que retorne b - a.</p>
 
+        </div>
+
+        <p>9. <span class="code">.map()</span> transforma o array, criando um novo array com os resultados de uma função aplicada a cada elemento. O <span class="code">.map()</span> não executa a função para elementos sem valores e não altera a matriz original. Este exemplo multiplica cada valor do array por 2:</p>
+
+        <div class="exemplo">
+            <code>
+                let numeros = [1, 2, 3, 4]; <br>
+                let numerosDobro = numeros.map((num) => num * 2); <br>
+                console.log(numerosDobro); // [2, 4, 6, 8]
+            </code>
+        </div>
+
+        <p>10. <span class="code">.filter()</span> cria um novo array contendo todos os elementos do array original que passam em um teste definido por uma função. Esse método é muito útil para selecionar elementos de um array com base em alguma condição. O exemplo abaixo filtra números maiores que 10:</p>
+
+        <div class="exemplo">
+            <code>
+                let numeros = [5, 12, 8, 130, 44]; <br>
+                let maioresQue10 = numeros.filter(num => num > 10); <br> 
+                console.log(maioresQue10); // [12, 130, 44]
+            </code>
+        </div>
+
+        <p>11. <span class="code">.reduce()</span> executa uma função em cada elemento do array para produzir (reduzi-lo a) um único valor. Permite calcular somas, produtos, criar objetos ou concatenar strings com base nos elementos do array. O exemplo abaixo calcula a soma dos elementos do array:</p>
+
+        <div class="exemplo">
+            <code>
+                let numeros = [5, 12, 8, 130, 44]; <br>
+                let soma = numeros.reduce((acumulador, num) => acumulador + num); <br>
+                console.log(soma); // 189
+            </code>
+        </div>
+
+        <p>Explicação:</p>
+
+        <p>- O <span class="code">acumulador</span> começa com <span class="code">5</span> (o primeiro elemento do array).</p>
+
+        <p>- Em cada iteração:</p>
+
+        <ul>
+            <li>Soma o <span class="code">acumulador</span> com o elemento atual (<span class="code">num</span>): <span class="code">5 + 12 = 17</span></li>
+            <li>Atualiza o <span class="code">acumulador</span> para a próxima iteração. Próxima iteração: <span class="code">acumulador = 17</span>, <span class="code">num = 8</span>. O resultado é <span class="code">17 + 8 = 25</span>.
+            </li>
+        </ul>
+
+        <p>- O valor final do acumulador após processar todos os elementos é <span class="code">189</span>, que é armazenado e retornado na variável <span class="code">soma</span>.</p>
+
+        <p>12. <span class="code">.every()</span> e <span class="code">.some()</span></p>
+
+        <p>Os métodos <span class="code">.every()</span> e <span class="code">.some()</span> são usados para verificar condições em arrays. Eles avaliam se todos os elementos (no caso de <span class="code">.every()</span>) ou algum elemento (no caso de <span class="code">.some()</span>) passam em um teste definido por uma função de callback. Esses métodos são muito úteis para validar dados em arrays.</p>
+
+        <p><span class="code">.every()</span> verifica se todos os elementos do array passam em uma condição. Ele retorna <span class="code">true</span> se todos os elementos atenderem ao teste e <span class="code">false</span> se algum elemento não atender.</p>
+
+        <p>Exemplo: Verificar se todos os números são pares</p>
+
+        <div class="exemplo">
+            <code>
+                let numeros = [2, 4, 6, 8, 9]; <br>
+                let todosPares = numeros.every(num => num % 2 === 0); <br>
+                console.log(todosPares); // false
+            </code>
+        </div>
+
+        <p><span class="code">.some()</span> verifica se pelo menos um elemento do array passa na condição. Ele retorna <span class="code">true</span> se algum elemento atender ao teste e <span class="code">false</span> se nenhum elemento atender.</p>
+
+        <p>Exemplo: Verificar se algum número é maior que 10</p>
+
+        <div class="exemplo">
+            <code>
+                let numeros = [5, 8, 12, 3]; <br>
+                let algumMaiorQueDez = numeros.some(num => num > 10); <br>
+                console.log(algumMaiorQueDez); // true
+            </code>
+        </div>
+
+        <p>13. <span class="code">.includes()</span> verifica se um array ou string contém um elemento ou substring específico. Ele é simples e direto, retornando <span class="code">true</span> se o elemento for encontrado e <span class="code">false</span> caso contrário. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let frutas = ["maçã", "banana", "laranja"]; <br>
+                console.log(frutas.includes("banana")); // true <br>
+                console.log(frutas.includes("uva"));    // false
+            </code>
+        </div>
+
+        <p>14. <span class="code">.indexOf()</span> retorna o índice da primeira ocorrência de um valor no array. Caso o valor não seja encontrado, ele retorna <span class="code">-1</span>. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let frutas = ["maçã", "banana", "laranja"]; <br>
+                console.log(frutas.indexOf("laranja")); // 2 <br>
+                console.log(frutas.indexOf("uva"));    // -1
+            </code>
         </div>
 
         <h2>Objeto</h2>

@@ -258,7 +258,6 @@
             <li><span class="code">for/of</span>: Iterar sobre os valores de objetos iteráveis</li>
             <li><span class="code">while</span>: Repetir enquanto uma condição for verdadeira</li>
             <li><span class="code">do/while</span>: Garantir pelo menos uma execução antes de verificar a condição.</li>
-            <li><span class="code">forEach</span>: Executar uma função para cada elemento de um array.</li>
         </ul>
 
         <p>Iterar significa repetir ou percorrer (passar por) um conjunto de elementos, geralmente de uma estrutura de dados (como um array, objeto ou outro tipo de coleção), de maneira sequencial para executar uma ação. Existem várias formas de fazer isso em JavaScript, e cada método possui características específicas que podem ser úteis em diferentes situações. Veremos a seguir cada tipo de loop:</p>
@@ -493,20 +492,147 @@
 
         <h3>Do/while</h3>
 
-        <h3>forEach</h3>
+        <p>O <span class="code">do/while</span> tem o mesmo conceito que o <span class="code">while</span> com uma única diferença, a condição é verificada após os comandos do bloco serem executados, ou seja, mesmo que a condição seja falsa, é garantia que o bloco será executado ao menos uma vez.</p>
+
+        <p>Sintaxe:</p>
+
+        <div class="exemplo">
+            <code>
+                do { <br>
+                    &nbsp;&nbsp;&nbsp; // Bloco de código a ser executado <br>
+                } while (condição); <br>
+            </code>
+        </div>
+
+        <p>Podemos testar da seguinte forma:</p>
+
+        <div class="exemplo">
+            <code>
+                let contador = 0; <br>
+                <br>
+                do { <br>
+                    &nbsp;&nbsp;&nbsp;console.log(contador); <br>
+                    &nbsp;&nbsp;&nbsp;contador++; <br>
+                } while (contador == 1);
+            </code>
+        </div>
+
+        <p>Explicação:</p>
+
+        <p>1. Inicialização: A variável <span class="code">contador</span> é definida como <span class="code">0</span>.</p>
+
+        <p>2. Primeira execução do bloco:</p>
+
+        <ul>
+            <li>O bloco dentro do <span class="code">do</span> será executado independentemente da condição porque ela é verificada apenas depois do bloco ser executado.</li>
+            <li>Ele executa <span class="code">console.log(contador);</span>, imprimindo: "0"</li>
+            <li>Incrementa <span class="code">contador</span> com <span class="code">contador++</span>, agora <span class="code">contador = 1</span>.
+            </li>
+        </ul>
+
+        <p>3. Verificação da condição:</p>
+
+        <ul>
+            <li>A condição <span class="code">contador == 1</span> é avaliada.</li>
+            <li>Como <span class="code">contador</span> é igual a <span class="code">1</span>, a condição é verdadeira, e o bloco será executado novamente.</li>
+        </ul>
+
+        <p>4. Segunda execução do bloco:</p>
+
+        <ul>
+            <li>O <span class="code">console.log</span> é executado novamente, imprimindo: "1"</li>
+            <li>Incrementa <span class="code">contador</span> com <span class="code">contador++</span>, agora <span class="code">contador = 2</span>.</li>
+        </ul>
+
+        <p>5. Nova verificação da condição:</p>
+
+        <ul>
+            <li>Agora a condição <span class="code">contador == 1</span> é falsa (porque <span class="code">contador = 2</span>).</li>
+            <li>O loop termina.</li>
+        </ul>
+
+        <p>O código gera a seguinte saída no console:</p>
+
+        <div class="exemplo">
+            <code>
+                0 <br>
+                1
+            </code>
+        </div>
+
+        <p>Nota: Não esqueça de incrementar a variável usada na condição, caso contrário o loop nunca vai acabar!</p>
         
+        <h3>Métodos de controle de loops: break e continue</h3>
 
+        <p>As palavras-chave <span class="code">break</span> e <span class="code">continue</span> são usadas em estruturas de repetição (<span class="code">for</span>, <span class="code">while</span>, <span class="code">do/while</span>) e no <span class="code">switch</span> para controlar o fluxo de execução. Vamos entender cada uma em detalhes:</p>
 
+        <p><strong>Break</strong></p>
 
+        <p>Finaliza o laço atual ou o bloco switch. Quando o JavaScript encontra a palavra-chave <span class="code">break</span>, ele interrompe a execução do laço imediatamente e sai dele, mesmo que a condição do laço ainda seja verdadeira.</p>
 
+        <p>Exemplo: <span class="code">break</span> com <span class="code">for</span></p>
 
+        <div class="exemplo">
+            <code>
+                for (let i = 0; i &lt;= 10; i++) { <br>
+                    &nbsp;&nbsp;&nbsp;if (i === 5) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                    &nbsp;&nbsp;&nbsp;} <br>
+                    &nbsp;&nbsp;&nbsp;console.log(i); <br>
+                } <br>
+            </code>
+        </div>
 
+        <p>Quando <span class="code">i</span> atinge o valor <span class="code">5</span>, o <span class="code">break</span> é acionado e o loop termina imediatamente.</p>
 
+        <p>Saída:</p>
 
+        <div class="exemplo">
+            <code>
+                0 <br>
+                1 <br>
+                2 <br>
+                3 <br>
+                4
+            </code>
+        </div>
 
+        <p><strong>Continue</strong></p>
 
+        <p>Pula para a próxima iteração do laço, ignorando o código restante na iteração atual. Diferente do <span class="code">break</span>, ele não encerra o laço, apenas salta para a próxima repetição.</p>
+        
+        <p>Exemplo: <span class="code">continue</span> com <span class="code">for</span></p>
 
+        <div class="exemplo">
+            <code>
+                for (let i = 1; i &lt;= 5; i++) { <br>
+                    &nbsp;&nbsp;&nbsp;if (i === 3) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue; <br>
+                    &nbsp;&nbsp;&nbsp;} <br>
+                    &nbsp;&nbsp;&nbsp;console.log(i); <br>
+                } <br>
+            </code>
+        </div>
 
+        <p>Quando <span class="code">i</span> é igual a <span class="code">3</span>, o <span class="code">continue</span> ignora o resto do código (o <span class="code">console.log</span>) e pula para a próxima iteração.</p>
+
+        <p>Saída:</p>
+
+        <div class="exemplo">
+            <code>
+                1 <br>
+                2 <br>
+                4 <br>
+                5
+            </code>
+        </div>
+
+        <p><strong>Quando usar <span class="code">break</span> e <span class="code">continue</span>?</strong></p>
+
+        <ul>
+            <li>Use <span class="code">break</span> quando você quiser parar completamente o laço ou o switch ao atingir uma condição específica.</li>
+            <li>Use <span class="code">continue</span> quando você quiser ignorar parte do código de uma iteração e ir para a próxima repetição do laço.</li>
+        </ul>
 
         <a href="Arrays e Objetos.html" class="button-previous" target="_self">
             <div class="arrow-wrapper">
