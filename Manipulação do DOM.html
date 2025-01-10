@@ -12,6 +12,83 @@
 
         <h1>Manipulação do DOM</h1>
 
+        <p>DOM (Document Object Model) é uma  interface de programação (API) que representa a estrutura de um documento HTML, que pode ser modificada com uma linguagem de script como JavaScript. Em termos simples, ele transforma o seu HTML em um objeto JavaScript, permitindo que você manipule e interaja com os elementos da sua página web de forma dinâmica.</p>
+
+        <p>Nota: Interface, do latim inter (entre) + facies (faces), significa: ligação física ou lógica entre 2 sistemas ou partes que não poderiam ser conectados diretamente.</p>
+
+        <p>Este modelo utiliza uma linguagem neutra que, por meio de uma árvore hierárquica de diretórios, permite você acessar e interagir com qualquer elemento de seu documento com o uso do JavaScript.</p>
+
+        <p>Dessa forma, o JavaScript tem o poder de:</p>
+
+        <ul>
+            <li>alterar, excluir e adicionar: elementos HTML, atributos HTML, eventos HTML, estilos CSS.</li>
+        </ul>
+
+        <p>Ou seja, o DOM é o <strong>intermediador</strong> da <strong>comunicação</strong> da linguagem JavaScript com as tecnologias HTML5 e CSS3.</p>
+
+        <p>Ilustração de uma árvore DOM:</p>
+
+        <div style="text-align: center;">
+            <img src="imagens/DOM.webp" alt="árvore DOM" style="width: 480px;">
+        </div>
+
+        <p><strong>Parent</strong> (pai)  - é quem está acima na árvore hierárquica.</p>
+
+        <p><strong>Child</strong> (filho) - é quem está abaixo na árvore hierárquica.</p>
+
+        <p>É como se fosse uma árvore genealógica. Exemplos:</p>
+
+        <p>HEAD e BODY são filhos de HTML;</p>
+
+        <p>HTML é pai de HEAD e BODY;</p>
+
+        <p>HTML é filho de DOCUMENT.</p>
+
+        <p>Um dos grandes responsáveis por isso tudo é o objeto <span class="code">document</span> que é responsável por conceder ao código Javascript todo o acesso a árvore DOM. Portanto, qualquer coisa criada pelo navegador Web no modelo da página Web poderá ser acessado através do objeto Javascript <span class="code">document</span>.</p>
+
+        <p>É importante ressaltar que um documento HTML e sua representação DOM são a <strong>mesma coisa</strong>. A única diferença é que estes estão representados de formas diferentes. Ex: "uma garrafa" e "a bottle" são a mesma coisa, só que representadas em línguas diferentes. É a mesma ideia. Caso você altere o documento HTML, você também alterará o seu DOM e vice-versa.</p>
+
+        <h2>Selecionando elementos</h2>
+
+        <p>Para começar a manipular o DOM, você precisa primeiro selecionar os elementos que deseja modificar. Os métodos mais comuns para isso são:</p>
+
+        <p><span class="code">document.getElementById()</span> seleciona um elemento pelo seu ID.</p>
+        <p>Exemplo:</p>
+
+        <div class="code-example">
+            <p>document.getElementById("myElement");</p>
+        </div>
+
+        <p><span class="code">document.getElementsByName()</span> seleciona elementos pelo NOME.</p>
+
+        <p><span class="code">document.getElementsByTagName()</span> seleciona elementos pela TAG.</p>
+
+        <p><span class="code">document.getElementsByClassName()</span> seleciona elementos pela CLASSE.</p>
+
+        <p><span class="code">document.querySelector()</span> seleciona o <strong>primeiro</strong> elemento que corresponda ao seletor CSS fornecido.</p>
+
+        <p><span class="code">document.queySelectorAll()</span> seleciona elementos pelo SELETOR CSS.</p>
+
+        <h2>Manipulando elementos</h2>
+
+
+
+
+
+
+
+        <a href="Funções.html" class="button-previous" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
+        <a href="index.html" class="button-home" target="_self">home</a>
+        <a href="#.html" class="button-next" target="_self">
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </a>
+
     </main>
     
 </body>

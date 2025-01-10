@@ -134,14 +134,145 @@
 
         <h2>Arrow function</h2>
 
+        <p>Arrow functions oferecem uma sintaxe mais curta e concisa para escrever funções.</p>
 
+        <p>Função tradicional:</p>
 
+        <div class="exemplo">
+            <code>
+                function soma(a, b) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return a + b <br>
+                    }
+            </code>
+        </div>
 
+        <p>Equivalente em arrow function:</p>
 
+        <div class="exemplo">
+            <code>
+                const soma = (a, b) => a + b <br>
+                console.log(soma(3, 4)); // Saída: 7
+            </code>
+        </div>
 
+        <p>Se a função tem apenas um parâmetro, os parênteses podem ser omitidos:</p>
 
+        <div class="exemplo">
+            <code>
+                const dobro = x => x * 2 <br>
+                console.log(dobro(3)); // Saída: 6
+            </code>
+        </div>
 
+        <p>Quando o corpo da função está entre <span class="code">{ }</span>, você precisa usar <span class="code">return</span> explicitamente para retornar um valor:</p>
 
+        <div class="exemplo">
+            <code>
+                const multiplica = (a, b) => { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return a * b <br>
+                    } <br>
+                console.log(multiplica(3, 4)); // Saída: 12
+            </code>
+        </div>
+
+        <p>Já sem <span class="code">{ }</span>, o retorno é implícito:</p>
+
+        <div class="exemplo">
+            <code>
+                const multiplica = (a, b) => a * b <br>
+                console.log(multiplica(3, 4)); // Saída: 12
+            </code>
+        </div>
+
+        <h2>Exemplos práticos</h2>
+
+        <p><strong>1. Função para verificar se um número é par ou ímpar</strong></p>
+
+        <div class="exemplo">
+            <code>
+                function parOuImpar(numero) { <br>
+                    &nbsp;&nbsp;&nbsp;if (numero % 2 === 0) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Par"; <br>
+                    &nbsp;&nbsp;&nbsp;} else {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Ímpar"; <br>
+                    &nbsp;&nbsp;&nbsp;} <br>
+                console.log(parOuImpar(3)); // Ímpar <br>
+                console.log(parOuImpar(4)); // Par
+            </code>
+        </div>
+
+        <div class="destaque">
+            <p>Explicação:</p>
+            <p>1. A função <span class="code">parOuImpar</span> recebe um número como parâmetro (<span class="code">numero</span>).</p>
+            <p>2. O operador <span class="code">%</span> calcula o resto da divisão. A linha <span class="code">if (numero % 2 === 0)</span> verifica se o resto da divisão por 2 é zero, indicando que o número é par.</p>
+            <ul>
+                <li>Se a condição for verdadeira, retorna <span class="code">"Par"</span>.</li>
+                <li>Se for falsa, executa o bloco do <span class="code">else</span> e retorna <span class="code">"Ímpar"</span>.</li>
+            </ul>
+            <p>Você pode simplificar o código utilizando uma Arrow Function e removendo o if-else, utilizando operador ternário, mas mantendo a mesma lógica:</p>
+            <div class="exemplo">
+                <code>
+                    const parOuImpar = numero => numero % 2 === 0 ? "Par" : "Ímpar" <br>
+                    console.log(parOuImpar(3)); // Ímpar <br>
+                    console.log(parOuImpar(4)); // Par
+                </code>
+            </div>
+        </div>
+
+        <p><strong>2. Função para calcular a média de um array numérico:</strong></p>
+
+        <div class="exemplo">
+            <code>
+                function calcularMedia(array) { <br>
+                    &nbsp;&nbsp;&nbsp;let soma = 0; <br>
+                    &nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; array.length; i++) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;soma += array[i]; <br>
+                    &nbsp;&nbsp;&nbsp;} <br>
+                    &nbsp;&nbsp;&nbsp;return soma / array.length; <br>
+                    } <br>
+                    <br>
+                    const numeros = [13, 22, 36, 41] <br>
+                    console.log(calcularMedia(numeros)); // 28
+            </code>
+        </div>
+
+        <div class="destaque">
+            <p>Explicação:</p>
+            <p>1. A função <span class="code">calcularMedia</span> recebe um array como entrada (<span class="code">array</span>).</p>
+            <p>2. Uma variável chamada <span class="code">soma</span> é criada para armazenar a soma de todos os elementos do array.</p>
+            <p>3. O laço for itera sobre o array e adiciona cada elemento ao valor da variável <span class="code">soma</span>. Em cada iteração:</p>
+            <ul>
+                <li>A variável <span class="code">i</span> é o índice do elemento atual no array.</li>
+                <li>A variável <span class="code">soma</span> recebe o valor da variável <span class="code">soma</span> mais o valor do elemento no índice <span class="code">i</span>.</li>
+            </ul>
+            <p>4. Após somar todos os elementos, a variável <span class="code">soma</span> é dividida pelo número de elementos do array (<span class="code">array.length</span>) para obter a média.</p>
+            <p>Também podemos simplificar esse código utilizando o método <span class="code">reduce</span>:</p>
+            <div class="exemplo">
+                <code>
+                    function calcularMedia(array) { <br>
+                        &nbsp;&nbsp;&nbsp;const soma = array.reduce((soma, elemento) =&gt; soma + elemento, 0);<br>
+                        &nbsp;&nbsp;&nbsp;return soma / array.length; <br>
+                    } <br>
+                    <br>
+                    const numeros = [13, 22, 36, 41] <br>
+                    console.log(calcularMedia(numeros)); // 28
+                </code>
+            </div>
+        </div>
+
+        <p><strong>3. Função para gerar uma frase com valores variáveis:</strong></p>
+
+        <p>Essa função recebe o nome de um produto, a quantidade e o preço unitário, e retorna uma frase com o total da compra no formato: "Você comprou [quantidade] [produto](s) pelo total de R$[total]."</p>
+
+        <div class="exemplo">
+            <code>
+                function frase (produto, quantidade, preco) { <br>
+                    &nbsp;&nbsp;&nbsp;return (`Você comprou ${quantidade} ${produto}(s) pelo total de R${quantidade * preco}.`) <br>
+                } <br>
+                <br>
+                console.log (frase ("camisas", 3, 40)); // "Você comprou 3 camisas pelo total de R$120."
+            </code>
+        </div>
 
         <a href="Estruturas de controle.html" class="button-previous" target="_self">
             <div class="arrow-wrapper">
