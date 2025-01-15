@@ -46,35 +46,121 @@
 
         <p>Um dos grandes responsáveis por isso tudo é o objeto <span class="code">document</span> que é responsável por conceder ao código Javascript todo o acesso a árvore DOM. Portanto, qualquer coisa criada pelo navegador Web no modelo da página Web poderá ser acessado através do objeto Javascript <span class="code">document</span>.</p>
 
-        <p>É importante ressaltar que um documento HTML e sua representação DOM são a <strong>mesma coisa</strong>. A única diferença é que estes estão representados de formas diferentes. Ex: "uma garrafa" e "a bottle" são a mesma coisa, só que representadas em línguas diferentes. É a mesma ideia. Caso você altere o documento HTML, você também alterará o seu DOM e vice-versa.</p>
+        <p>É importante ressaltar que um documento HTML e sua representação DOM são a <strong>mesma coisa</strong>. A única diferença é que estes estão representados de formas diferentes. Ex: "uma garrafa" e "a bottle" são a mesma coisa, só que representadas em línguas diferentes. Caso você altere o documento HTML, você também alterará o seu DOM e vice-versa.</p>
 
         <h2>Selecionando elementos</h2>
 
         <p>Para começar a manipular o DOM, você precisa primeiro selecionar os elementos que deseja modificar. Os métodos mais comuns para isso são:</p>
 
-        <p><span class="code">document.getElementById()</span> seleciona um elemento pelo seu ID.</p>
+        <p><strong><span class="code">document.getElementById()</span> seleciona um elemento pelo seu ID.</strong></p>
+
         <p>Exemplo:</p>
 
-        <div class="code-example">
-            <p>document.getElementById("myElement");</p>
+        <div class="exemplo">
+            &lt;p id="texto">Acessando elementos HTML pelo id&lt;/p&gt; <br>
+            <br>
+            &lt;script&gt; <br>
+            &nbsp;&nbsp;&nbsp;const texto = document.getElementById("texto"); <br>
+            &nbsp;&nbsp;&nbsp;console.log(texto.innerHTML); <br>
+            &lt;/script&gt;
         </div>
 
-        <p><span class="code">document.getElementsByName()</span> seleciona elementos pelo NOME.</p>
+        <p>O código acima armazena o elemento com o id="texto" na variável <span class="code">texto</span> e em seguida exibe o seu conteúdo no console.</p>
 
-        <p><span class="code">document.getElementsByTagName()</span> seleciona elementos pela TAG.</p>
+        <p><strong><span class="code">document.getElementsByName()</span> seleciona elementos pelo NOME.</strong></p>
 
-        <p><span class="code">document.getElementsByClassName()</span> seleciona elementos pela CLASSE.</p>
+        <p>Exemplo:</p>
 
-        <p><span class="code">document.querySelector()</span> seleciona o <strong>primeiro</strong> elemento que corresponda ao seletor CSS fornecido.</p>
+        <div class="exemplo">
+            &lt;input type="text" name="usuario" value="Maria"&gt;; <br>
+            <br>
+            &lt;script&gt; <br>
+            &nbsp;&nbsp;&nbsp;const elemento = document.getElementsByName("usuario"); <br>
+            &nbsp;&nbsp;&nbsp;console.log(elemento[0].value); <br>
+            &lt;/script&gt;
+        </div>
 
-        <p><span class="code">document.queySelectorAll()</span> seleciona elementos pelo SELETOR CSS.</p>
+        <p>Esse código exibirá o valor do primeiro elemento (no índice 0) encontrado com o atributo name="usuario".</p>
 
+        <p><strong><span class="code">document.getElementsByTagName()</span> seleciona elementos pela TAG.</strong></p>
+
+        <p>Exemplo:</p>
+
+        <div class="exemplo">
+            &lt;h1&gt;Acessando elementos HTML pela tag&lt;/h1&gt; <br>
+            <br>
+            &lt;script&gt; <br>
+            &nbsp;&nbsp;&nbsp;const titulo = document.getElementsByTagName("h1"); <br>
+            &nbsp;&nbsp;&nbsp;console.log(titulo[0].innerHTML); <br>
+            &lt;/script&gt;
+        </div>
+
+        <p>Esse código acessa o conteúdo do primeiro elemento com a tag "h1".</p>
+
+        <p><strong><span class="code">document.getElementsByClassName()</span> seleciona elementos pela CLASSE.</strong></p>
+
+        <p>Exemplo:</p>
+
+        <div class="exemplo">
+            &lt;p class="ola">Hello World!&lt;/p&gt; <br>
+            <br>
+            &lt;script&gt; <br>
+            &nbsp;&nbsp;&nbsp;const x = document.getElementsByClassName("ola"); <br>
+            &nbsp;&nbsp;&nbsp;console.log(x[0].innerHTML); <br>
+            &lt;/script>
+        </div>
+
+        <p>Esse código exibe o conteúdo do primeiro elemento com a classe "ola".</p>
+
+        <p><strong><span class="code">document.querySelector()</span> seleciona o <strong>primeiro</strong> elemento que corresponda ao seletor CSS fornecido.</strong></p>
+
+        <p>Esse método é uma forma moderna e eficiente de selecionar elementos no DOM. Ele permite selecionar o primeiro elemento que corresponde a um seletor CSS. Aceita qualquer seletor CSS, como nomes de tags, classes (.minha-classe), IDs (#meu-id), ou combinações de seletores.</p>
+
+        <p>Exemplo:</p>
+
+        <div class="exemplo">
+            &lt;p class="nome">Maria&lt;/p&gt; <br>
+            <br>
+            &lt;script&gt; <br>
+            &nbsp;&nbsp;&nbsp;const a = document.querySelector(".nome"); <br>
+            &nbsp;&nbsp;&nbsp;console.log(a.innerHTML); <br>
+            &lt;/script>
+        </div>
+
+        <p><strong><span class="code">document.querySelectorAll()</span> seleciona elementos pelo SELETOR CSS.</strong></p>
+
+        <p>Permite selecionar todos os elementos no DOM que correspondem a um seletor CSS especificado e retorna uma lista dos elementos.</p>
+
+        <p>Exemplo:</p>
+
+        <div class="exemplo">
+            &lt;p&gt;Acessando elementos HTML com querySelectorAll().&lt;/p&gt; <br>
+            &lt;p class="paragrafo"&gt;Olá, mundo!&lt;/p&gt; <br>
+            &lt;p class="paragrafo"&gt;Esse exemplo demonstra o método querySelectorAll().&lt;/p&gt; <br>
+            <br>
+            &lt;script&gt; <br>
+            &nbsp;&nbsp;&nbsp;const x = document.querySelectorAll("p.paragrafo"); <br>
+            &nbsp;&nbsp;&nbsp;console.log(x[1].innerHTML); <br>
+            &lt;/script&gt;
+        </div>
+        
         <h2>Manipulando elementos</h2>
 
 
 
+    
+        
+        <p>Acessando elementos HTML com querySelectorAll().</p>
+        <p class="paragrafo">Olá, mundo!</p>
+        <p class="paragrafo">Esse exemplo demonstra o método querySelectorAll().</p>
+        
+        <script>
+           const x = document.querySelectorAll("p.paragrafo");
+           console.log(x[1].innerHTML);
+        </script>
 
-
+        
+       
 
 
         <a href="Funções.html" class="button-previous" target="_self">
