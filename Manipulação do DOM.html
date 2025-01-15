@@ -144,8 +144,105 @@
             &lt;/script&gt;
         </div>
         
+        <p>Nota: O Seletor de Classe é representado por: <span class="code">.</span>; o Seletor de ID é representado por:  #</p>
+
+        <p><span class="code">document.queySelectorAll()</span> seleciona elementos pelo SELETOR CSS.</p>
+
+        <p>querySelectorAll -> retorna uma NodeList com todos os elementos do seletor dentro dos parânteses.</p>
+
+        <p>Nota: NodeList é uma coleção de nós (nodes). Quando se tem uma estrutura baseada em árvore, o nó <span class="code">Node</span> é o elemento básico da estrutura. No caso do JavaScript, o DOM é uma árvore de nós. A classe <span class="code">NodeList</span> representa um conjunto desses nós, sendo retornado, por exemplo, pela função <span class="code">document.querySelectorAll</span>.</p>
+
+        <p>Atente-se que alguns dos seletores estão no <strong>singular</strong> e outros no <strong>plural</strong> (element e elements). Caso utilize um seletor que está no plural (como <span class="code">document.getElementsByTagName</span> ou <span class="code">document.getElementsByClassName</span>), ele retornará uma coleção com todos os elementos selecionados <span class="code">(HTMLCollection)</span>.</p>
+        
+        <p>Para especificar qual tag, name ou class você deseja acessar, você têm que usar, após os parênteses ( ), os colchetes [ ] e, dentro destes, você indicará qual a <strong>posição</strong> do elemento que você deseja acessar. Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                let elemento = document.getElementsByTagName('h1')[0]; <br>
+                console.log(elemento); // &lt;h1&gt;Manipulação do DOM&lt;h1&gt;
+            </code>
+        </div>
+
+        <p>Neste exemplo selecionou-se, dentro dos parênteses, todas as tags <span class="code">&lt;h1&gt;</span>. E, dentro dos colchetes, selecionou-se a tag <span class="code">&lt;h1&gt;</span> que se encontra na posição 0, ou seja, a 1° tag <span class="code">&lt;h1&gt;</span>.</p>
+
+        <p>Os seguintes elementos também podem ser acessados:</p>
+
+        <ul>
+            <li>document.anchors</li>
+            <li>document.body</li>
+            <li>document.documentElement</li>
+            <li>document.embeds</li>
+            <li>document.forms</li>
+            <li>document.head</li>
+            <li>document.images</li>
+            <li>document.links</li>
+            <li>document.scripts</li>
+            <li>document.title</li>
+        </ul>
+
         <h2>Manipulando elementos</h2>
 
+        <p>Uma vez que você selecionou um elemento, você pode manipulá-lo de diversas formas. Para alterar o conteúdo de um elemento HTML, é possível usar a sintaxe:</p>
+
+        <div class="exemplo">
+            <code>
+                &lt;p id="p1"&gt;Olá, mundo!&lt;/p&gt; <br>
+                <br>
+                let texto = document.getElementById("p1"); <br>
+                texto.innerHTML = "Novo texto"; <br>
+                console.log(texto.innerHTML); // Novo texto
+            </code>
+        </div>
+
+        <p>É possível simplificar:</p>
+
+        <div class="exemplo">
+            <code>
+                let texto = document.getElementById("p1").innerHTML = "Novo texto"; <br>
+                console.log(texto.innerHTML); // Novo texto
+            </code>
+        </div>
+
+        <p>Exemplo explicado:</p>
+
+        <ul>
+            <li>O HTML acima contém um elemento &lt;p&gt; com id="p1";</li>
+            <li>Usamos o DOM para obter o elemento id="p1";</li>
+            <li>O método <span class="code">innerHTML</span> altera o conteúdo desse elemento para "Novo texto".</li>
+        </ul>
+
+        <p>Os métodos <span class="code">innerHTML</span>, <span class="code">innerText</span> e <span class="code">textContent</span> são usados para acessar ou modificar o conteúdo de elementos HTML, mas eles possuem diferenças importantes em como manipulam o DOM e interpretam o conteúdo. Vamos detalhar cada um:</p>
+
+        <p><strong>1. innerHTML:</strong> Retorna ou define o conteúdo HTML completo, incluindo tags e elementos filhos. Assim, permite inserir ou modificar HTML estruturado dentro de um elemento.</p>
+
+        <p><strong>2. innerText:</strong> Retorna ou define o conteúdo de texto de um elemento, ignorando as tags HTML. Também ignora elementos ocultos por CSS (<span class="code">display: none</span> ou <span class="code">visibility: hidden</span>). Assim, permite trabalhar com o texto puro de um elemento, sem se preocupar com a formatação HTML.</p>
+
+        <p><strong>3. textContent:</strong>Similar ao innerText, retorna ou define o conteúdo de texto de um elemento, mas inclui todo o texto, mesmo que esteja oculto.</p>
+
+        <p>Exemplo:</p>
+
+        <div class="exemplo">
+            <code>
+                &lt;div id="meuDiv"&gt; <br>
+                &nbsp;&nbsp;&nbsp;&lt;h1&gt;Título&lt;/h1&gt; <br>
+                &nbsp;&nbsp;&nbsp;&lt;p&gt;Este é um parágrafo com &lt;span style="display:none;"&gt;texto oculto&lt;/span&gt;.&lt;/p&gt; <br>
+                &lt;/div&gt; <br>
+                <br>
+                let elemento = document.getElementById("meuDiv"); <br>
+                <br>
+                console.log(elemento.innerHTML); <br>
+                // &lt;h1&gt;Título&lt;/h1&gt; <br>
+                &nbsp;&nbsp;&nbsp;&lt;p&gt;Este é um parágrafo com &lt;span style="display:none;"&gt;texto oculto&lt;/span&gt;.&lt;/p&gt; <br>
+                <br>
+                console.log(elemento.innerText); <br>
+                // Título <br>
+                &nbsp;&nbsp;&nbsp;Este é um parágrafo com . <br>
+                <br>
+                console.log(elemento.textContent); <br>
+                // Título <br>
+                &nbsp;&nbsp;&nbsp;Este é um parágrafo com texto oculto.
+            </code>
+        </div>
 
 
     
@@ -161,6 +258,12 @@
 
         
        
+      
+
+
+      
+
+
 
 
         <a href="Funções.html" class="button-previous" target="_self">
