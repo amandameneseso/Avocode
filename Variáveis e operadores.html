@@ -13,6 +13,29 @@
             margin: auto;
             color: rgb(208, 219, 192);
         }
+
+        .button-container {
+            display: flex;
+            justify-content: center; /* Centraliza os botões horizontalmente */
+            gap: 20px; /* Espaçamento de 15px entre os botões */
+            margin-top: 30px; /* Espaço acima dos botões */
+        }
+
+        .button-calc {
+            background-color: rgba(206, 195, 178); /* Cor de fundo */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 5px;
+            border: none;
+            padding: 6px;
+        }
+
+        .button-calc:hover {
+            background-color: rgba(206, 195, 178, 0.900);
+        }
+
+        .button-calc:active {
+            background-color: rgba(206, 195, 178, 0.800);
+        }
     </style>
 </head>
 <body>
@@ -659,6 +682,34 @@
                 console.log(x);  // Saída: 4 (depois, o valor decrementado de x [4] é atribuído à variável y).
             </code>
         </div>
+
+        <div class="destaque">
+            <p><strong>Exercício: Calculando desconto</strong></p>
+            <p>Crie um código que recebe o preço de uma camisa que custa 19,90 e um percentual de desconto de 40%. O programa deve calcular e exibir o preço final com o desconto aplicado.</p>
+            <div class="button-container">
+                <input type="button" class="button-calc" value="Exibir ajuda">
+                <input type="button" class="button-calc" value="Exibir resposta">
+            </div>
+        </div>
+
+        <script>
+            document.querySelector("input[value='Exibir ajuda']").addEventListener("click", function(){
+                alert(`
+                1. Definir uma variável preco com o valor do produto.
+                2. Definir uma variável desconto com o valor do desconto (exemplo: 0.4 para 40%).
+                3. Definir uma variável precoFinal para calcular o preço final aplicando o desconto.
+                4. Exibir o resultado no console.`
+                );
+            });
+            document.querySelector("input[value='Exibir resposta']").addEventListener("click", function(){
+                alert(`
+                let preco = 19.90;
+                let desconto = 0.4;
+                let precoFinal = preco * (1 - desconto);
+                console.log(precoFinal);
+                `);
+            });
+        </script>
 
         <h3>Operadores de atribuição</h3>
 
